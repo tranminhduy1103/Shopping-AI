@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="final-project" target="11" />
+      <module name="final-project" target="1.8" />
       <module name="registration-login-springboot-security-thymeleaf" target="1.8" />
     </bytecodeTargetLevel>
   </component>
