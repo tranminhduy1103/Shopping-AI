@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.0.1/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400"  type="text/css">
+
+    <!--   CSS for 147 Colors   -->
+    <link href="http://www.colorname.xyz/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<style type="text/css">
+
+
+
+
+body {
+  background: #191828;
+  color: #efedef;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.6em;
+  margin: 0;
+  padding:80px;
+  }
+
+h1 {
+  font-size: 40px;
+  line-height: 0.8em;
+  color: rgba(255,255,255,0.2);}
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none; }
+
+.tabs {
+  display: block;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  overflow: hidden; }
+  .tabs [class^="tab"] label,
+  .tabs [class*=" tab"] label {
+    color: #efedef;
+    cursor: pointer;
+    display: block;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1em;
+    padding: 2rem 0;
+    text-align: center; }
+  .tabs [class^="tab"] [type="radio"],
+  .tabs [class*=" tab"] [type="radio"] {
+    border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .tabs [class^="tab"] [type="radio"]:hover, .tabs [class^="tab"] [type="radio"]:focus,
+    .tabs [class*=" tab"] [type="radio"]:hover,
+    .tabs [class*=" tab"] [type="radio"]:focus {
+      border-bottom: 1px solid #fd264f; }
+    .tabs [class^="tab"] [type="radio"]:checked,
+    .tabs [class*=" tab"] [type="radio"]:checked {
+      border-bottom: 2px solid #fd264f; }
+    .tabs [class^="tab"] [type="radio"]:checked + div,
+    .tabs [class*=" tab"] [type="radio"]:checked + div {
+      opacity: 1; }
+    .tabs [class^="tab"] [type="radio"] + div,
+    .tabs [class*=" tab"] [type="radio"] + div {
+      display: block;
+      opacity: 0;
+      padding: 2rem 0;
+      width: 90%;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+  .tabs .tab-2 {
+    width: 50%; }
+    .tabs .tab-2 [type="radio"] + div {
+      width: 200%;
+      margin-left: 200%; }
+    .tabs .tab-2 [type="radio"]:checked + div {
+      margin-left: 0; }
+    .tabs .tab-2:last-child [type="radio"] + div {
+      margin-left: 100%; }
+    .tabs .tab-2:last-child [type="radio"]:checked + div {
+      margin-left: -100%; }
+
+<!--      List of bacic Item-->
+
+/* elements */
+body {
+  font: 400 16px 'Muli', sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  margin: 0;
+  max-width: 100%;
+  padding: 5px;
+  text-align: center;
+  overflow: auto;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0
+}
+
+li{
+  background: slategrey;
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 7px;
+}
+
+li > a {
+  color: white;
+  font-size: 16px;
+}
+
+li > a:hover{
+  color: #262626;
+  text-decoration: none;
+}
+
+.inner {
+  padding: 25px;
+}
+/* headings */
+
+.container-fluid h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.site-title {
+  font-size: 50px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+/* text colors */
+
+.black,
+.k {
+  font-color: #262626;
+}
+
+/* background colors */
+
+.sq {
+  /*  alignment  */
+  float: left;
+  margin: 5px;
+  /*  size  */
+  width: 200px;
+  height: 200px;
+  /*  box text  */
+  color: #262626;
+  text-align: center;
+}
+
+.sq:hover {
+  border: 6px solid rgba(255,255,255, 0.5);
+}
+
+
+
+/* table */
+table{
+  margin: 10px auto;
+}
+
+table > tbody > tr.tableizer-firstrow > th {
+  padding: 10px;
+ background-color: #1F2739;}
+
+body > div.container-fluid.inner > table > tbody > tr > td{
+  border: 4px solid #fff;
+  width: 500px;
+  padding: 10px;
+  background: #f8f8f8;
+}
+td{
+padding:10px;
+
+}
+
+img {
+   border-radius: 50%;
+   height: $imageSmall;
+   width: $imageSmall;
+}
+
+img.fix{
+border-radius: 50%;
+   height: 50px;
+   width: 45px;
+   padding:1px;
+}
+
+.b{
+border:1px solid black;
+padding:15px;
+}
+
+.border{
+border:1px solid black;
+}
+.bo{
+border:1px solid black;
+padding:15px;
+text-align:center;
+
+}
+.center{
+text-align:center;
+}
+
+
+
+
+
+
+a{
+padding:8px;
+}
+.decor{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+
+</style>
+<body>
+<h1>
+    Items
+</h1>
+
+<div class="tabs">
+
+    <div class="tab-2 decor" >
+
+        <label for="tab2-1" >Basic Item</label>
+        <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+
+        <div >
+
+
+            Recipe:
+            <div class="row" >
+
+                <div class="col " th:each="b_item : ${basicItems}">
+                    <center style="padding:5px">
+                        <a> <img th:src="${b_item.image}" class="fix" alt="the-brains"> </a>
+
+                    </center>
+                </div>
+            </div>
+
+            <div class="container-fluid inner">
+                <table class="tableizer-table">
+                    <tr class="tableizer-firstrow decor">
+                        <th>Basic Item</th>
+                        <th>Name</th>
+                        <th >Item Bonus</th>
+                        <th>Combined Items</th>
+                    </tr>
+
+                    <tr th:each="b_item : ${basicItems}"   >
+                        <td>
+                            <img th:src="${b_item.image}">
+                        </td>
+                        <td th:text="${b_item.name}"></td>
+                        <td th:text="${b_item.des}"></td>
+                        <td  >
+                            <img class="fix" th:each="item : ${items}" th:if="(${item.recipe1_name} == ${b_item.name}
+                            OR ${item.recipe2_name} == ${b_item.name})"
+                                 th:src="${item.image}">
+                        </td>
+                    </tr>
+
+
+
+
+
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="tab-2 decor">
+        <label for="tab2-2" >Combined Item</label>
+        <input id="tab2-2" name="tabs-two" type="radio">
+
+        <div>
+            <div class="bo">
+                Recipe:
+                <a> <img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/tear-of-the-goddess.png"> </a>
+                <a> <img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/sparring-gloves.png"> </a>
+                <a> <img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/recurve-bow.png"> </a>
+                <a> <img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/spatula.png"> </a>
+                <a><img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/negatron-cloak.png"> </a>
+                <a><img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/giants-belt.png"></a>
+                <a><img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/needlessly-large-rod.png"></a>
+                <a><img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/bf-sword.png "></a>
+                <a><img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/chain-vest.png"></a>
+            </div>
+
+
+            <div class="container-fluid inner">
+                <table class="tableizer-table " >
+                    <tr class="tableizer-firstrow" >
+                        <th style="width:75px;">Item</th>
+                        <th style="width:150px;">Name</th>
+                        <th style="width:400px;">Item Bonus</th>
+                        <th style="width:200px;">Recipe</th>
+                    </tr>
+
+                    <tr th:each="item : ${items}">
+                        <td>
+                            <img th:src="${item.image}">
+                        </td>
+                        <td th:text="${item.name}"></td>
+                        <td th:text="${item.des}"></td>
+                        <td>
+                            <img class="fix" th:src="${item.recipe1_image}">
+                            <img class="fix" th:src="${item.recipe2_image}">
+
+                        </td>
+                    </tr>
+
+
+
+
+                </table>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.6/prefixfree.min.js"></script>
+
+
+</body>
+</html>

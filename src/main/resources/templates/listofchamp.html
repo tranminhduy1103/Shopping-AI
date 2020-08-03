@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+</head>
+<style type="text/css">
+   figure {
+    margin: 0;
+    position: relative;
+}
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background:url(https://apptrigger.com/files/2018/08/tft-galaxies-returntothestars-sky-background-1-compressed.jpg);
+ 	font-family: 'Oxygen', sans-serif;
+	    background-size: cover;
+}
+figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+	position: relative;
+    z-index: 10;
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    transition: transform 0.4s;
+}
+
+figure:hover img {
+    -webkit-transform: scale(0.4);
+    -moz-transform: scale(0.4);
+    -ms-transform: scale(0.4);
+    transform: scale(0.4);
+}
+
+figure:hover figcaption {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+}
+
+figure a {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	padding: 20px;
+	background: none;
+	color: #ed4e6e;
+
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	-ms-transform: scale(0.7);
+	transform: scale(0.7);
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.4s;
+	transition: transform 0.4s, opacity 0.4s;
+}
+
+figcaption h3 {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+
+figcaption span:before {
+	content: 'by ';
+}
+
+figcaption a {
+    text-align: center;
+    padding: 3px 25px;
+    border-radius: 2px;
+    display: inline-block;
+    background: #ffc107;
+    color: #fff;
+}
+
+figcaption a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+</style>
+<body>
+
+
+<div class="container"  >
+    <div class="row" >
+        <div class="col-sm-4" th:each="champ : ${champs}">
+            <figure>
+                <img th:src="${champ.Image}" class="img-fluid" alt="img01">
+                <figcaption>
+                    <h3 th:text="${champ.Name}"></h3>
+                    <a th:href="${ '/champs/' + champ.id}">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>
+</html>
