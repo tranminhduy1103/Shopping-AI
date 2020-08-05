@@ -4,10 +4,7 @@ import net.javaguides.springboot.springsecurity.Exception.RecordNotFoundExceptio
 import net.javaguides.springboot.springsecurity.model.Champs;
 import net.javaguides.springboot.springsecurity.model.Item;
 import net.javaguides.springboot.springsecurity.model.User;
-import net.javaguides.springboot.springsecurity.repository.BasicRepository;
-import net.javaguides.springboot.springsecurity.repository.ChampRepository;
-import net.javaguides.springboot.springsecurity.repository.ItemRepository;
-import net.javaguides.springboot.springsecurity.repository.UserRepository;
+import net.javaguides.springboot.springsecurity.repository.*;
 import net.javaguides.springboot.springsecurity.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -46,10 +43,13 @@ public class MainController {
     @Autowired
     ItemRepository itemRepository;
 
+    @Autowired
+    ClassRepository classRepository;
+
     @GetMapping("/")
     public String root(Model model) {
 
-        return "redirect:/listofitem";
+        return "redirect:/listofSynergies";
 ////        return "list-users";
 //        return "Main_Page";
     }
@@ -89,6 +89,15 @@ public class MainController {
         model.addAttribute("basicItems",basicRepository.findAll());
         model.addAttribute("items", itemRepository.findAll());
         return "List_Item";
+    }
+
+    @GetMapping("listofSynergies")
+    public String listofSynergies(Model model){
+
+        model.addAttribute("classes",classRepository.findAll());
+
+
+        return "test-synergies";
     }
 
 

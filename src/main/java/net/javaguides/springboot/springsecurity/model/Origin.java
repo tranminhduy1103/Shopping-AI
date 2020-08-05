@@ -1,12 +1,10 @@
 package net.javaguides.springboot.springsecurity.model;
 
-
 import javax.persistence.*;
 
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "Name"))
-public class Classes {
-
+public class Origin {
 
 
     @Id
@@ -24,7 +22,9 @@ public class Classes {
     private String sl4;
     private String image4;
 
-    public Classes(Long id, String name, String image, String des, String sl1, String image1, String sl2, String image2, String sl3, String image3, String sl4, String image4) {
+
+
+    public Origin(Long id, String name, String image, String des, String sl1, String image1, String sl2, String image2, String sl3, String image3, String sl4, String image4) {
         this.id = id;
         this.name = name;
         this.image = image;
@@ -38,7 +38,6 @@ public class Classes {
         this.sl4 = sl4;
         this.image4 = image4;
     }
-    public Classes(){}
 
     public Long getId() {
         return id;
