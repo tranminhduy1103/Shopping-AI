@@ -23,6 +23,8 @@ public class Origin {
     private String image4;
 
 
+    public Origin() {
+    }
 
     public Origin(Long id, String name, String image, String des, String sl1, String image1, String sl2, String image2, String sl3, String image3, String sl4, String image4) {
         this.id = id;

@@ -26,18 +26,17 @@ public class ItemServiceImpl implements ItemService {
         return null;
     }
 
-//    public List<Item> listOfTear(){
-//        List<Item> list=itemRepository.findAll();
-//        List<BasicItem> list1=basicRepository.findAll();
-//        List<Item>listOfTear= new ArrayList<Item>();
-//        for (BasicItem x:list1) {
-//            for(Item y:list) {
-//                if (y.getRecipe1_name().equals(x.getName()) || y.getRecipe2_name().equals(x.getName()))
-//                    listOfTear.add(y);
-//            }
-//        }
-//        return listOfTear;
-//    }
+    public List<Item> buildItem(String name){
+        List<Item> list=itemRepository.findAll();
+
+        List<Item> listOfItem= new ArrayList<Item>();
+            for(Item y:list) {
+                if (y.getRecipe1_name().equals(name) || y.getRecipe2_name().equals(name)){
+                    listOfItem.add(y);
+            }
+        }
+        return listOfItem;
+    }
 
 
 }

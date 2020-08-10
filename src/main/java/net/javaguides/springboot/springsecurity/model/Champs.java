@@ -15,11 +15,13 @@ public class Champs {
     private int Cost;
     private String Image;
     private String Categorize_I;
-
     private String Origin_I;
-
+    private String Categorize_1;
+    private String Origin_1;
     private String Categorize;
     private String Origin;
+    private String Categorize1;
+    private String Origin1;
     private String Health;
     private String Mana;
     private String Damage;
@@ -33,7 +35,48 @@ public class Champs {
     private String Re_item1;
     private String Re_item2;
     private String Re_item3;
+    @Column(length=1000)
+    private String story;
 
+    public String getCategorize_1() {
+        return Categorize_1;
+    }
+
+    public void setCategorize_1(String categorize_1) {
+        Categorize_1 = categorize_1;
+    }
+
+    public String getOrigin_1() {
+        return Origin_1;
+    }
+
+    public void setOrigin_1(String origin_1) {
+        Origin_1 = origin_1;
+    }
+
+    public String getCategorize1() {
+        return Categorize1;
+    }
+
+    public void setCategorize1(String categorize1) {
+        Categorize1 = categorize1;
+    }
+
+    public String getOrigin1() {
+        return Origin1;
+    }
+
+    public void setOrigin1(String origin1) {
+        Origin1 = origin1;
+    }
+
+    public String getStory() {
+        return story;
+    }
+
+    public void setStory(String story) {
+        this.story = story;
+    }
 
     public Champs(long id, String name, int cost, String image, String categorize_I, String origin_I, String categorize, String origin, String health, String mana, String damage, String dps, String armor, String MR, double speed, String skill, String skill_Des, String skill_Dame, String re_item1, String re_item2, String re_item3) {
         Id = id;

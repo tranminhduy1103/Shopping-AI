@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-
-<html lang="en">
-
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>Synergies</title>
 
-    <title>Main page</title>
 
-    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.0.1/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400"  type="text/css">
+
+    <!--   CSS for footer  -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
@@ -23,8 +29,8 @@
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Font Awesome JS -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
             integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
             crossorigin="anonymous"></script>
@@ -36,7 +42,6 @@
 </head>
 <style type="text/css">
 
-
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body,footer {
      height: 100%;
@@ -45,6 +50,224 @@ body,footer {
  	font-family: 'Oxygen', sans-serif;
 	    background-size: cover;
 }
+
+h1 {
+  font-size: 40px;
+  line-height: 0.8em;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none; }
+
+.tabs {
+  display: block;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  overflow: hidden; }
+  .tabs [class^="tab"] label,
+  .tabs [class*=" tab"] label {
+    color: #efedef;
+    cursor: pointer;
+    display: block;
+    font-size: 1.8em;
+    font-weight: 300;
+    line-height: 1em;
+    padding: 2rem 0;
+    text-align: center; }
+  .tabs [class^="tab"] [type="radio"],
+  .tabs [class*=" tab"] [type="radio"] {
+    border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .tabs [class^="tab"] [type="radio"]:hover, .tabs [class^="tab"] [type="radio"]:focus,
+    .tabs [class*=" tab"] [type="radio"]:hover,
+    .tabs [class*=" tab"] [type="radio"]:focus {
+      border-bottom: 1px solid #fd264f; }
+    .tabs [class^="tab"] [type="radio"]:checked,
+    .tabs [class*=" tab"] [type="radio"]:checked {
+      border-bottom: 2px solid #fd264f; }
+    .tabs [class^="tab"] [type="radio"]:checked + div,
+    .tabs [class*=" tab"] [type="radio"]:checked + div {
+      opacity: 1; }
+    .tabs [class^="tab"] [type="radio"] + div,
+    .tabs [class*=" tab"] [type="radio"] + div {
+      display: block;
+      opacity: 0;
+      padding: 2rem 0;
+      width: 90%;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+  .tabs .tab-2 {
+    width: 50%; }
+    .tabs .tab-2 [type="radio"] + div {
+      width: 200%;
+      margin-left: 200%; }
+    .tabs .tab-2 [type="radio"]:checked + div {
+      margin-left: 0; }
+    .tabs .tab-2:last-child [type="radio"] + div {
+      margin-left: 100%; }
+    .tabs .tab-2:last-child [type="radio"]:checked + div {
+      margin-left: -100%; }
+
+<!--      List of bacic Item-->
+
+/* elements */
+body {
+  font: 400 16px 'Muli', sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  margin: 0;
+  max-width: 100%;
+  padding: 5px;
+  text-align: center;
+  overflow: auto;
+}
+
+
+
+
+.inner {
+  padding: 25px;
+}
+/* headings */
+
+.container-fluid h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.site-title {
+  font-size: 50px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+/* table */
+table{
+  margin: 10px auto;
+}
+
+table > tbody > tr.tableizer-firstrow > th {
+font-size:17px;
+  padding: 10px;
+ background-color: #1F2739;}
+
+body > div.container-fluid.inner > table > tbody > tr > td{
+  border: 4px solid #fff;
+  width: 500px;
+  padding: 10px;
+  background: #f8f8f8;
+  font-size:15px;
+
+}
+td{
+padding:10px;
+  font-size:15px;
+
+}
+
+img {
+   border-radius: 50%;
+   height: $imageSmall;
+   width: $imageSmall;
+}
+
+img.fix{
+border-radius: 50%;
+   height: 50px;
+   width: 45px;
+   padding:1px;
+}
+
+.b{
+border:1px solid black;
+padding:15px;
+}
+
+.border{
+border:1px solid black;
+}
+.bo{
+border:1px solid black;
+padding:15px;
+text-align:center;
+}
+.center{
+text-align:center;
+}
+.decor{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+
+/*footer*/
+.col_white_amrc { color:#FFF;}
+<!--footer { width:100%; background-color:#263238;-->
+<!-- min-height:250px; padding:10px 0px 25px 0px ;}-->
+
+.pt2 { padding-top:40px ; margin-bottom:20px ;}
+footer p { font-size:14px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
+.mb10 { padding-bottom:15px ;}
+.footer_ul_amrc { margin:0px ; list-style-type:none ; font-size:14px; padding:0px 0px 10px 0px ; }
+.footer_ul_amrc li {padding:0px 0px 5px 0px;}
+.footer_ul_amrc li a{ color:#CCC;}
+.footer_ul_amrc li a:hover{ color:#fff; text-decoration:none;}
+.fleft { float:left;}
+.padding-right { padding-right:10px; }
+
+.footer_ul2_amrc {margin:0px; list-style-type:none; padding:0px;}
+.footer_ul2_amrc li p { display:table; }
+.footer_ul2_amrc li a:hover { text-decoration:none;}
+.footer_ul2_amrc li i { margin-top:5px;}
+
+.bottom_border { border-bottom:1px solid #323f45; padding-bottom:20px;}
+.foote_bottom_ul_amrc {
+	list-style-type:none;
+	padding:0px;
+	display:table;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+.foote_bottom_ul_amrc li { display:inline;}
+.foote_bottom_ul_amrc li a { color:#999; margin:0 12px;}
+
+.social_footer_ul { display:table; margin:15px auto 0 auto; list-style-type:none;  }
+.social_footer_ul li { padding-left:20px; padding-top:10px; float:left; }
+.social_footer_ul li a { color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;}
+.social_footer_ul li i {  width:20px; height:20px; text-align:center;}
 
 .top-bar {
 margin-right:10px;
@@ -104,85 +327,9 @@ a:focus, a:hover {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     text-decoration: none !important;
-    font-size: 0.75rem;
+    font-size: 1.25rem;
     font-weight: 700;
     margin-right: 5px;
-}
-
-/*footer*/
-.col_white_amrc { color:#FFF;}
-<!--footer { width:100%; background-color:#263238;-->
-<!-- min-height:250px; padding:10px 0px 25px 0px ;}-->
-
-.pt2 { padding-top:40px ; margin-bottom:20px ;}
-footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
-.mb10 { padding-bottom:15px ;}
-.footer_ul_amrc { margin:0px ; list-style-type:none ; font-size:14px; padding:0px 0px 10px 0px ; }
-.footer_ul_amrc li {padding:0px 0px 5px 0px;}
-.footer_ul_amrc li a{ color:#CCC;}
-.footer_ul_amrc li a:hover{ color:#fff; text-decoration:none;}
-.fleft { float:left;}
-.padding-right { padding-right:10px; }
-
-.footer_ul2_amrc {margin:0px; list-style-type:none; padding:0px;}
-.footer_ul2_amrc li p { display:table; }
-.footer_ul2_amrc li a:hover { text-decoration:none;}
-.footer_ul2_amrc li i { margin-top:5px;}
-
-.bottom_border { border-bottom:1px solid #323f45; padding-bottom:20px;}
-.foote_bottom_ul_amrc {
-	list-style-type:none;
-	padding:0px;
-	display:table;
-	margin-top: 10px;
-	margin-right: auto;
-	margin-bottom: 10px;
-	margin-left: auto;
-}
-.foote_bottom_ul_amrc li { display:inline;}
-.foote_bottom_ul_amrc li a { color:#999; margin:0 12px;}
-
-.social_footer_ul { display:table; margin:15px auto 0 auto; list-style-type:none;  }
-.social_footer_ul li { padding-left:20px; padding-top:10px; float:left; }
-.social_footer_ul li a { color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;}
-.social_footer_ul li i {  width:20px; height:20px; text-align:center;}
-
-.login-btn{
-color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-}
-.signup-btn{
-color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-}
-.logout-btn{
-color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;}
-
-.button_decor{
-width:78px;
-height:30px;
- padding:0px 5px;
-  text-align: center;
-}
-h5.decor{
-color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;}
-strong.decor{
-color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-}
-
-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: #999;
-}
-p.decor{
-color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 a,
@@ -206,6 +353,7 @@ a:focus {
     box-shadow: none;
     outline: none !important;
     border: none;
+
 }
 
 .line {
@@ -224,7 +372,7 @@ span {
 }
 span.decor{
 color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+ text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 
 }
 
@@ -242,7 +390,7 @@ color: white;
     max-width: 250px;
     background: #2e353d;
     color: #fff;
-    transition: all 0.3s;
+    transition: all 0.3s;SteelBlue
 }
 
 #sidebar.active {
@@ -251,7 +399,7 @@ color: white;
     text-align: center;
 }
 
-#sidebar.active .sidebar-header h5,
+#sidebar.active .sidebar-header h2,
 #sidebar.active .CTAs {
     display: none;
 }
@@ -267,7 +415,7 @@ color: white;
 #sidebar.active ul li a {
     padding: 20px 10px;
     text-align: center;
-    font-size: 0.85em;
+    font-size: 1.2em;
 }
 
 #sidebar.active ul li a i {
@@ -307,7 +455,7 @@ color: white;
 
 #sidebar ul li a {
     padding: 10px;
-    font-size: 1.1em;
+    font-size: 1.8em;
     display: block;
 }
 
@@ -396,7 +544,7 @@ a.article:hover {
     #sidebar.active {
         margin-left: 0 !important;
     }
-    #sidebar .sidebar-header h5,
+    #sidebar .sidebar-header h2,
     #sidebar .CTAs {
         display: none;
     }
@@ -417,7 +565,7 @@ a.article:hover {
         padding: 10px !important;
     }
     #sidebar ul li a i {
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
     #sidebar {
         margin-left: 0;
@@ -425,18 +573,51 @@ a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
+    }
+
+
+img.fix1{
+border-radius: 80%;
+   height: 80px;
+   width: 80px;
+   padding:1px;
+   position: relative;
+}
+img.fix2{
+border-radius: 70%;
+   height: 25px;
+   width: 25px;
+   padding:1px;
+   position: absolute;
+   top:45px;
+   left:60px;
+}
+img.fix3{
+border-radius: 70%;
+   height: 30px;
+   width: 30px;
+   padding:1px;
+   position: absolute;
+   top:43px;
+   right:75px;
+}
+
+
+
+
+
+
 
 
 
 </style>
-
 <body>
 
 <div class="wrapper">
     <!-- Sidebar  -->
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h5 class="decor">Team Fight Tactics</h5>
+            <h2 class="decor">Team Fight Tactics</h2>
             <strong class="decor">TFT</strong>
         </div>
         <ul class="list-unstyled components">
@@ -498,7 +679,7 @@ a.article:hover {
             <div class="container">
                 <div class="row d-flex align-items-center">
                     <div class="col-md-6 d-md-block d-none">
-                        <p class="decor">Hello, and welcome to the OFFICIAL Teamfight Tactics (TFT) Detailed General Guide for beginners!</p>
+                        <h1>Synergies</h1>
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex justify-content-md-end justify-content-between">
@@ -519,65 +700,146 @@ a.article:hover {
             </div>
         </div>
 
+        <div class="tabs">
+            <div class="tab-2 decor">
 
-        <p class="decor">Teamfight Tactics Guides</p>
-        <p> Learn how to play TFT with our tips, tricks, and in depth guides.</p>
-        <p>Hi! Welcome to our website about team fight tactics.</p>
-        <p>Before we go into what we have here, I would like to tell you something about the latest version of TFT. Actually, instead of season 4 Riot Game made
-        a decision to create the sub version of season 3 or we can say season 3 part 2.  </p>
-    <p>
-        In this season, we'll have some new synergies called Paragon and Battlecast with full new champions as follow. This season will change everything you've
-        known before about TFT Season3. All the Synergies have been updated and upgraded so as to suitable for a game. Also, the player have know everything about
-        how a new synergies works and the power of each champions though every patch. But don't worry much about that. Our website will provide everything you need
-        in order for you to reach a highest top in a game and in rank as well.</p>
-     <p>  Now, Let's begin!!!</p>
+                <label for="tab2-1">Classes</label>
+                <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+
+                <div>
 
 
-        <div class="line"></div>
+                    <div class="container-fluid inner">
+                        <table class="tableizer-table">
 
-        <h1 style="color: white;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">
-            Champion</h1>
+                            <tr class="tableizer-firstrow decor">
+                                <th style="width:80px;">Name</th>
+                                <th style="width:170px;">Effect</th>
+                                <th style="width:240px;">Effect Bonus</th>
+                                <th style="width:750px;">Champion</th>
+                            </tr>
 
-        <p>This function will help you to know every specific information of each champions in TFT, also some recommended items for that champion</p>
-        <p>- One of the most crucial things you need to know so as to master this game that is about champion. That is right!. When you fully understand about
-        all of the champions, you are able to handle every situations may occur. For example, sometimes the items from the beginning are not as you
-        expected and the champion are not suitable with your team comps, you lack of money compare with the other,...
-            A myriad of tough circumstances may happen.
-        But do not worry about, with a well-known knowledge about champion, you will know what moment your champs is strongest and vice versa. Hence, you can turnaround right away.</p>
-          <p>- And now, let's see what we have about champion!</p>
+                            <tr th:each="class : ${classes}">
+                                <td class="textc">
+                                    <img th:src="${class.image}">
+                                    <span th:text="${class.name}"> </span>
+                                </td>
+                                <td th:text="${class.des}"></td>
 
-        <div class="line"></div>
-
-        <h1 style="color: white;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">
-            Items</h1>
-        <p>When you know clearly about our champions, the next one we should consider is the item.
-        In order for champion to reach its highest power, we better know which item is suitable for my champion.
-        In addition, well-knowing about combine items plays an important role as well as knowing the true power of each champion. </p>
-
-        <div class="line"></div>
-
-
-        <h1 style="color: white;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">
-            Synergies</h1>
-        <p>This part is one of the most interesting part of our game. You can combine your champion together in order to build a strongest team comp.
-        So what we have here are classes and origins. When you have some champions have the same class or origin, they will stack together and create som
-        wonderful effect or we can say bonus effect. One champ may have at least two classes or two origins, anh thanks for that you can create an army
-        based on your hobby. Creativity is infinity so build whatever you want ang gain the winning.</p>
-
-        <div class="line"></div>
+                                <td class="column">
+                                    <img class="fix" th:src="${class.image1}">
+                                    <span th:text="${class.sl1}"></span>
+                                    <p></p>
+                                    <img class="fix" th:if="${class.image2}" th:src="${class.image2}">
+                                    <span th:text="${class.sl2}"></span>
+                                    <p></p>
+                                    <img class="fix" th:if="${class.image3}" th:src="${class.image3}">
+                                    <span th:text="${class.sl3}"></span>
+                                </td>
+                                <td class="row" >
+                                    <!--                            th:each="item : ${items}" th:if="(${item.recipe1_name} == ${b_item.name}-->
+                                    <div  style="position:relative; width:100px;"th:each="champ: ${champs}" th:if="(${champ.Categorize} == ${class.name} OR${champ.Origin} == ${class.name} )">
+                                        <img class="fix1" th:src="${champ.Image}">
+                                        <img class="fix2" th:src="${champ.Categorize_I}" >
+                                        <img class="fix3" th:src="${champ.Origin_I}">
+                                    </div>
 
 
-        <h1 style="color: white;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">
-            Team Builder</h1>
-        <p>This part is one of the most interesting part of our game. You can combine your champion together in order to build a strongest team comp.
-            So what we have here are classes and origins. When you have some champions have the same class or origin, they will stack together and create som
-            wonderful effect or we can say bonus effect. One champ may have at least two classes or two origins, anh thanks for that you can create an army
-            based on your hobby. Creativity is infinity so build whatever you want ang gain the winning.</p>
+
+                                </td>
+                            </tr>
+
+
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="tab-2 decor">
+                <label for="tab2-2">Origins</label>
+                <input id="tab2-2" name="tabs-two" type="radio">
+
+                <div>
+
+                    <div class="container-fluid inner">
+                        <table class="tableizer-table">
+                            <tr class="tableizer-firstrow decor">
+                                <th style="width:80px;">Name</th>
+                                <th style="width:170px;">Effect</th>
+                                <th style="width:240px;">Effect Bonus</th>
+                                <th style="width:750px;">Champion</th>
+                            </tr>
+
+                            <tr th:each="origin : ${origins}">
+                                <td class="textc">
+                                    <img th:src="${origin.image}">
+                                    <span th:text="${origin.name}"> </span>
+                                </td>
+                                <td th:text="${origin.des}"></td>
+
+                                <td class="column">
+                                    <img class="fix" th:src="${origin.image1}">
+                                    <span th:text="${origin.sl1}"></span>
+                                    <p></p>
+                                    <img class="fix" th:if="${origin.image2}" th:src="${origin.image2}">
+                                    <span th:text="${origin.sl2}"></span>
+                                    <p></p>
+                                    <img class="fix" th:if="${origin.image3}" th:src="${origin.image3}">
+                                    <span th:text="${origin.sl3}"></span>
+                                    <p></p>
+                                    <img class="fix" th:if="${origin.image4}" th:src="${origin.image4}">
+                                    <span th:text="${origin.sl4}"></span>
+                                </td>
+                                <td class=" row">
+                                    <div class="" style="position:relative; width:100px;" th:each="champ: ${champs}" th:if="(${champ.Categorize} == ${origin.name} OR${champ.Origin} == ${origin.name} )">
+                                        <img class="fix1" th:src="${champ.Image}">
+                                        <img class="fix2" th:src="${champ.Categorize_I}" >
+                                        <img class="fix3" th:src="${champ.Origin_I}">
+                                    </div>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
     </div>
-
-
 </div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.6/prefixfree.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.6/prefixfree.min.js"></script>
+
 <footer class="footer">
     <div class="container bottom_border">
         <div class="row">
@@ -648,7 +910,7 @@ a.article:hover {
             <li><a href="http://webenlance.com">Contact</a></li>
         </ul>
         <!--foote_bottom_ul_amrc ends here-->
-        <p class="text-center">Copyright @2020 | Designed With by Minh Duy | <a href="#">Green Academy Project</a></p>
+        <p class="text-center">Copyright @2020 | Designed  by Minh Duy | <a href="#">Green Academy Project</a></p>
 
         <ul class="social_footer_ul">
             <li><a href="http://webenlance.com"><i class="fab fa-facebook-f"></i></a></li>
@@ -661,32 +923,5 @@ a.article:hover {
 
 </footer>
 
-<!-- jQuery CDN - Slim version (=without AJAX) -->
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<!-- Popper.JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-        crossorigin="anonymous"></script>
-<!-- Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-        crossorigin="anonymous"></script>
-
-<script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
-        });
-
-</script>
 </body>
-</html>
 </html>

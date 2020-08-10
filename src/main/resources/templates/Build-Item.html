@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Build Item</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.0.1/normalize.css">
     <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400"  type="text/css">
 
     <!--   CSS for 147 Colors   -->
     <link href="http://www.colorname.xyz/style.css" rel="stylesheet" type="text/css">
@@ -31,7 +31,7 @@ body {
   letter-spacing: 0.01em;
   line-height: 1.6em;
   margin: 0;
-  padding: 100px; }
+  padding: 80px; }
 
 h1 {
   font-size: 40px;
@@ -150,7 +150,7 @@ li > a:hover{
 }
 
 .inner {
-  padding: 40px;
+  padding: 25px;
 }
 /* headings */
 
@@ -197,24 +197,24 @@ table{
 }
 
 table > tbody > tr.tableizer-firstrow > th {
-  padding: 15px;
+  padding: 10px;
  background-color: #1F2739;}
 
 body > div.container-fluid.inner > table > tbody > tr > td{
   border: 4px solid #fff;
-  width: 170px;
+  width: 500px;
   padding: 15px;
   background: #f8f8f8;
 }
 td{
 padding:15px;
-
 }
 
 img {
    border-radius: 50%;
    height: $imageSmall;
    width: $imageSmall;
+   padding: 3px;
 }
 
 img.fix{
@@ -229,7 +229,7 @@ padding:15px;
 text-align:center;
 }
 a{
-padding:8px;
+padding:0px;
 }
 .decor{
 color: white;
@@ -238,7 +238,7 @@ color: white;
 
 </style>
 <body>
-<h1>
+<h1 class="decor">
     Items
 </h1>
 
@@ -248,37 +248,35 @@ color: white;
 
 
         <div>
-            <div class="b ">
             Recipe:
-                <a> <img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/tear-of-the-goddess.png"> </a>
-                <a> <img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/sparring-gloves.png"> </a>
-                <a> <img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/recurve-bow.png"> </a>
-                <a> <img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/spatula.png"> </a>
-                <a><img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/negatron-cloak.png"> </a>
-                <a><img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/giants-belt.png"></a>
-                <a><img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/needlessly-large-rod.png"></a>
-                <a><img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/bf-sword.png "></a>
-                <a><img class="fix" src="https://cdn.mobalytics.gg/stable/tft/items/set3/chain-vest.png"></a>
+            <div class="row" >
+
+                <div class="col"style="padding:5px;" th:each="b_item : ${basicItems}">
+                    <center >
+                        <a th:href="${ '/items/' + b_item.name}"> <img th:src="${b_item.image}" class="fix" alt="the-brains"> </a>
+                    </center>
+                </div>
             </div>
 
-            <div class="container-fluid inner">
+            <div class="container-fluid inner" >
                 <table class="tableizer-table">
                     <tr class="tableizer-firstrow decor">
-                        <th>Recipe</th>
-                        <th>Combined Items</th>
-                        <th>Item Bonus</th>
+                        <th style="width:220px;">Recipe</th>
+                        <th style="width:200px;">Combined Items</th>
+                        <th style="width:150px;">Item Bonus</th>
                     </tr>
 
-                    <tr>
-                        <td>
-                            <img src="https://cdn.mobalytics.gg/stable/tft/items/set3/tear-of-the-goddess.png">
-                            <img src="https://cdn0.iconfinder.com/data/icons/social-messaging-productivity-2/64/x-10-128.png" style="width:30px;">
-                            <img src="https://cdn.mobalytics.gg/stable/tft/items/set3/tear-of-the-goddess.png">
+                    <tr th:each="item : ${items}">
+                        <td class="row">
+                            <img th:src="${item.recipe1_image}">
+                            <img src="https://cdn0.iconfinder.com/data/icons/social-messaging-productivity-2/64/x-10-128.png" style="width:40px;">
+                            <img th:src="${item.recipe2_image}">
 
                         </td>
-                        <td><img src="https://cdn2.iconfinder.com/data/icons/smashicons-the-essentials-retro-vol-4/44/212_-_Equal_interaction_communication_essential-128.png" style="width:35px;">
-                            <img src="https://cdn.mobalytics.gg/stable/tft/items/set3/statikk-shiv.png"></td>
-                        <td>Every 3rd attack deals 90 magical damage to 3/4/5 targets. Scales with Star Level</td>
+                        <td>
+                            <img src="https://cdn2.iconfinder.com/data/icons/smashicons-the-essentials-retro-vol-4/44/212_-_Equal_interaction_communication_essential-128.png" style="width:35px;">
+                            <img th:src="${item.image}"></td>
+                        <td th:text="${item.des}"></td>
 
                     </tr>
 

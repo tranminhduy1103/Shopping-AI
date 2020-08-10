@@ -45,13 +45,15 @@ public class MainController {
 
     @Autowired
     ClassRepository classRepository;
+    @Autowired
+    OriginRepository originRepository;
 
     @GetMapping("/")
     public String root(Model model) {
 
-        return "redirect:/listofSynergies";
+//        return "redirect:/listofitem";
 ////        return "list-users";
-//        return "Main_Page";
+        return "Main_Page";
     }
 
 
@@ -95,9 +97,11 @@ public class MainController {
     public String listofSynergies(Model model){
 
         model.addAttribute("classes",classRepository.findAll());
+        model.addAttribute("origins",originRepository.findAll());
+        model.addAttribute("champs",champRepository.findAll());
 
 
-        return "test-synergies";
+        return "List-Synergies";
     }
 
 
@@ -105,9 +109,20 @@ public class MainController {
     @RequestMapping("champs/{id}")
     public String showDetail(@PathVariable Long id, Model model){
         Champs champs = champServiceIpml.findById(id).get();
-//        System.out.println(champServiceIpml.findById(id));
+
         model.addAttribute("champ", champs);
         return "detailOfChamp";
+    }
+
+    @RequestMapping("items/{name}")
+    public String BuildItem(@PathVariable String name, Model model){
+
+
+        List<Item> items=  itemService.buildItem(name);
+        model.addAttribute("basicItems",basicRepository.findAll());
+
+        model.addAttribute("items",items);
+        return "Build-Item";
     }
 
 
@@ -118,7 +133,7 @@ public class MainController {
     public String listofUser(Model model){
     List<User> list = userService.getAllUsers();
 		model.addAttribute("users", list);
-		return "test";
+		return "Manage_member";
 }
 
 
