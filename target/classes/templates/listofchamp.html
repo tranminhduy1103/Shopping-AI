@@ -435,7 +435,7 @@ a.article:hover {
 .grid-item {
   width: 90%;
   float: none;
-  margin: 5px; 
+  margin: 1% auto;
 }
 
 @supports (display: grid) {
@@ -515,11 +515,11 @@ a.article:hover {
 	@supports (display: grid) {
 		.grid-container {
 			grid-template-columns: repeat(4, auto);
-			grid-gap: 3%;
+			grid-gap: 15px;
 		}
 		.grid-item {
 			width: 100%;
-			margin: 0 auto 7%;
+			margin: 0 auto 1%;
 		}
 	}
 }
@@ -643,7 +643,7 @@ a.article:hover {
 .bio-block,
 .scroll-block,
 .more-info {
-	background-color: #eaedef;
+	background-color:LightSlateGrey; ;
 	width: 100%;
 	box-sizing: border-box;
 }
@@ -787,7 +787,8 @@ background-color: rgba(0,0,0,0.01) !important;
 .bio-text {
 	line-height: 180%;
 	height: 0%;
-	color: #313b40;
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 	opacity: 0.85;
 	font-size: 1em;
 	padding: 0 1em 0 1.5em;
@@ -1042,16 +1043,62 @@ s*/
 		transform: scale(1, 1) translatey(0%);
 	}
 }
+ .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
+
 
 </style>
 <script>
   window.console = window.console || function(t) {};
+
 
 </script>
 <script>
   if (document.location.search.match(/type=embed/gi)) {
     window.parent.postMessage("resize", "*");
   }
+
 
 </script>
 
@@ -1142,7 +1189,18 @@ s*/
                 </div>
             </div>
         </div>
+
+        <form class="form-inline pull-right" action="#"
+              th:action="@{/Champs/search}" method="GET">
+            <div class="d-flex justify-content-center h-100">
+                <div class="searchbar">
+                    <input class="search_input" type="text" name="s" placeholder="Search...">
+                    <a href="#" class="search_icon"><i class="fas fa-search"  type="submit"></i></a>
+                </div>
+            </div>
+        </form>
         <main class="grid-container fix">
+
 
             <div class="grid-item " th:each="champ : ${champs}">
                 <div class="wrapper1">
@@ -1151,11 +1209,15 @@ s*/
 
                             <section class="item-card">
                                 <div class="item-summary">
-                                    <img th:src="${champ.Categorize_I}"style="width:25px;height:25px;"><span th:text="${champ.Categorize}"></span>
+                                    <img th:src="${champ.Categorize_I}" style="width:25px;height:25px;"><span
+                                        th:text="${champ.Categorize}"></span>
                                     <p></p>
-                                    <img  th:if="${champ.Categorize_1}" th:src="${champ.Categorize_1}"style="width:25px;height:25px;"><span th:if="${champ.Categorize1}" th:text="${champ.Categorize1}"></span>
+                                    <img th:if="${champ.Categorize_1}" th:src="${champ.Categorize_1}"
+                                         style="width:25px;height:25px;"><span th:if="${champ.Categorize1}"
+                                                                               th:text="${champ.Categorize1}"></span>
                                     <p></p>
-                                    <img th:src="${champ.Origin_I}" style="width:25px;height:25px;"><span th:text="${champ.Origin}">  </span>
+                                    <img th:src="${champ.Origin_I}" style="width:25px;height:25px;"><span
+                                        th:text="${champ.Origin}">  </span>
                                 </div>
                                 <div class="image-wrapper1">
                                     <img class="featured-image"
@@ -1166,35 +1228,34 @@ s*/
                                     <time class="date" th:text="${champ.Name}"></time>
                                     <time class="time">
                                         <img src="https://cdn3.iconfinder.com/data/icons/business-finance-vol-4-21/512/5_Coin_dollar_money-256.png"
-                                            style="width:25px;height:25px;"><span th:text="${champ.Cost}">   </span>
+                                             style="width:25px;height:25px;"><span th:text="${champ.Cost}">   </span>
                                     </time>
                                 </div>
                                 <div class="item-buttons front-buttons">
                                     <button class="btn-details grey" aria-label="Learn more about the band and venue">
                                         Basic Info
                                     </button>
-                                    <a class="btn-tickets blue" aria-label="Purchase tickets for this event" th:href="${ '/champs/' + champ.id}">Details</a>
+                                    <a class="btn-tickets blue" aria-label="Purchase tickets for this event"
+                                       th:href="${ '/champs/' + champ.id}">Details</a>
                                 </div>
                             </section>
 
-                            <section class="item-card-details">
-                                <div class="bio-block">
+                            <section class="item-card-details ">
+                                <div class="bio-block ">
                                     <h3 class="bio-title" th:text="${champ.Name}"></h3>
                                 </div>
-                                <div class="scroll-block">
+                                <div class="scroll-block ">
                                     <p class="bio-text" th:text="${champ.story}">
 
                                     </p>
                                 </div>
                                 <div class="more-info">
-                                    <p>
-                                        <a class="info" aria-label="Visit The Paper Kites website" href="#">The Paper
-                                            Kites Details</a>
-                                    </p>
-                                    <p>
-                                        <a class="info" aria-label="Visit the venue's website" href="#">Venue
-                                            Details</a>
-                                    </p>
+                                    <!--                                    <p>-->
+                                    <!--                                        <a class="info" aria-label="Visit The Paper Kites website" href="#"></a>-->
+                                    <!--                                    </p>-->
+                                    <!--                                    <p>-->
+                                    <!--                                        <a class="info" aria-label="Visit the venue's website" href="#"></a>-->
+                                    <!--                                    </p>-->
                                 </div>
                                 <div class="item-buttons back">
                                     <button class="btn-details grey back-arrow"
@@ -1207,11 +1268,6 @@ s*/
                     </div>
                 </div>
             </div>
-
-
-
-
-
 
 
         </main>
@@ -1249,6 +1305,7 @@ flipCard = () => {
 })();
       //# sourceURL=pen.js
 
+
         </script>
 
 
@@ -1283,6 +1340,7 @@ flipCard = () => {
                 $('#sidebar').toggleClass('active');
             });
         });
+
 
 
 </script>
