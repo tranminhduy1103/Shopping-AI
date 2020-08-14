@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -27,6 +28,9 @@ public class ChampServiceIpml implements ChampService {
         return null;
     }
 
-
+    @Override
+    public List<Champs> search(String name) {
+        return champRepository.findByName(name);
+    }
 }
 

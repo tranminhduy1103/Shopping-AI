@@ -197,7 +197,7 @@ padding:10px;
 }
 
 img {
-   border-radius: 50%;
+
    height: $imageSmall;
    width: $imageSmall;
 }
@@ -601,6 +601,15 @@ border-radius: 70%;
    top:43px;
    right:75px;
 }
+img.fix4{
+ height: 30px;
+   width: 30px;
+   padding:1px;
+}
+.textc{
+text-align:center;
+
+}
 
 
 
@@ -727,18 +736,18 @@ border-radius: 70%;
                                 <td th:text="${class.des}"></td>
 
                                 <td class="column">
-                                    <img class="fix" th:src="${class.image1}">
+                                    <img class="fix4" th:src="${class.image1}">
                                     <span th:text="${class.sl1}"></span>
                                     <p></p>
-                                    <img class="fix" th:if="${class.image2}" th:src="${class.image2}">
+                                    <img class="fix4" th:if="${class.image2}" th:src="${class.image2}">
                                     <span th:text="${class.sl2}"></span>
                                     <p></p>
-                                    <img class="fix" th:if="${class.image3}" th:src="${class.image3}">
+                                    <img class="fix4" th:if="${class.image3}" th:src="${class.image3}">
                                     <span th:text="${class.sl3}"></span>
                                 </td>
                                 <td class="row" >
                                     <!--                            th:each="item : ${items}" th:if="(${item.recipe1_name} == ${b_item.name}-->
-                                    <div  style="position:relative; width:100px;"th:each="champ: ${champs}" th:if="(${champ.Categorize} == ${class.name} OR${champ.Origin} == ${class.name} )">
+                                    <div  style="position:relative; width:100px;"th:each="champ: ${champs}" th:if="(${champ.Categorize} == ${class.name} OR${champ.Origin} == ${class.name} OR${champ.Categorize1} == ${class.name} )">
                                         <img class="fix1" th:src="${champ.Image}">
                                         <img class="fix2" th:src="${champ.Categorize_I}" >
                                         <img class="fix3" th:src="${champ.Origin_I}">
@@ -781,16 +790,16 @@ border-radius: 70%;
                                 <td th:text="${origin.des}"></td>
 
                                 <td class="column">
-                                    <img class="fix" th:src="${origin.image1}">
+                                    <img class="fix4" th:src="${origin.image1}">
                                     <span th:text="${origin.sl1}"></span>
                                     <p></p>
-                                    <img class="fix" th:if="${origin.image2}" th:src="${origin.image2}">
+                                    <img class="fix4" th:if="${origin.image2}" th:src="${origin.image2}">
                                     <span th:text="${origin.sl2}"></span>
                                     <p></p>
-                                    <img class="fix" th:if="${origin.image3}" th:src="${origin.image3}">
+                                    <img class="fix4" th:if="${origin.image3}" th:src="${origin.image3}">
                                     <span th:text="${origin.sl3}"></span>
                                     <p></p>
-                                    <img class="fix" th:if="${origin.image4}" th:src="${origin.image4}">
+                                    <img class="fix4" th:if="${origin.image4}" th:src="${origin.image4}">
                                     <span th:text="${origin.sl4}"></span>
                                 </td>
                                 <td class=" row">

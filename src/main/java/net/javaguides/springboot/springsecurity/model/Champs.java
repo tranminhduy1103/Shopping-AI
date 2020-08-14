@@ -11,7 +11,7 @@ public class Champs {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long Id;
 
-    private String Name;
+    private String name;
     private int Cost;
     private String Image;
     private String Categorize_I;
@@ -37,6 +37,35 @@ public class Champs {
     private String Re_item3;
     @Column(length=1000)
     private String story;
+
+    public Champs(long id, String name, int cost, String image, String categorize_I, String origin_I, String categorize_1, String origin_1, String categorize, String origin, String categorize1, String origin1, String health, String mana, String damage, String dps, String armor, String MR, double speed, String skill, String skill_Des, String skill_Dame, String re_item1, String re_item2, String re_item3, String story) {
+        Id = id;
+        this.name = name;
+        Cost = cost;
+        Image = image;
+        Categorize_I = categorize_I;
+        Origin_I = origin_I;
+        Categorize_1 = categorize_1;
+        Origin_1 = origin_1;
+        Categorize = categorize;
+        Origin = origin;
+        Categorize1 = categorize1;
+        Origin1 = origin1;
+        Health = health;
+        Mana = mana;
+        Damage = damage;
+        Dps = dps;
+        Armor = armor;
+        this.MR = MR;
+        Speed = speed;
+        Skill = skill;
+        Skill_Des = skill_Des;
+        Skill_Dame = skill_Dame;
+        Re_item1 = re_item1;
+        Re_item2 = re_item2;
+        Re_item3 = re_item3;
+        this.story = story;
+    }
 
     public String getCategorize_1() {
         return Categorize_1;
@@ -78,29 +107,6 @@ public class Champs {
         this.story = story;
     }
 
-    public Champs(long id, String name, int cost, String image, String categorize_I, String origin_I, String categorize, String origin, String health, String mana, String damage, String dps, String armor, String MR, double speed, String skill, String skill_Des, String skill_Dame, String re_item1, String re_item2, String re_item3) {
-        Id = id;
-        Name = name;
-        Cost = cost;
-        Image = image;
-        Categorize_I = categorize_I;
-        Origin_I = origin_I;
-        Categorize = categorize;
-        Origin = origin;
-        Health = health;
-        Mana = mana;
-        Damage = damage;
-        Dps = dps;
-        Armor = armor;
-        this.MR = MR;
-        Speed = speed;
-        Skill = skill;
-        Skill_Des = skill_Des;
-        Skill_Dame = skill_Dame;
-        Re_item1 = re_item1;
-        Re_item2 = re_item2;
-        Re_item3 = re_item3;
-    }
 
     public String getDps() {
         return Dps;
@@ -186,7 +192,13 @@ public class Champs {
         Categorize = categorize;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public long getId() {
         return Id;
@@ -196,13 +208,7 @@ public class Champs {
         Id = id;
     }
 
-    public String getName() {
-        return Name;
-    }
 
-    public void setName(String name) {
-        Name = name;
-    }
 
     public int getCost() {
         return Cost;
