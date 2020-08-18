@@ -1,164 +1,390 @@
 
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8' />
+    <meta charset="UTF-8">
+    <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+    <title>CodePen - FullCalendar drag &amp; drop events between multiple calendars</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'>
 
+    <style>
+body {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+}
 
-    <title>
-        Drag-n-drop external events - Demos | FullCalendar
-    </title>
+#wrap {
+  width: 1500px;
+  margin: 0 auto;
+}
 
+#external-events {
+  float: left;
+  width: 150px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  background: #eee;
+  text-align: left;
+}
 
-    <link href='/assets/demo-to-codepen.css' rel='stylesheet' />
+#external-events h4 {
+  font-size: 16px;
+  margin-top: 0;
+  padding-top: 1em;
+}
 
+#external-events .fc-event {
+  margin: 10px 0;
+  cursor: pointer;
+}
 
+#external-events p {
+  margin: 1.5em 0;
+  font-size: 11px;
+  color: #666;
+}
 
+#external-events p input {
+  margin: 0;
+  vertical-align: middle;
+}
 
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.3.0/main.min.css' rel='stylesheet' />
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.3.0/main.min.js'></script>
-
-
-
-
-
-
-
-    <script src='/assets/demo-to-codepen.js'></script>
-
-
+#calendar {
+  float: right;
+  width: 900px;
+}
+.mb-20{
+  margin-bottom:20px;
+}
+</style>
     <script>
+  window.console = window.console || function(t) {};
+</script>
+    <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div id='wrap'>
+    <div id='external-events'>
+        <div id='external-events-listing'>
+            <h4>Draggable Events</h4>
+            <div class='fc-event'>My Event 1</div>
+            <div class='fc-event'>My Event 2</div>
+            <div class='fc-event'>My Event 3</div>
+            <div class='fc-event'>My Event 4</div>
+            <div class='fc-event'>My Event 5</div>
+            <div class='fc-event'>
+                <img src="https://i.imgur.com/qdU5mrV.png" width="20" height="20"></div>
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var Calendar = FullCalendar.Calendar;
-    var Draggable = FullCalendar.Draggable;
 
-    var containerEl = document.getElementById('external-events');
-    var calendarEl = document.getElementById('calendar');
-    var checkbox = document.getElementById('drop-remove');
+        </div>
+        <p>
+            <input type='checkbox' id='drop-remove' checked='checked' />
+            <label for='drop-remove'>remove after drop</label>
+        </p>
+    </div>
+    <div class="container">
+        <div class="col-md-12">
+            <div class="col-md-6 mb-20">
+                <div id='calendar1'></div>
+            </div>
 
-    // initialize the external events
-    // -----------------------------------------------------------------
+        </div>
+    </div>
+    <div style='clear:both'></div>
+</div>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+<script src='https://code.jquery.com/jquery-1.11.2.min.js'></script>
+<script src='https://code.jquery.com/ui/1.11.2/jquery-ui.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js'></script>
+<script id="rendered-js">
+$(document).ready(function () {
 
-    new Draggable(containerEl, {
-      itemSelector: '.fc-event',
-      eventData: function(eventEl) {
-        return {
-          title: eventEl.innerText
-        };
-      }
+  // Manage status of dragging event and calendar
+  var calEventStatus = [];
+
+
+  /* Required functions */
+
+  var isEventOverDiv = function (x, y) {
+
+    var external_events = $('#external-events');
+    var offset = external_events.offset();
+    offset.right = external_events.width() + offset.left;
+    offset.bottom = external_events.height() + offset.top;
+
+    // Compare
+    if (x >= offset.left &&
+    y >= offset.top &&
+    x <= offset.right &&
+    y <= offset.bottom) {return true;}
+    return false;
+
+  };
+
+
+  function makeEventsDraggable() {
+
+    $('.fc-draggable').each(function () {
+
+      // store data so the calendar knows to render an event upon drop
+      $(this).data('event', {
+        title: $.trim($(this).text()), // use the element's text as the event title
+        stick: true // maintain when user navigates (see docs on the renderEvent method)
+      });
+
+      // make the event draggable using jQuery UI
+      $(this).draggable({
+        zIndex: 999,
+        revert: true, // will cause the event to go back to its
+        revertDuration: 0 //  original position after the drag
+      });
+
+      console.log('makeEventsDraggable');
+
+      // Dirty fix to remove highlighted blue background
+      $("td").removeClass("fc-highlight");
+
     });
 
-    // initialize the calendar
-    // -----------------------------------------------------------------
+  }
 
-    var calendar = new Calendar(calendarEl, {
-      headerToolbar: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay'
-      },
-      editable: true,
-      droppable: true, // this allows things to be dropped onto the calendar
-      drop: function(info) {
-        // is the "remove after drop" checkbox checked?
-        if (checkbox.checked) {
-          // if so, remove the element from the "Draggable Events" list
-          info.draggedEl.parentNode.removeChild(info.draggedEl);
-        }
-      }
+
+
+  /* initialize the external events
+    -----------------------------------------------------------------*/
+
+  $('#external-events .fc-event').each(function () {
+
+    // store data so the calendar knows to render an event upon drop
+    $(this).data('event', {
+      title: $.trim($(this).text()), // use the element's text as the event title
+      stick: true // maintain when user navigates (see docs on the renderEvent method)
     });
 
-    calendar.render();
+    // make the event draggable using jQuery UI
+    $(this).draggable({
+      zIndex: 999,
+      revert: true, // will cause the event to go back to its
+      revertDuration: 0 //  original position after the drag
+    });
+
   });
 
-</script>
-    <style>
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-    font-size: 14px;
-  }
+  /* initialize the calendar1
+      -----------------------------------------------------------------*/
 
-  #external-events {
-    position: fixed;
-    z-index: 2;
-    top: 20px;
-    left: 20px;
-    width: 150px;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-    background: #eee;
-  }
+  $('#calendar1').fullCalendar({
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay' },
 
-  .demo-topbar + #external-events { /* will get stripped out */
-    top: 60px;
-  }
+    editable: true,
+    droppable: true, // this allows things to be dropped onto the calendar
+    dragRevertDuration: 0,
+    eventLimit: true, // allow "more" link when too many events
+    drop: function (date, jsEvent, ui) {console.log('calendar 1 drop');console.log(date);console.log(jsEvent);console.log(ui);console.log(this);
+      // is the "remove after drop" checkbox checked?
+      if ($('#drop-remove').is(':checked')) {
+        // if so, remove the element from the "Draggable Events" list
+        $(this).remove();
+      }
 
-  #external-events .fc-event {
-    cursor: move;
-    margin: 3px 0;
-  }
+      // if event dropped from another calendar, remove from that calendar
+      if (typeof calEventStatus['calendar'] != 'undefined') {
+        $(calEventStatus['calendar']).fullCalendar('removeEvents', calEventStatus['event_id']);
+        //$(calEventStatus['calendar']).fullCalendar('unselect');
+      }
 
-  #calendar-container {
-    position: relative;
-    z-index: 1;
-    margin-left: 200px;
-  }
+      makeEventsDraggable();
+    },
+    eventReceive: function (event) {console.log('calendar 1 eventReceive');
+      makeEventsDraggable();
+    },
+    eventDrop: function (event, delta, revertFunc, jsEvent, ui, view) {console.log('calendar 1 eventDrop');
+      makeEventsDraggable();
+    },
+    eventDragStart: function (event, jsEvent, ui, view) {
+      console.log(event);console.log(jsEvent);console.log(ui);console.log(view);
 
-  #calendar {
-    max-width: 1100px;
-    margin: 20px auto;
-  }
+      // Add dragging event in global var
+      calEventStatus['calendar'] = '#calendar1';
+      calEventStatus['event_id'] = event._id;
+      console.log('calendar 1 eventDragStart');
+    },
+    eventDragStop: function (event, jsEvent, ui, view) {console.log('calendar 1 eventDragStop');
 
-</style>
-</head><body>
+      if (isEventOverDiv(jsEvent.clientX, jsEvent.clientY)) {
+        $('#calendar1').fullCalendar('removeEvents', event._id);
+        var el = $("<div class='fc-event'>").appendTo('#external-events-listing').text(event.title);
+        el.draggable({
+          zIndex: 999,
+          revert: true,
+          revertDuration: 0 });
 
-<div class='demo-topbar'>
-    <button data-codepen class='codepen-button'>Edit in CodePen</button>
+        el.data('event', { title: event.title, id: event.id, stick: true });
+      }
+
+      calEventStatus = []; // Empty
+      makeEventsDraggable();
+    },
+    eventResize: function (event, delta, revertFunc, jsEvent, ui, view) {
+      makeEventsDraggable();
+    },
+    viewRender: function () {console.log('calendar 1 viewRender');
+      makeEventsDraggable();
+    } });
 
 
 
+  /* initialize the calendar2
+          -----------------------------------------------------------------*/
 
-    Drag external events into the calendar with the Draggable API
+  $('#calendar2').fullCalendar({
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay' },
 
-</div>
+    editable: true,
+    droppable: true, // this allows things to be dropped onto the calendar
+    dragRevertDuration: 0,
+    eventLimit: true, // allow "more" link when too many events
+    drop: function (date, jsEvent, ui) {console.log('calendar 2 drop');console.log(date);console.log(jsEvent);console.log(ui);console.log(this);
+
+      // is the "remove after drop" checkbox checked?
+      if ($('#drop-remove').is(':checked')) {
+        // if so, remove the element from the "Draggable Events" list
+        $(this).remove();
+      }
+
+      // if event dropped from another calendar, remove from that calendar
+      if (typeof calEventStatus['calendar'] != 'undefined') {
+        $(calEventStatus['calendar']).fullCalendar('removeEvents', calEventStatus['event_id']);
+      }
+
+      makeEventsDraggable();
+    },
+    eventReceive: function (event) {console.log('calendar 2 eventReceive');
+      makeEventsDraggable();
+    },
+    eventDrop: function (event, delta, revertFunc, jsEvent, ui, view) {console.log('calendar 2 eventDrop');
+      makeEventsDraggable();
+    },
+    eventDragStart: function (event, jsEvent, ui, view) {
+
+      // Add dragging event in global var
+      calEventStatus['calendar'] = '#calendar2';
+      calEventStatus['event_id'] = event._id;
+      console.log('calendar 2 eventDragStart');
+    },
+    eventDragStop: function (event, jsEvent, ui, view) {console.log('calendar 2 eventDragStop');
+
+      if (isEventOverDiv(jsEvent.clientX, jsEvent.clientY)) {
+        $('#calendar2').fullCalendar('removeEvents', event._id);
+        var el = $("<div class='fc-event'>").appendTo('#external-events-listing').text(event.title);
+        el.draggable({
+          zIndex: 999,
+          revert: true,
+          revertDuration: 0 });
+
+        el.data('event', { title: event.title, id: event.id, stick: true });
+      }
+
+      calEventStatus = []; // Empty
+      makeEventsDraggable();
+    },
+    eventResize: function (event, delta, revertFunc, jsEvent, ui, view) {
+      makeEventsDraggable();
+    },
+    viewRender: function () {console.log('calendar 2 viewRender');
+      makeEventsDraggable();
+    } });
 
 
-<div id='external-events'>
-    <p>
-        <strong>Draggable Events</strong>
-    </p>
 
-    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-        <div class='fc-event-main'>My Event 1</div>
-    </div>
-    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-        <div class='fc-event-main'>My Event 2</div>
-    </div>
-    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-        <div class='fc-event-main'>My Event 3</div>
-    </div>
-    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-        <div class='fc-event-main'>My Event 4</div>
-    </div>
-    <div class='fc-event fc-h-event fc-daygrid-event fc-daygrid-block-event'>
-        <div class='fc-event-main'>My Event 5</div>
-    </div>
+  /* initialize the calendar3
+          -----------------------------------------------------------------*/
 
-    <p>
-        <input type='checkbox' id='drop-remove' />
-        <label for='drop-remove'>remove after drop</label>
-    </p>
-</div>
+  $('#calendar3').fullCalendar({
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay' },
 
-<div id='calendar-container'>
-    <div id='calendar'></div>
-</div>
+    editable: true,
+    droppable: true, // this allows things to be dropped onto the calendar
+    dragRevertDuration: 0,
+    eventLimit: true, // allow "more" link when too many events
+    drop: function (date, jsEvent, ui) {console.log('calendar 3 drop');console.log(date);console.log(jsEvent);console.log(ui);console.log(this);
+      // is the "remove after drop" checkbox checked?
+      if ($('#drop-remove').is(':checked')) {
+        // if so, remove the element from the "Draggable Events" list
+        $(this).remove();
+      }
 
+      // if event dropped from another calendar, remove from that calendar
+      if (typeof calEventStatus['calendar'] != 'undefined') {
+        $(calEventStatus['calendar']).fullCalendar('removeEvents', calEventStatus['event_id']);
+      }
+
+      makeEventsDraggable();
+    },
+    eventReceive: function (event) {console.log('calendar 3 eventReceive');
+      makeEventsDraggable();
+    },
+    eventDrop: function (event, delta, revertFunc, jsEvent, ui, view) {console.log('calendar 3 eventDrop');
+      makeEventsDraggable();
+    },
+    eventDragStart: function (event, jsEvent, ui, view) {
+      console.log(event);console.log(jsEvent);console.log(ui);console.log(view);
+
+      // Add dragging event in global var
+      calEventStatus['calendar'] = '#calendar3';
+      calEventStatus['event_id'] = event._id;
+      console.log('calendar 3 eventDragStart');
+    },
+    eventDragStop: function (event, jsEvent, ui, view) {console.log('calendar 3 eventDragStop');
+
+      if (isEventOverDiv(jsEvent.clientX, jsEvent.clientY)) {
+        $('#calendar3').fullCalendar('removeEvents', event._id);
+        var el = $("<div class='fc-event'>").appendTo('#external-events-listing').text(event.title);
+        el.draggable({
+          zIndex: 999,
+          revert: true,
+          revertDuration: 0 });
+
+        el.data('event', { title: event.title, id: event.id, stick: true });
+      }
+
+      calEventStatus = []; // Empty
+      makeEventsDraggable();
+    },
+    eventResize: function (event, delta, revertFunc, jsEvent, ui, view) {
+      makeEventsDraggable();
+    },
+    viewRender: function () {console.log('calendar 3 viewRender');
+      makeEventsDraggable();
+    } });
+
+
+
+});
+//# sourceURL=pen.js
+    </script>
 </body>
-
-
 </html>
