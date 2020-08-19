@@ -201,7 +201,7 @@ public class MainController {
     @GetMapping("/Manage_basicItems")
     public String ManageBasicItem(Model model){
 //        List<Item>list1=itemService.listOfTear();
-//        model.addAttribute("list1",list1);
+//        model.addAttribute("list1",list1);awsdfghjk,jhgfd
         model.addAttribute("basicItems",basicRepository.findAll());
         return "Manage_basicItems";
     }
