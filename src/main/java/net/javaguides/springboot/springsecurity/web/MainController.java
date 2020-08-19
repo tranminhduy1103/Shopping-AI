@@ -50,7 +50,7 @@ public class MainController {
     @GetMapping("/")
     public String root(Model model) {
 
-//        return "redirect:/listofitem";
+//        return "redirect:/listofuser";
 ////        return "list-users";
         return "Main_Page";
     }
@@ -76,12 +76,6 @@ public class MainController {
     }
 
 
-    @GetMapping("/listofchamp")
-    public String listOfChamp(Model model)
-    {
-        model.addAttribute("champs", champRepository.findAll());
-        return "listofchamp";
-    }
 
     @GetMapping("/listofitem")
     public String listOfItem(Model model){
@@ -108,7 +102,6 @@ public class MainController {
     @RequestMapping("champs/{id}")
     public String showDetail(@PathVariable Long id, Model model){
         Champs champs = champServiceIpml.findById(id).get();
-
         model.addAttribute("champ", champs);
         return "detailOfChamp";
     }
@@ -135,6 +128,12 @@ public class MainController {
 		return "Manage_member";
 }
 
+    @GetMapping("/teambuilder")
+    public String teamBuilder(Model model){
+
+        model.addAttribute("champs", champRepository.findAll());
+        return "Team-Builder";
+    }
 
     @RequestMapping(path = {"/edit", "/edit/{id}"})
     public String editUserById(Model model, @PathVariable("id") Optional<Long> id)
@@ -163,6 +162,13 @@ public class MainController {
         userService.createOrUpdateUser(user);
         return "redirect:/";
     }
+    @GetMapping("/listofchamp")
+    public String listOfChamp(Model model)
+    {
+        model.addAttribute("champs", champRepository.findAll());
+        return "listofchamp";
+    }
+
     @GetMapping("/Champs/search")
     public String search(@RequestParam("s") String s, Model model) {
         if (s.equals("")) {
@@ -171,6 +177,15 @@ public class MainController {
 
         model.addAttribute("champs", champService.search(s));
         return "listofchamp";
+    }
+
+    @GetMapping("/Champ/search")
+    public String search1(@RequestParam("s") String s, Model model) {
+        if (s.equals("")) {
+            return "redirect:/Champ";
+        }
+        model.addAttribute("champs", champService.search(s));
+        return "Team-Builder";
     }
 
 
