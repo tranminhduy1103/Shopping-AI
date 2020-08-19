@@ -201,12 +201,12 @@ public class MainController {
     @GetMapping("/Manage_basicItems")
     public String ManageBasicItem(Model model){
 //        List<Item>list1=itemService.listOfTear();
-//        model.addAttribute("list1",list1);awsdfghjk,jhgfd
+//        model.addAttribute("list1",list1);awsdfghjk,jhgfdasdfhg
         model.addAttribute("basicItems",basicRepository.findAll());
         return "Manage_basicItems";
     }
 
-
+//rererer
     @GetMapping("/Champ/search")
     public String search1(@RequestParam("s") String s, Model model) {
         if (s.equals("")) {
