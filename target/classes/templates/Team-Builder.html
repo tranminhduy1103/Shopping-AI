@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>Team Builder</title>
 
 
@@ -21,6 +22,11 @@
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -626,7 +632,7 @@ border:3px solid black;
 
 .champ {
   display: inline-block;
-  width: 50%;
+  width:10%;
 
   padding: 1rem;
 }
@@ -698,6 +704,8 @@ margin-top:90px;
 	 border-top: 40.41px solid white;
 	   clear: both;
 }
+
+
 /* Inner Hexagon */
  .hexagon-inner {
 	 position: relative;
@@ -881,11 +889,81 @@ margin-top:100px;
 
 
 
-
-
-
 svg{
-  width:10%;
+  width:5%;
+
+}.hexagon1 {
+  position: relative;
+  width: 100px;
+  height: 57.74px;
+  margin: 28.87px 0;
+  background-size: auto 103.9230px;
+  background-position: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  border-left: solid 5px #333333;
+  border-right: solid 5px #333333;
+}
+
+.hexTop,
+.hexBottom {
+  position: absolute;
+  z-index: 1;
+  width: 70.71px;
+  height: 70.71px;
+  overflow: hidden;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background: inherit;
+  left: 9.64px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/*counter transform the bg image on the caps*/
+.hexTop:after,
+.hexBottom:after {
+  content: "";
+  position: absolute;
+  width: 90.0000px;
+  height: 51.96152422706633px;
+  -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-25.9808px);
+  -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-25.9808px);
+  transform:          rotate(45deg) scaleY(1.7321) translateY(-25.9808px);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  background: inherit;
+}
+
+.hexTop {
+  top: -35.3553px;
+  border-top: solid 7.0711px #333333;
+  border-right: solid 7.0711px #333333;
+}
+
+.hexTop:after {
+  background-position: center top;
+}
+
+.hexBottom {
+  bottom: -35.3553px;
+  border-bottom: solid 7.0711px #333333;
+  border-left: solid 7.0711px #333333;
+}
+
+.hexBottom:after {
+  background-position: center bottom;
+}
+
+.hexagon1:after {
+  content: "";
+  position: absolute;
+  top: 2.8868px;
+  left: 0;
+  width: 90.0000px;
+  height: 51.9615px;
+  z-index: 2;
+  background: inherit;
 }
 
 </style>
@@ -988,11 +1066,17 @@ svg{
 <!--            <polygon points="50 1 95 25 95 75 50 99 5 75 5 25" fill="url(#img)"/>-->
 <!--        </svg>-->
 
+        <div class="hexagon1 champ">
+            <div class="hexTop "></div>
+            <div class="hexBottom "></div>
+        </div>
+
         <ul class="hexagon-grid-container ">
 
 
-            <div class="hexagon champ  " >
 
+            <div class="hexagon champ  " >
+   <img class="">
 
             </div>
 

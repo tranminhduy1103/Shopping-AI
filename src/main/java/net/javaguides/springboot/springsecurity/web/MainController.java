@@ -156,11 +156,12 @@ public class MainController {
         return "redirect:/";
     }
 
-    @RequestMapping(path = "/createUser", method = RequestMethod.POST)
-    public String createOrUpdateEmployee(User user)
+    @RequestMapping(path = "/createUser")
+    public String addUser(Model model, @PathVariable("id") Optional<Long> id )
     {
-        userService.createOrUpdateUser(user);
-        return "redirect:/";
+        model.addAttribute("user", new User());
+
+        return "add-editUser";
     }
     @GetMapping("/listofchamp")
     public String listOfChamp(Model model)
@@ -178,7 +179,34 @@ public class MainController {
         model.addAttribute("champs", champService.search(s));
         return "listofchamp";
     }
+    @GetMapping("/manage_champ")
+    public String manaChamp(Model model){
+        model.addAttribute("champs", champRepository.findAll());
+        return "Manage_champs";
+    }
+    @RequestMapping(path = "/createChamp")
+    public String addUChapm(Model model, @PathVariable("id") Optional<Long> id )
+    {
+        model.addAttribute("champs", new Champs());
 
+        return "add-editUser";
+    }
+    @GetMapping("/Manage_items")
+    public String ManageItem(Model model){
+//        List<Item>list1=itemService.listOfTear();
+//        model.addAttribute("list1",list1);
+        model.addAttribute("items", itemRepository.findAll());
+        return "Manage_items";
+    }
+    @GetMapping("/Manage_basicItems")
+    public String ManageBasicItem(Model model){
+//        List<Item>list1=itemService.listOfTear();
+//        model.addAttribute("list1",list1);awsdfghjk,jhgfdasdfhg
+        model.addAttribute("basicItems",basicRepository.findAll());
+        return "Manage_basicItems";
+    }
+
+//rererer
     @GetMapping("/Champ/search")
     public String search1(@RequestParam("s") String s, Model model) {
         if (s.equals("")) {

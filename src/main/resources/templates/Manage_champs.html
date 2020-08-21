@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Add Champs</title>
+    <title>List of members</title>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -137,6 +137,10 @@ h2 a {
 .container td:nth-child(4),
 .container th:nth-child(4) { display: none; }
 }
+img{
+border-radius:50%;
+   height:120px;
+   width: 120px;
 </style>
 
 
@@ -145,11 +149,11 @@ h2 a {
 
 <body>
 
-<div th:switch="${users}" class="container my-5">
+<div th:switch="${champs}" class="container my-5">
 
     <p class="my-5">
-        <a href="/edit" class="btn btn-primary">
-            <i class="fas fa-user-plus ml-2"> Add Champs </i></a>
+        <a href="/manage_champ" class="btn btn-primary">
+            <i class="fas fa-user-plus ml-2"> Add New Champ </i></a>
     </p>
 
     <h2 th:case="null">No record found !!</h2>
@@ -160,25 +164,25 @@ h2 a {
                 <th><h1>Id</h1></th>
                 <th><h1>Champ Name</h1></th>
                 <th><h1>Image</h1></th>
-                <th><h1>Costs</h1></th>
+                <th><h1>Cost</h1></th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="user : ${users}">
-                <td th:text="${user.Id}"></td>
-                <td th:text="${user.firstName}"></td>
-                <td th:text="${user.lastName}"></td>
-                <td th:text="${user.email}"></td>
+            <tr th:each="champ : ${champs}">
+                <td th:text="${champ.Id}"></td>
+                <td th:text="${champ.name}"></td>
+                <td > <img  th:src="${champ.Image}"></td>
+                <td th:text="${champ.Cost}"></td>
 
-                <td>  <a th:href="@{/edit/{id}(id=${user.id})}" class="btn btn-primary">
+                <td>  <a th:href="@{/edit/{id}(id=${champ.id})}" class="btn btn-primary">
                     <i class="fas fa-user-edit ml-2"></i>
                 </a>
                 </td>
 
                 <td>
-                    <a th:href="@{/delete/{id}(id=${user.id})}" class="btn btn-primary">
+                    <a th:href="@{/delete/{id}(id=${champ.id})}" class="btn btn-primary">
                         <i class="fas fa-user-times ml-2"></i>
                     </a>
                 </td>
