@@ -8,11 +8,7 @@
     <title>Team Builder</title>
 
 
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style4.css">
 
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -23,10 +19,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -42,6 +35,7 @@
     <link rel="mask-icon" type=""
           href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg"
           color="#111"/>
+
     <title>CodePen - A drag&amp;drop div-selector</title>
     <link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -402,7 +396,6 @@ a.article:hover {
 }
 
 
-
 @media (max-width: 768px) {
     #sidebar {
         min-width: 80px;
@@ -485,6 +478,7 @@ p.text-center a {
     width:1440px;
   }
 }
+
 
 #apps .row.is-flex {
   display:flex;
@@ -670,11 +664,12 @@ margin-top:90px;
 	 padding: 0;
 	 list-style: none;
 }
+
  .hexagon {
 	 position: relative;
 	 width: 140px;
 	 height: 80.83px;
-	 background-color: white;
+	 background-color: #33CCFF;
 	 margin: 44px 2px 0;
 	 display: flex;
 	 justify-content: center;
@@ -682,8 +677,6 @@ margin-top:90px;
 
 
 }
-
-
  .hexagon:before, .hexagon:after {
 	 content: "";
 	 position: absolute;
@@ -695,45 +688,17 @@ margin-top:90px;
 }
  .hexagon:before {
 	 bottom: 100%;
-	 border-bottom: 40.41px solid white;
+	 border-bottom: 40.41px solid #33CCFF;
 	 	   clear: both;
 }
  .hexagon:after {
 	 top: 100%;
 	 width: 0;
-	 border-top: 40.41px solid white;
+	 border-top: 40.41px solid #33CCFF;
 	   clear: both;
 }
 
 
-/* Inner Hexagon */
- .hexagon-inner {
-	 position: relative;
-	 width: 136px;
-	 height: 78.52px;
-	 background-color: #c9c9c9;
-	 margin: 39.26px 0;
-	 display: flex;
-	 justify-content: center;
-
-}
- .hexagon-inner:before, .hexagon-inner:after {
-	 content: "";
-	 position: absolute;
-	 width: 0;
-	 border-left: 68px solid transparent;
-	 border-right: 68px solid transparent;
-	 z-index: 1;
-}
- .hexagon-inner:before {
-	 bottom: 100%;
-	 border-bottom: 39.26px solid #c9c9c9;
-}
- .hexagon-inner:after {
-	 top: 100%;
-	 width: 0;
-	 border-top: 39.26px solid #c9c9c9;
-}
 /* Media queries */
  @media (min-width: 1920px) {
 	 .hexagon-grid-container {
@@ -783,55 +748,10 @@ margin-top:90px;
 		 margin-left: 74px;
 	}
 }
-/* Avatar */
- .hexagon-avatar-img {
-	 position: absolute;
-	 width: 42px;
-	 border-radius: 42px;
-	 border: 2px solid #fff;
-	 top: -24px;
-	 z-index: 1;
-}
-/* Name */
- .hexagon-name {
-	 position: absolute;
-	 width: 130px;
-	 text-align: center;
-	 font-family: 'Roboto Condensed', sans-serif;
-	 font-weight: 700;
-	 font-size: 14px;
-	 top: 25px;
-	 z-index: 1;
-}
-/* Metric */
- .hexagon-metric-label {
-	 position: absolute;
-	 width: 130px;
-	 text-align: center;
-	 font-family: 'Roboto Condensed', sans-serif;
-	 font-weight: 100;
-	 font-size: 12px;
-	 top: 48px;
-	 z-index: 1;
-}
-/* Score */
- .hexagon-featured-score {
-	 position: absolute;
-	 z-index: 2;
-	 bottom: -24px;
-	 width: 32px;
-	 height: 32px;
-	 border-radius: 36px;
-	 border: 1px solid;
-	 text-align: center;
-	 padding-top: 9px;
-	 font-family: 'Roboto Condensed', sans-serif;
-	 font-weight: 700;
-	 font-size: 12px;
-	 color: #fff;
-	 background: #b4b5b6;
-	 border-color: #9fa0a2;
-}
+
+
+
+
 
 
 
@@ -882,89 +802,33 @@ color:white;
 text-decoration:none;
 }
 
+
 .gap{
-margin-top:100px;
+margin-top:80px;
+padding:5px;
 }
-
-
-
-
-svg{
-  width:5%;
-
-}.hexagon1 {
-  position: relative;
-  width: 100px;
-  height: 57.74px;
-  margin: 28.87px 0;
-  background-size: auto 103.9230px;
-  background-position: center;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  border-left: solid 5px #333333;
-  border-right: solid 5px #333333;
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
 }
+	.item {
 
-.hexTop,
-.hexBottom {
-  position: absolute;
-  z-index: 1;
-  width: 70.71px;
-  height: 70.71px;
-  overflow: hidden;
-  -webkit-transform: scaleY(0.5774) rotate(-45deg);
-  -ms-transform: scaleY(0.5774) rotate(-45deg);
-  transform: scaleY(0.5774) rotate(-45deg);
-  background: inherit;
-  left: 9.64px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-}
 
-/*counter transform the bg image on the caps*/
-.hexTop:after,
-.hexBottom:after {
-  content: "";
-  position: absolute;
-  width: 90.0000px;
-  height: 51.96152422706633px;
-  -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-25.9808px);
-  -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-25.9808px);
-  transform:          rotate(45deg) scaleY(1.7321) translateY(-25.9808px);
-  -webkit-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
-  transform-origin: 0 0;
-  background: inherit;
-}
+		cursor: move;
 
-.hexTop {
-  top: -35.3553px;
-  border-top: solid 7.0711px #333333;
-  border-right: solid 7.0711px #333333;
-}
 
-.hexTop:after {
-  background-position: center top;
-}
 
-.hexBottom {
-  bottom: -35.3553px;
-  border-bottom: solid 7.0711px #333333;
-  border-left: solid 7.0711px #333333;
-}
+		}
+		.drag-n-drop {
 
-.hexBottom:after {
-  background-position: center bottom;
-}
 
-.hexagon1:after {
-  content: "";
-  position: absolute;
-  top: 2.8868px;
-  left: 0;
-  width: 90.0000px;
-  height: 51.9615px;
-  z-index: 2;
-  background: inherit;
-}
+	}
+
 
 </style>
 <body>
@@ -1057,418 +921,49 @@ svg{
             </div>
         </div>
 
-<!--        <svg  class="champ b" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">-->
-<!--            <defs>-->
-<!--                <pattern id="img" patternUnits="userSpaceOnUse" width="100" height="100">-->
-<!--                    <image xlink:href="#" x="-25" width="150" height="100" />-->
-<!--                </pattern>-->
-<!--            </defs>-->
-<!--            <polygon points="50 1 95 25 95 75 50 99 5 75 5 25" fill="url(#img)"/>-->
-<!--        </svg>-->
-
-        <div class="hexagon1 champ">
-            <div class="hexTop "></div>
-            <div class="hexBottom "></div>
-        </div>
-
-        <ul class="hexagon-grid-container ">
 
 
 
-            <div class="hexagon champ  " >
-   <img class="">
+        <ul class="hexagon-grid-container  drag-n-drop">
 
-            </div>
-
-            <li class="hexagon hexagon-green">
-                <div class="hexagon-inner champ">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-yellow">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-blue">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-green">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-yellow">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-blue">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-green">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-yellow">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-blue">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-green">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-yellow">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-blue">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-green">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-yellow">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-blue">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-green">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-yellow">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-blue">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-green">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-yellow">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-blue">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
 
 
-            <li class="hexagon hexagon-blue">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-blue">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-blue">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-blue">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-blue">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-blue">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-blue">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-blue">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Coachability</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-
-
-            <li class="hexagon hexagon-yellow">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Progress to Goal</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-yellow">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Progress to Goal</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-yellow">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Progress to Goal</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-yellow">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Progress to Goal</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-yellow">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Progress to Goal</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-yellow">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Progress to Goal</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-yellow">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Progress to Goal</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-yellow">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Progress to Goal</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-yellow">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Progress to Goal</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-yellow">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Progress to Goal</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-yellow">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Progress to Goal</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
-            <li class="hexagon hexagon-yellow">
-                <div class="hexagon-inner">
-                    <img class="hexagon-avatar-img" src="https://randomuser.me/api/portraits/men/32.jpg"/>
-                    <span class="hexagon-name">Bruce Wayne</span>
-                    <span class="hexagon-metric-label">Progress to Goal</span>
-                    <span class="hexagon-featured-score">97</span>
-                    <span class="hexagon-icon-left hexagon-icon-green">
-				<i class="fa fa-money-bill-alt"></i>
-			</span>
-                    <span class="hexagon-icon-right hexagon-icon-red">
-				<i class="fa fa-list-ol"></i>
-			</span>
-                </div>
-            </li>
 
 
         </ul>
 
-        <div class="collection b">
 
-            <div class="row ">
+
+        <div class="collection">
+            <div class="row">
                 <div>
                     <form class="form-inline pull-right " action="#"
                           th:action="@{/Champ/search}" method="GET">
@@ -1477,73 +972,65 @@ svg{
                                 <input class="search_input" type="text" name="s" id="myInput" onkeyup="myFunction()"
                                        placeholder="Search...">
                                 <script>
-                            $(document).ready(function () {
-                                $("#myInput").on("keyup", function () {
-                                    var value = $(this).val().toLowerCase();
-                                    $("#myTable div").filter(function () {
-                                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                                    });
-                                });
-                            });
+                                            $(document).ready(function () {
+                                                $("#myInput").on("keyup", function () {
+                                                    var value = $(this).val().toLowerCase();
+                                                    $("#myTable div").filter(function () {
+                                                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                                    });
+                                                });
+                                            });
 
                                 </script>
                                 <a href="#" class="search_icon"><i class="fas fa-search" type="submit"></i></a>
                             </div>
                         </div>
                     </form>
+
                 </div>
-                <div class="col-md-12 " id="myTable">
-
-                    <div class="panel-body text-center ">
-                        <div class="row is-flex ">
-
-                            <div class="col-xl gap " th:each="champ : ${champs}">
+                <div class="col-md-12 drag-n-drop" id="myTable">
+                    <div class="panel-body text-center">
+                        <div class="row is-flex">
+                            <div class="col-md-2 col-sm-3 col-xs-4 gap" th:each="champ : ${champs}">
                                 <div class="app"><a href="#">
-<!--                                    <img class="container1 fix" th:src="${champ.Image}" width="100" height="100">-->
-<!--                                    <span th:text="${champ.Name}"></span>-->
-                                                                        <img class="container1 fix"
-                                                                             src="https://i2.wp.com/thegamehaus.com/wp-content/uploads/2020/03/1-scaled.jpg?fit=1920%2C1080&ssl=1"
-                                                                             width="100" height="100">
-                                                                        <span>Name</span>
+                                    <img class="container1 fix" th:src="${champ.Image}" width="100" height="100">
+                                    <span th:text="${champ.name}"></span>
+<!--                                    <img class="container1 fix item" draggable="true"  src="https://lh3.googleusercontent.com/proxy/93S4GIcvFqcpEmU2WjHOKgJ9vx-VCJ4l_5zz4qzpGtToj8ATXshFSa5J6Aw&#45;&#45;Y5dMiA1AhR96xo3lHNlHw9aZXr2UESK50tF0Y9Dud9f8o_Br3p2dYFPuuBd3_8msQ" width="100" height="100">-->
+<!--                                    <span >test</span>-->
                                 </a>
                                 </div>
                             </div>
 
 
                         </div>
+
+
                     </div>
-
                 </div>
-
-
             </div>
-
         </div>
-
-
     </div>
-
-
 </div>
 
 
-<footer class="footer">
-    <div class="container bottom_border">
-        <div class="row">
-            <div class=" col-sm-4 col-md col-sm-4  col-12 col">
-                <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
-                <!--headin5_amrc-->
-                <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                    has been the industry's standard dummy text ever since the 1500s</p>
-                <p><i class="fa fa-location-arrow"></i> International University </p>
-                <p><i class="fa fa-phone"></i> 0704689783 </p>
-                <p><i class="fa fa fa-envelope"></i> tranminhduy1103@gmail.com </p>
+                <footer class="footer">
+                    <div class="container bottom_border">
+                        <div class="row">
+                            <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                                <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+                                <!--headin5_amrc-->
+                                <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum
+                                    has been the industry's standard dummy text ever since the 1500s</p>
+                                <p><i class="fa fa-location-arrow"></i> International University </p>
+                                <p><i class="fa fa-phone"></i> 0704689783 </p>
+                                <p><i class="fa fa fa-envelope"></i> tranminhduy1103@gmail.com </p>
 
 
-            </div>
+                            </div>
 
 
-            <div class=" col-sm-4 col-md  col-6 col">
+                            <div class=" col-sm-4 col-md  col-6 col">
                 <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
                 <!--headin5_amrc-->
                 <ul class="footer_ul_amrc">
@@ -1620,8 +1107,93 @@ svg{
 <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js'></script>
 <script id="rendered-js">
+
+function draganddrop() {
+
+  var dragSrcEl = null;
+
+  function handleDragStart(e) {
+    // Target (this) element is the source node.
+    this.style.opacity = '0.4';
+
+    dragSrcEl = this;
+
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', this.innerHTML);
+  }
+
+  function handleDragOver(e) {
+    if (e.preventDefault) {
+      e.preventDefault(); // Necessary. Allows us to drop.
+    }
+
+    e.dataTransfer.dropEffect = 'move'; // See the section on the DataTransfer object.
+
+    return false;
+  }
+
+  function handleDragEnter(e) {
+    // this / e.target is the current hover target.
+    this.classList.add('over');
+  }
+
+  function handleDragLeave(e) {
+    this.classList.remove('over'); // this / e.target is previous target element.
+  }
+
+  function handleDrop(e) {
+    // this/e.target is current target element.
+
+    if (e.stopPropagation) {
+      e.stopPropagation(); // Stops some browsers from redirecting.
+    }
+
+    // Don't do anything if dropping the same column we're dragging.
+    if (dragSrcEl != this) {
+      // Set the source column's HTML to the HTML of the column we dropped on.
+      dragSrcEl.innerHTML = this.innerHTML;
+      this.innerHTML = e.dataTransfer.getData('text/html');
+    }
+
+    handleDragEnd(e);
+
+    return false;
+  }
+
+  function handleDragEnd(e) {
+    // this/e.target is the source node.
+
+    console.log('ended');
+
+    [].forEach.call(items, function (item) {
+      item.classList.remove('over');
+      item.style.opacity = '1';
+    });
+  }
+
+  var items = document.querySelectorAll('.drag-n-drop .item');
+
+
+  [].forEach.call(items, function (item) {
+    item.addEventListener('dragstart', handleDragStart, false);
+    item.addEventListener('dragenter', handleDragEnter, false);
+    item.addEventListener('dragover', handleDragOver, false);
+    item.addEventListener('dragleave', handleDragLeave, false);
+    item.addEventListener('drop', handleDrop, false);
+    item.addEventListener('dragend', handleDragEnd, false);
+  });
+
+}
+
+if (Modernizr.draganddrop) {
+  draganddrop();
+}
+
 $('.champ').sortable();
+
 $('.collection .container1').draggable({
   connectToSortable: '.champ',
   helper: 'clone' });
@@ -1633,6 +1205,7 @@ $('.collection').droppable({
     if ($(ui.draggable).parent().hasClass('champ')) {
       $(ui.draggable).remove();
     }
+
   } });
 //# sourceURL=pen.js
 

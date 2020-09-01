@@ -709,6 +709,7 @@ text-align:center;
             </div>
         </div>
 
+
         <div class="tabs">
             <div class="tab-2 decor">
 
@@ -736,25 +737,22 @@ text-align:center;
                                 <td th:text="${class.des}"></td>
 
                                 <td class="column">
-                                    <img class="fix4" th:src="${class.image1}">
+                                    <img class="fix4" th:each="num : ${nums}" th:if="(${num.name} == ${class.num1})" th:src="${num.image}">
                                     <span th:text="${class.sl1}"></span>
                                     <p></p>
-                                    <img class="fix4" th:if="${class.image2}" th:src="${class.image2}">
+                                    <img class="fix4" th:each="num : ${nums}" th:if="(${num.name} == ${class.num2} AND ${class.num2})" th:src="${num.image}">
                                     <span th:text="${class.sl2}"></span>
                                     <p></p>
-                                    <img class="fix4" th:if="${class.image3}" th:src="${class.image3}">
-                                    <span th:text
+                                    <img class="fix4" th:each="num : ${nums}" th:if="(${num.name} == ${class.num3} AND ${class.num3})" th:src="${num.image}">
+                                    <span th:text="${class.sl3}"></span>
+                                </td>
 
                                 <td class="row" >
-                                    <!--                            th:each="item : ${items}" th:if="(${item.recipe1_name} == ${b_item.name}-->
-                                    <div  style="position:relative; width:100px;"th:each="champ: ${champs}" th:if="(${champ.Categorize} == ${class.name} OR${champ.Origin} == ${class.name} OR${champ.Categorize1} == ${class.name} )">
+                                    <div  style="position:relative; width:100px;"th:each="champ: ${champs}" th:if="( ${champ.Categorize} == ${class.name} OR${champ.Origin} == ${class.name} OR${champ.Categorize1} == ${class.name} )">
                                         <img class="fix1" th:src="${champ.Image}">
-                                        <img class="fix2" th:src="${champ.Categorize_I}" >
-                                        <img class="fix3" th:src="${champ.Origin_I}">
+                                        <img class="fix2"  th:each="class : ${classes}" th:if="( ${champ.Categorize} == ${class.name})" th:src="${class.image}" >
+                                        <img class="fix3" th:each="origin : ${origins}" th:if="( ${champ.Origin} == ${origin.name})"  th:src="${origin.image}">
                                     </div>
-
-
-
                                 </td>
                             </tr>
 
@@ -790,24 +788,25 @@ text-align:center;
                                 <td th:text="${origin.des}"></td>
 
                                 <td class="column">
-                                    <img class="fix4" th:src="${origin.image1}">
+                                    <img class="fix4" th:each="num : ${nums}" th:if="(${num.name} == ${origin.num1})" th:src="${num.image}">
                                     <span th:text="${origin.sl1}"></span>
                                     <p></p>
-                                    <img class="fix4" th:if="${origin.image2}" th:src="${origin.image2}">
+                                    <img class="fix4"  th:each="num : ${nums}" th:if="(${num.name} == ${origin.num2} AND ${origin.num2})" th:src="${num.image}">
                                     <span th:text="${origin.sl2}"></span>
                                     <p></p>
-                                    <img class="fix4" th:if="${origin.image3}" th:src="${origin.image3}">
+                                    <img class="fix4" th:each="num : ${nums}" th:if="(${num.name} == ${origin.num3} AND ${origin.num3})" th:src="${num.image}">
                                     <span th:text="${origin.sl3}"></span>
                                     <p></p>
-                                    <img class="fix4" th:if="${origin.image4}" th:src="${origin.image4}">
+                                    <img class="fix4" th:each="num : ${nums}" th:if="(${num.name} == ${origin.num4} AND ${origin.num4})" th:src="${num.image}">
                                     <span th:text="${origin.sl4}"></span>
                                 </td>
                                 <td class=" row">
                                     <div class="" style="position:relative; width:100px;" th:each="champ: ${champs}" th:if="(${champ.Categorize} == ${origin.name} OR${champ.Origin} == ${origin.name} )">
                                         <img class="fix1" th:src="${champ.Image}">
-                                        <img class="fix2" th:src="${champ.Categorize_I}" >
-                                        <img class="fix3" th:src="${champ.Origin_I}">
+                                        <img class="fix2"  th:each="class : ${classes}" th:if="( ${champ.Categorize} == ${class.name})" th:src="${class.image}" >
+                                        <img class="fix3" th:each="origin : ${origins}" th:if="( ${champ.Origin} == ${origin.name})"  th:src="${origin.image}">
                                     </div>
+                                </td>
                         </table>
                     </div>
                 </div>

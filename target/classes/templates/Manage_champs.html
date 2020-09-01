@@ -152,9 +152,11 @@ border-radius:50%;
 <div th:switch="${champs}" class="container my-5">
 
     <p class="my-5">
-        <a href="/manage_champ" class="btn btn-primary">
+        <a href="/addchamp" class="btn btn-primary">
             <i class="fas fa-user-plus ml-2"> Add New Champ </i></a>
     </p>
+    <a href="/adminview" class="btn btn-primary">
+        <i class="fas fa-home ml-2"> Back to Admin Page </i></a>
 
     <h2 th:case="null">No record found !!</h2>
     <div th:case="*">
@@ -173,16 +175,18 @@ border-radius:50%;
             <tr th:each="champ : ${champs}">
                 <td th:text="${champ.Id}"></td>
                 <td th:text="${champ.name}"></td>
-                <td > <img  th:src="${champ.Image}"></td>
+
+                <td > <img  th:src="@{(${champ.Image})}"></td>
                 <td th:text="${champ.Cost}"></td>
 
-                <td>  <a th:href="@{/edit/{id}(id=${champ.id})}" class="btn btn-primary">
+
+                <td>  <a th:href="@{/edit-champ/{id}(id=${champ.id})}" class="btn btn-primary">
                     <i class="fas fa-user-edit ml-2"></i>
                 </a>
                 </td>
 
                 <td>
-                    <a th:href="@{/delete/{id}(id=${champ.id})}" class="btn btn-primary">
+                    <a th:href="@{/deletechamp/{id}(id=${champ.id})}" class="btn btn-primary">
                         <i class="fas fa-user-times ml-2"></i>
                     </a>
                 </td>

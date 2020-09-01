@@ -8,19 +8,20 @@ public class Origin {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String image;
     private String des;
     private String sl1;
-    private String image1;
     private String sl2;
-    private String image2;
     private String sl3;
-    private String image3;
     private String sl4;
-    private String image4;
+    private String num1;
+    private String num2;
+    private String num3;
+    private String num4;
+
 
 
     public Origin() {
@@ -32,13 +33,44 @@ public class Origin {
         this.image = image;
         this.des = des;
         this.sl1 = sl1;
-        this.image1 = image1;
+
         this.sl2 = sl2;
-        this.image2 = image2;
         this.sl3 = sl3;
-        this.image3 = image3;
+
         this.sl4 = sl4;
-        this.image4 = image4;
+
+    }
+
+    public String getNum1() {
+        return num1;
+    }
+
+    public void setNum1(String num1) {
+        this.num1 = num1;
+    }
+
+    public String getNum2() {
+        return num2;
+    }
+
+    public void setNum2(String num2) {
+        this.num2 = num2;
+    }
+
+    public String getNum3() {
+        return num3;
+    }
+
+    public void setNum3(String num3) {
+        this.num3 = num3;
+    }
+
+    public String getNum4() {
+        return num4;
+    }
+
+    public void setNum4(String num4) {
+        this.num4 = num4;
     }
 
     public Long getId() {
@@ -81,13 +113,7 @@ public class Origin {
         this.sl1 = sl1;
     }
 
-    public String getImage1() {
-        return image1;
-    }
 
-    public void setImage1(String image1) {
-        this.image1 = image1;
-    }
 
     public String getSl2() {
         return sl2;
@@ -97,13 +123,6 @@ public class Origin {
         this.sl2 = sl2;
     }
 
-    public String getImage2() {
-        return image2;
-    }
-
-    public void setImage2(String image2) {
-        this.image2 = image2;
-    }
 
     public String getSl3() {
         return sl3;
@@ -113,13 +132,6 @@ public class Origin {
         this.sl3 = sl3;
     }
 
-    public String getImage3() {
-        return image3;
-    }
-
-    public void setImage3(String image3) {
-        this.image3 = image3;
-    }
 
     public String getSl4() {
         return sl4;
@@ -129,11 +141,4 @@ public class Origin {
         this.sl4 = sl4;
     }
 
-    public String getImage4() {
-        return image4;
-    }
-
-    public void setImage4(String image4) {
-        this.image4 = image4;
-    }
 }

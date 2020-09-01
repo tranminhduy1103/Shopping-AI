@@ -573,6 +573,7 @@ a.article:hover {
 .wrapper1.frontback-cards .item-card-details {
 	z-index: 1;
 	transform: rotateY(180deg);
+
 }
 
 .wrapper1.frontback-cards .item-card,
@@ -585,6 +586,8 @@ a.article:hover {
 }
 
 .wrapper1 .item-card-details {
+
+
 		margin-top: -2em;
 }
 
@@ -1050,18 +1053,20 @@ s*/
     background-color: #353b48;
     border-radius: 30px;
     padding: 10px;
+float:left;
     }
 
 
 
 .search_input{
+
 color: white;
 border: 0;
 outline: 0;
 background: none;
 width: 0;
 caret-color:transparent;
-line-height: 40px;
+line-height: 60px;
 transition: width 0.4s linear;
 }
 
@@ -1172,6 +1177,7 @@ text-decoration:none;
                 <div class="row d-flex align-items-center">
                     <div class="col-md-6 d-md-block d-none">
                         <h1>List of Champions</h1>
+
                     </div>
                     <div class="col-md-6">
                         <div class="d-flex justify-content-md-end justify-content-between">
@@ -1188,37 +1194,39 @@ text-decoration:none;
 
                         </div>
                     </div>
+                    <form class="form-inline pull-right" action="#"
+                          th:action="@{/Champs/search}" method="GET">
+                        <div class="d-flex justify-content-center h-100">
+                            <div class="searchbar">
+                                <input class="search_input" type="text" name="s" placeholder="Search...">
+                                <a href="#" class="search_icon"><i class="fas fa-search"  type="submit"></i></a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
 
-        <form class="form-inline pull-right" action="#"
-              th:action="@{/Champs/search}" method="GET">
-            <div class="d-flex justify-content-center h-100">
-                <div class="searchbar">
-                    <input class="search_input" type="text" name="s" placeholder="Search...">
-                    <a href="#" class="search_icon"><i class="fas fa-search"  type="submit"></i></a>
-                </div>
-            </div>
-        </form>
+
+
         <main class="grid-container fix">
-
-
             <div class="grid-item " th:each="champ : ${champs}">
                 <div class="wrapper1">
                     <div class="card-container">
                         <div class="flip-animation">
 
-                            <section class="item-card">
-                                <div class="item-summary">
-                                    <img th:src="${champ.Categorize_I}" style="width:25px;height:25px;"><span
-                                        th:text="${champ.Categorize}"></span>
+                            <section class="item-card" >
+                                <div class="item-summary" >
+                                    <img th:each="class:${classes}" th:if="( ${champ.Categorize} == ${class.name})" th:src="${class.image}" style="width:25px;height:25px;">
+                                    <span th:text="${champ.Categorize}"></span>
                                     <p></p>
-                                    <img th:if="${champ.Categorize_1}" th:src="${champ.Categorize_1}"
-                                         style="width:25px;height:25px;"><span th:if="${champ.Categorize1}"
-                                                                               th:text="${champ.Categorize1}"></span>
+
+                                    <img th:each="class:${classes}"  th:if="(${champ.Categorize1} AND ${champ.Categorize1} == ${class.name} )" th:src="${class.image}"
+                                         style="width:25px;height:25px;">
+                                    <span th:if="${champ.Categorize1}" th:text="${champ.Categorize1}"></span>
                                     <p></p>
-                                    <img th:src="${champ.Origin_I}" style="width:25px;height:25px;"><span
+
+                                    <img th:each="origin:${origins}"  th:if="(${champ.Origin} == ${origin.name}) " th:src="${origin.image}" style="width:25px;height:25px;"><span
                                         th:text="${champ.Origin}">  </span>
                                 </div>
                                 <div class="image-wrapper1">
@@ -1227,7 +1235,7 @@ text-decoration:none;
                                          alt="The Paper Kites performing, overlooking a crowd"/>
                                 </div>
                                 <div class="item-time-date">
-                                    <time class="date" th:text="${champ.Name}"></time>
+                                    <time class="date" th:text="${champ.name}"></time>
                                     <time class="time">
                                         <img src="https://cdn3.iconfinder.com/data/icons/business-finance-vol-4-21/512/5_Coin_dollar_money-256.png"
                                              style="width:25px;height:25px;"><span th:text="${champ.Cost}">   </span>
@@ -1248,7 +1256,6 @@ text-decoration:none;
                                 </div>
                                 <div class="scroll-block ">
                                     <p class="bio-text" th:text="${champ.story}">
-
                                     </p>
                                 </div>
                                 <div class="more-info">

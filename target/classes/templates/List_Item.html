@@ -759,8 +759,10 @@ a.article:hover {
                                 <td th:text="${item.name}"></td>
                                 <td th:text="${item.des}"></td>
                                 <td>
-                                    <img class="fix" th:src="${item.recipe1_image}">
-                                    <img class="fix" th:src="${item.recipe2_image}">
+                                    <img class="fix"  th:each="b_item : ${basicItems}" th:if="(${item.recipe1_name} == ${b_item.name})"
+                                         th:src="${b_item.image}">
+                                    <img class="fix" th:each="b_item : ${basicItems}" th:if="(${item.recipe2_name} == ${b_item.name})"
+                                         th:src="${b_item.image}">
 
                                 </td>
                             </tr>

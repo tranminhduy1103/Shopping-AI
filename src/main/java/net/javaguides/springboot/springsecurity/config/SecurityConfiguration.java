@@ -44,7 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                             "/webjars/**").permitAll();
         http.csrf().requireCsrfProtectionMatcher(new AntPathRequestMatcher("**/Login_form")).and().authorizeRequests()
                 .antMatchers("/Menu").hasAuthority("ROLE_USER")
-                .antMatchers("/test").hasAuthority("ROLE_ADMIN")
+                .antMatchers("/adminview").hasAuthority("ROLE_ADMIN")
                 .and().formLogin().loginPage("/Login_form").loginProcessingUrl("/Login_form").successHandler(successHandler)
 
 
@@ -76,7 +76,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(authenticationProvider());
+        auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
     }
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {

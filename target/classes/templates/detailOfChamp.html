@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Arhi</title>
+    <title>Detail of champion</title>
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -167,7 +167,8 @@ background-color: rgba(0,0,0,0.1) !important;
   overflow: hidden;
 }
 .profile-comments__sender {
-  color: #333333;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
   font-weight: 500;
   margin: 5px 0;
 }
@@ -401,14 +402,14 @@ footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
     </div>
 </div>
 
-<div class="container">
+<div class="container" >
     <div class="row">
         <div class="col-xs-12 col-sm-9">
 
             <!-- User profile -->
             <div class="panel panel-default">
                 <div class="panel-heading ">
-                    <h4 class="panel-title"  th:text="${champ.Name}"></h4>
+                    <h4 class="panel-title"  th:text="${champ.name}"></h4>
                 </div>
 
                 <div class="panel-body">
@@ -493,10 +494,10 @@ footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
                     <div class="panel-footer decor">
                         <img src="https://cdn3.iconfinder.com/data/icons/business-finance-vol-4-21/512/5_Coin_dollar_money-256.png" style="width:25px;height:25px;"><span th:text="${champ.Cost}">  </span>
                         <p></p>
-                        <img th:src="${champ.Categorize_I}" style="width:25px;height:25px;"><span th:text="${champ.Categorize}">   </span>
+                        <img th:each="class:${classes}" th:if="( ${champ.Categorize} == ${class.name})"th:src="${class.image}" style="width:25px;height:25px;"><span th:text="${champ.Categorize}">   </span>
                         <p></p>
-                        <img th:if="${champ.Categorize_1}" th:src="${champ.Categorize_1}" style="width:25px;height:25px;"><span th:if="${champ.Categorize1}" th:text="${champ.Categorize1}">   </span>
-                        <img th:src="${champ.Origin_I}"style="width:30px;height:35px;"><span th:text="${champ.Origin}">  </span>
+                        <img th:each="class:${classes}"  th:if="(${champ.Categorize1} AND ${champ.Categorize1} == ${class.name} )" th:src="${class.image}" style="width:25px;height:25px;"><span th:if="${champ.Categorize1}" th:text="${champ.Categorize1}">   </span>
+                        <img th:each="origin:${origins}"  th:if="(${champ.Origin} == ${origin.name}) " th:src="${origin.image}" style="width:30px;height:35px;"><span th:text="${champ.Origin}">  </span>
 
                     </div>
                 </div>
@@ -508,111 +509,93 @@ footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h2 class="panel-title">Skill</h2>
+
                 </div>
-                <div class="panel-body decor">
+                <div class="panel-body decor" >
                     <table class="table profile__table">
-                        <tbody>
-                        <tr>
-                            <th><img th:src="${champ.Skill}"style="width:45px;height:55px;"></th>
-                            <td th:text="${champ.Skill_Des}"> </td>
+                        <tbody >
+                        <tr >
+                            <th><img th:each="skill:${skills}"  th:if="( ${champ.Skill_name} == ${skill.name})" th:src="${skill.image}"style="width:45px;height:55px;"></th>
+                            <td  th:each="skill:${skills}"th:if="( ${champ.Skill_name} == ${skill.name})" th:text="${skill.name}">
+                            </td>
                         </tr>
-                        <tr>
+                        <tr >
+                            <th><strong>Description:</strong></th>
+                            <td th:each="skill:${skills}" th:if="( ${champ.Skill_name} == ${skill.name})" th:text="${skill.des}"></td>
+                        </tr>
+                        <tr >
                             <th><strong>Specific:</strong></th>
-                            <td th:text="${champ.Skill_Dame}"></td>
+                            <td th:each="skill:${skills}" th:if="( ${champ.Skill_name} == ${skill.name})" th:text="${skill.dame}"></td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Story</h4>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table profile__table">
+                                    <tbody>
+                                    <tr>
+                                        <td class="decor" th:text="${champ.story}"></td>
+                                    </tr>
 
-            <!-- Community -->
-<!--            <div class="panel panel-default">-->
-<!--                <div class="panel-heading">-->
-<!--                    <h4 class="panel-title">Community</h4>-->
-<!--                </div>-->
-<!--                <div class="panel-body">-->
-<!--                    <table class="table profile__table">-->
-<!--                        <tbody>-->
-<!--                        <tr>-->
-<!--                            <th><strong>Comments</strong></th>-->
-<!--                            <td>58584</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <th><strong>Member since</strong></th>-->
-<!--                            <td>Jan 01, 2016</td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <th><strong>Last login</strong></th>-->
-<!--                            <td>1 day ago</td>-->
-<!--                        </tr>-->
-<!--                        </tbody>-->
-<!--                    </table>-->
-<!--                </div>-->
-<!--            </div>-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
 
             <!-- Latest posts -->
-            <div class="panel panel-default">
+            <div class="panel panel-default" >
                 <div class="panel-heading">
                     <h2 class="panel-title">Recommend Items</h2>
                 </div>
-                <div class="panel-body">
+
+                <div class="panel-body" >
                     <div class="profile__comments">
-                        <div class="profile-comments__item">
-                            <div class="profile-comments__controls">
-                                <a href="#"><i class="fa fa-share-square-o"></i></a>
-                                <a href="#"><i class="fa fa-edit"></i></a>
-                                <a href="#"><i class="fa fa-trash-o"></i></a>
-                            </div>
-
+                        <div class="profile-comments__item" >
                             <div class="profile-comments__avatar">
-                                <img th:src="${champ.Re_item1}" alt="...">
+                                <img th:each="item : ${items}"th:if="(${item.name} == ${champ.Re_item1})" th:src="${item.image}" alt="...">
                             </div>
-                            <div class="profile-comments__body">
-                                <h5 class="profile-comments__sender">
-                                    Richard Roe <small>2 hours ago</small>
+                            <div class="profile-comments__body" >
+                                <h5 class="profile-comments__sender decor " th:each="item : ${items}"th:if="(${item.name} == ${champ.Re_item1})"  th:text="${item.name}">
                                 </h5>
                                 <div class="profile-comments__content">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, corporis. Voluptatibus odio perspiciatis non quisquam provident, quasi eaque officia.
+                                    <span th:each="item : ${items}" th:if="(${item.name} == ${champ.Re_item1})" th:text="${item.des}"></span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="profile-comments__item">
-                            <div class="profile-comments__controls">
-                                <a href="#"><i class="fa fa-share-square-o"></i></a>
-                                <a href="#"><i class="fa fa-edit"></i></a>
-                                <a href="#"><i class="fa fa-trash-o"></i></a>
-                            </div>
+                        <div class="profile-comments__item" >
                             <div class="profile-comments__avatar">
-                                <img th:src="${champ.Re_item2}" alt="...">
+                                <img th:each="item : ${items}"th:if="(${item.name} == ${champ.Re_item2})" th:src="${item.image}" alt="...">
                             </div>
 
-                            <div class="profile-comments__body">
-                                <h5 class="profile-comments__sender">
-                                    Richard Roe <small>5 hours ago</small>
+                            <div class="profile-comments__body" >
+                                <h5 class="profile-comments__sender decor" th:each="item : ${items}"th:if="(${item.name} == ${champ.Re_item2})"  th:text="${item.name}">
                                 </h5>
                                 <div class="profile-comments__content">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero itaque dolor laboriosam dolores magnam mollitia, voluptatibus inventore accusamus illo.
+                                    <span th:each="item : ${items}"th:if="(${item.name} == ${champ.Re_item2})"  th:text="${item.des}"></span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="profile-comments__item">
-                            <div class="profile-comments__controls">
-                                <a href="#"><i class="fa fa-share-square-o"></i></a>
-                                <a href="#"><i class="fa fa-edit"></i></a>
-                                <a href="#"><i class="fa fa-trash-o"></i></a>
-                            </div>
+                        <div class="profile-comments__item" >
+
                             <div class="profile-comments__avatar">
-                                <img th:src="${champ.Re_item3}" alt="...">
+                                <img th:each="item : ${items}" th:if="(${item.name} == ${champ.Re_item3})" th:src="${item.image}"  alt="...">
                             </div>
 
-                            <div class="profile-comments__body">
-                                <h5 class="profile-comments__sender">
-                                    Richard Roe <small>5 hours ago</small>
+                            <div class="profile-comments__body" >
+                                <h5 class="profile-comments__sender decor" th:each="item : ${items}"th:if="(${item.name} == ${champ.Re_item3})" th:text="${item.name}">
+
                                 </h5>
                                 <div class="profile-comments__content">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero itaque dolor laboriosam dolores magnam mollitia, voluptatibus inventore accusamus illo.
+                                    <span th:each="item : ${items}" th:if="(${item.name} == ${champ.Re_item3})" th:text="${item.des}"></span>
                                 </div>
                             </div>
                         </div>

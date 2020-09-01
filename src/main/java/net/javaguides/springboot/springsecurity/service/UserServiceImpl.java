@@ -79,23 +79,23 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    public User createOrUpdateUser(User user)
-    {
-        if(user.getId()  == null)
-        {
+    public User create(User user) {
+
             User newEntity = user;
             newEntity.setEmail(user.getEmail());
             newEntity.setFirstName(user.getFirstName());
             newEntity.setLastName(user.getLastName());
             newEntity.setPassword(passwordEncoder.encode(user.getPassword()));
             newEntity.setRoles(user.getRoles());
-
             newEntity = userRepository.save(newEntity);
 
             return newEntity;
         }
-        else
-        {
+
+
+
+
+    public User update(User user) {
             Optional<User> newUser = userRepository.findById(user.getId());
 
             if(newUser.isPresent())
@@ -106,17 +106,13 @@ public class UserServiceImpl implements UserService {
                 newEntity.setLastName(user.getLastName());
                 newEntity.setPassword(passwordEncoder.encode(user.getPassword()));
                 newEntity.setRoles(user.getRoles());
-
                 newEntity = userRepository.save(newEntity);
-
                 return newEntity;
             } else {
                 user = userRepository.save(user);
-
                 return user;
             }
         }
-    }
 
     public void deleteUserById(Long id) throws RecordNotFoundException
     {
