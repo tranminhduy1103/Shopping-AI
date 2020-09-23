@@ -674,8 +674,7 @@ margin-top:90px;
 	 display: flex;
 	 justify-content: center;
 	 align-items: center;
-	 background-size: auto 161.6581px;
-  background-position: center;
+
 
 }
  .hexagon:before, .hexagon:after {
@@ -697,10 +696,6 @@ margin-top:90px;
 	 width: 0;
 	 border-top: 40.41px solid #33CCFF;
 	   clear: both;
-}
-.hexagon.img{
-width:100%;
-height:100%;
 }
 
 
@@ -869,7 +864,7 @@ padding:5px;
 
             </li>
             <li>
-                <a href="/" th:href="@{/Team-Builder}">
+                <a href="/" th:href="@{/teambuilder}">
                     <img src="https://cdn2.iconfinder.com/data/icons/rpg-fantasy-game-skill-ui/512/knight_sword_medieval_helmet_warrior_war_soldier_ancient_kingdom-128.png"
                          alt="Trulli" width="50" height="50">
                     <span class="decor">Team Builder</span>
@@ -926,55 +921,39 @@ padding:5px;
             </div>
         </div>
 
-<!--        <svg  class="champ b" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg">-->
-<!--            <defs>-->
-<!--                <pattern id="img" patternUnits="userSpaceOnUse" width="100" height="100">-->
-<!--                    <image xlink:href="#" x="-25" width="150" height="100" />-->
-<!--                </pattern>-->
-<!--            </defs>-->
-<!--            <polygon points="50 1 95 25 95 75 50 99 5 75 5 25" fill="url(#img)"/>-->
-<!--        </svg>-->
 
 
 
-        <ul class="hexagon-grid-container drag-n-drop ">
+        <ul class="hexagon-grid-container  drag-n-drop">
 
-
-
-            <div class="hexagon champ item"  draggable="true">
-                <img class="champ">
-
-            </div>
             <div class="hexagon champ item"  draggable="true"></div>
-            <div class="hexagon champ" draggable="true"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-            <div class="hexagon champ"></div>
-
-            <div class="hexagon champ"></div>
-
-
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
+            <div class="hexagon champ item"  draggable="true"></div>
+            <div class="hexagon champ item" draggable="true"></div>
 
 
 
@@ -1007,29 +986,20 @@ padding:5px;
                             </div>
                         </div>
                     </form>
-
                 </div>
-                <div class="col-md-12" id="myTable">
+                <div class="col-md-12 drag-n-drop" id="myTable">
                     <div class="panel-body text-center">
                         <div class="row is-flex">
                             <div class="col-md-2 col-sm-3 col-xs-4 gap" th:each="champ : ${champs}">
                                 <div class="app"><a href="#">
-<!--                                    <img class="container1 fix" th:src="${champ.Image}" width="100" height="100">-->
-<!--                                    <span th:text="${champ.Name}"></span>-->
-                                    <img class="container1 fix"  src="https://lh3.googleusercontent.com/proxy/93S4GIcvFqcpEmU2WjHOKgJ9vx-VCJ4l_5zz4qzpGtToj8ATXshFSa5J6Aw--Y5dMiA1AhR96xo3lHNlHw9aZXr2UESK50tF0Y9Dud9f8o_Br3p2dYFPuuBd3_8msQ" width="100" height="100">
-                                    <span >test</span>
+                                    <img class="container1 fix" th:src="${champ.Image}" width="100" height="100">
+                                    <span th:text="${champ.name}"></span>
+<!--                                    <img class="container1 fix item" draggable="true"  src="https://lh3.googleusercontent.com/proxy/93S4GIcvFqcpEmU2WjHOKgJ9vx-VCJ4l_5zz4qzpGtToj8ATXshFSa5J6Aw&#45;&#45;Y5dMiA1AhR96xo3lHNlHw9aZXr2UESK50tF0Y9Dud9f8o_Br3p2dYFPuuBd3_8msQ" width="100" height="100">-->
+<!--                                    <span >test</span>-->
                                 </a>
                                 </div>
                             </div>
-                            <div class="col-md-2 col-sm-3 col-xs-4 gap" th:each="champ : ${champs}"  >
-                                <div class="app"><a href="#">
-                                    <!--                                    <img class="container1 fix" th:src="${champ.Image}" width="100" height="100">-->
-                                    <!--                                    <span th:text="${champ.Name}"></span>-->
-                                    <img class="container1 fix" src="https://lh3.googleusercontent.com/proxy/-3X7tS7SYWY4uWRCOYqPh_JYTpH2bCjQt7VrFUC5hZP4QuAvtMUafW3QgnutCuxF5fLpo1wfJgenJd965gXC0I9WFqAej6-Ll36hVQP9otRlzrhTQ5vIa7JJuw49LrIu" width="100" height="100">
-                                    <span >test1</span>
-                                </a>
-                                </div>
-                            </div>
+
 
                         </div>
 
@@ -1222,6 +1192,7 @@ if (Modernizr.draganddrop) {
 }
 
 $('.champ').sortable();
+
 $('.collection .container1').draggable({
   connectToSortable: '.champ',
   helper: 'clone' });

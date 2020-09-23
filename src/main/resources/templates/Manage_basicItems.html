@@ -152,9 +152,11 @@ border-radius:50%;
 <div th:switch="${basicItems}" class="container my-5">
 
     <p class="my-5">
-        <a href="/Manage_bacsicItems" class="btn btn-primary">
+        <a href="/addbitem" class="btn btn-primary">
             <i class="fas fa-user-plus ml-2"> Add New bItems </i></a>
     </p>
+    <a href="/adminview" class="btn btn-primary">
+        <i class="fas fa-home ml-2"> Back to Admin Page </i></a>
 
     <h2 th:case="null">No record found !!</h2>
     <div th:case="*">
@@ -176,13 +178,13 @@ border-radius:50%;
                 <td > <img  th:src="${bitem.image}"></td>
                 <td th:text="${bitem.des}"></td>
 
-                <td>  <a th:href="@{/edit/{id}(id=${bitem.id})}" class="btn btn-primary">
+                <td>  <a th:href="@{/edit-bitem/{id}(id=${bitem.id})}" class="btn btn-primary">
                     <i class="fas fa-user-edit ml-2"></i>
                 </a>
                 </td>
 
                 <td>
-                    <a th:href="@{/delete/{id}(id=${bitem.id})}" class="btn btn-primary">
+                    <a th:href="@{/deletebitem/{id}(id=${bitem.id})}" class="btn btn-primary">
                         <i class="fas fa-user-times ml-2"></i>
                     </a>
                 </td>

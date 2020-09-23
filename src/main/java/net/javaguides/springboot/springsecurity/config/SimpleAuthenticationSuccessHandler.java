@@ -35,7 +35,7 @@ public class SimpleAuthenticationSuccessHandler implements AuthenticationSuccess
                 }
             } else if (authority.getAuthority().equals("ROLE_ADMIN")) {
                 try {
-                    redirectStrategy.sendRedirect(arg0, arg1, "/test");
+                    redirectStrategy.sendRedirect(arg0, arg1, "/adminview");
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
