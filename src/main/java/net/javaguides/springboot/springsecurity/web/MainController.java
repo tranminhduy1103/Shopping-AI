@@ -79,7 +79,7 @@ public class MainController {
 
     @GetMapping("/Menu")
     public String userView() {
-        return "Menu";
+        return "Main_page";
     }
 
     @GetMapping("/champ")
