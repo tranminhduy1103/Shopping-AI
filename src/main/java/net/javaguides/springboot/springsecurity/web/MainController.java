@@ -2,8 +2,8 @@ package net.javaguides.springboot.springsecurity.web;
 
 import net.javaguides.springboot.springsecurity.Exception.FileStorageException;
 import net.javaguides.springboot.springsecurity.Exception.RecordNotFoundException;
-import net.javaguides.springboot.springsecurity.model.*;
 import net.javaguides.springboot.springsecurity.model.Class;
+import net.javaguides.springboot.springsecurity.model.*;
 import net.javaguides.springboot.springsecurity.repository.*;
 import net.javaguides.springboot.springsecurity.service.*;
 import net.javaguides.springboot.springsecurity.upload.FileService;
@@ -66,7 +66,7 @@ public class MainController {
     public String root(Model model) {
 
 
-        return "redirect:/Menu";
+        return "redirect:/Login_form";
 
     }
 
