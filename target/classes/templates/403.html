@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+</head>
+<style type="text/css">
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background:url(https://apptrigger.com/files/2018/08/tft-galaxies-returntothestars-sky-background-1-compressed.jpg);
+ 	font-family: 'Oxygen', sans-serif;
+	    background-size: cover;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+.card{
+height: 370px;
+margin-top: 50px;
+margin-left:auto;
+margin-right:auto;
+margin-bottom: auto;
+width: 500px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }
+.decor{
+color: white;
+text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+font-size:17px;}
+h1,h2{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;}
+
+
+
+</style>
+
+<body>
+<div class="container">
+    <div class="card">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="error-template ">
+                    <h1>
+                        Oops!</h1>
+                    <h2>
+                        404 Not Found</h2>
+                    <div class="error-details decor">
+                        Sorry, an error has occured, Requested page not found!
+                        <p></p>
+                        This function is available only for our Members or Admin. Join with us to use this function and get lot of
+                        useful advice ^_^
+
+                    </div>
+                    <div class="error-actions">
+                        <a href="/" th:href="@{/Menu}" class="btn btn-primary btn-lg"><span
+                                class="glyphicon glyphicon-home">
+
+                        </span>Take Me Home </a>
+                        <a href="http://www.jquery2dotnet.com" class="btn btn-default btn-lg"><span
+                                class="glyphicon glyphicon-envelope"></span> Contact Support </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
