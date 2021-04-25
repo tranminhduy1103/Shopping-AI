@@ -45,6 +45,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.csrf().requireCsrfProtectionMatcher(new AntPathRequestMatcher("**/Login_form")).and().authorizeRequests()
                 .antMatchers("/Menu").hasAuthority("ROLE_USER")
                 .antMatchers("/adminview").hasAuthority("ROLE_ADMIN")
+                // .antMatchers("/supplierview").hasAuthority("ROLE_SUPPLIER")
+
                 .and().formLogin().loginPage("/Login_form").loginProcessingUrl("/Login_form").successHandler(successHandler)
 
 
@@ -82,6 +84,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("user").password("password").roles("USER");
         auth.inMemoryAuthentication().withUser("admin").password("password").roles("ADMIN");
+        auth.inMemoryAuthentication().withUser("supplier").password("password").roles("SUPPLIER");
     }
 
 }

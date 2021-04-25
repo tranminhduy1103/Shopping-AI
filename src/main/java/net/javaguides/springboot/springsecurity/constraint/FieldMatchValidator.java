@@ -6,7 +6,9 @@ import javax.validation.ConstraintValidatorContext;
 import org.apache.commons.beanutils.BeanUtils;
 
 
-/**This class is used to validate fidled_Match( for confirm pass and email)**/
+/**
+ * This class is used to validate field_Match( for confirm pass and email)
+ **/
 
 
 public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Object> {

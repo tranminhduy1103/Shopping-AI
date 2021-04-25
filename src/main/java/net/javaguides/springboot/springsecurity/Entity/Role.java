@@ -1,4 +1,4 @@
-package net.javaguides.springboot.springsecurity.model;
+package net.javaguides.springboot.springsecurity.Entity;
 
 import javax.persistence.*;
 import java.util.Set;

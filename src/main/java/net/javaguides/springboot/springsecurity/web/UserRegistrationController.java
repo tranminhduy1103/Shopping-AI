@@ -2,7 +2,6 @@ package net.javaguides.springboot.springsecurity.web;
 
 import javax.validation.Valid;
 
-import net.javaguides.springboot.springsecurity.constraint.FieldMatchValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import net.javaguides.springboot.springsecurity.model.User;
+import net.javaguides.springboot.springsecurity.Entity.User;
 import net.javaguides.springboot.springsecurity.service.UserService;
 import net.javaguides.springboot.springsecurity.web.dto.UserRegistrationDto;
 

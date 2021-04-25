@@ -1,4 +1,4 @@
-package net.javaguides.springboot.springsecurity.model;
+package net.javaguides.springboot.springsecurity.Entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -13,6 +13,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @NotEmpty
     @Column(nullable = false)
     @Size(min = 2, max = 32, message = "Name must be between 2 and 32 characters long")
@@ -21,16 +22,50 @@ public class User {
     @NotEmpty
     @Column(nullable = false)
     private String lastName;
+
     @NotEmpty
     @Column(nullable = false)
     private String email;
+
     @NotEmpty
     @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
+    private String Phone;
+    @Column(nullable = false)
+    private String DateOfBirth;
+
 //    @ManyToMany
 //    private Set<Role> roles;
 
+
+    public User(Long id, @NotEmpty @Size(min = 2, max = 32, message = "Name must be between 2 and 32 characters long") String firstName, @NotEmpty String lastName, @NotEmpty String email, @NotEmpty String password, String phone, String dateOfBirth, Collection<Role> roles) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        Phone = phone;
+        DateOfBirth = dateOfBirth;
+        this.roles = roles;
+    }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String phone) {
+        Phone = phone;
+    }
+
+    public String getDateOfBirth() {
+        return DateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        DateOfBirth = dateOfBirth;
+    }
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
