@@ -40,6 +40,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                             "/Login_form/**",
                             "/js/**",
                             "/css/**",
+                            "/images/**",
+                            "/plugins/**",
+                            "/styles/**",
                             "/img/**",
                             "/webjars/**").permitAll();
         http.csrf().requireCsrfProtectionMatcher(new AntPathRequestMatcher("**/Login_form")).and().authorizeRequests()

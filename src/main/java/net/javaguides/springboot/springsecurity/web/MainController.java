@@ -36,8 +36,7 @@ public class MainController {
     @GetMapping("/")
     public String root(Model model) {
 
-
-        return "redirect:/Login_form";
+        return "redirect:/Menu";
 
     }
 
@@ -50,7 +49,7 @@ public class MainController {
 
     @GetMapping("/Menu")
     public String userView() {
-        return "Main_page";
+        return "mainpage";
     }
 
     @GetMapping("/champ")
