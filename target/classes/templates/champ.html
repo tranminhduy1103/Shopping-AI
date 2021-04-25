@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+
+<head>
+<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Font Awesome JS -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet"
+      href="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/font-awesome/css/font-awesome.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<!------ Include the above in your HEAD tag ---------->
+<style type="text/css">
+
+   figure {
+    margin: 0;
+    position: relative;
+}
+body, html,footer{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background:url(https://apptrigger.com/files/2018/08/tft-galaxies-returntothestars-sky-background-1-compressed.jpg);
+ 	font-family: 'Oxygen', sans-serif;
+	    background-size: cover;
+}
+<!--.top-bar {-->
+<!--margin-right:10px;-->
+<!--margin left:2px;-->
+<!--    color: #fff;-->
+<!--    font-size: 0.9rem;-->
+<!--    padding: 10px 0;-->
+<!--}-->
+
+<!--.top-bar .contact-info {-->
+<!--    margin-right: 60px;-->
+<!--}-->
+
+<!--.top-bar ul {-->
+<!--    margin-bottom: 0;-->
+<!--}-->
+
+<!--.top-bar .contact-info a {-->
+<!--    font-size: 0.8rem;-->
+<!--}-->
+
+<!--.top-bar ul.social-custom {-->
+<!--    margin-left: 10px;-->
+<!--}-->
+<!--.top-bar ul {-->
+<!--    margin-bottom: 0;-->
+<!--}-->
+<!--.login{-->
+<!--margin-right:5px;-->
+<!--}-->
+
+<!--.top-bar a.login-btn i, .top-bar a.signup-btn i,.top-bar a.logout-btn i {-->
+<!--    margin-right: 5px;-->
+<!--}-->
+
+<!--.top-bar ul.social-custom a:hover {-->
+<!--    background: #4fbfa8;-->
+<!--    color: #fff;-->
+<!--}-->
+<!--.top-bar ul.social-custom a {-->
+<!--    text-decoration: none !important;-->
+<!--    font-size: 0.7rem;-->
+<!--    width: 26px;-->
+<!--    height: 26px;-->
+<!--    line-height: 26px;-->
+<!--    color: #999;-->
+<!--    text-align: center;-->
+<!--    border-radius: 50%;-->
+<!--    margin: 0;-->
+}
+/*footer*/
+.col_white_amrc { color:#FFF;}
+footer { width:100%; background-color:#263238;
+ min-height:250px; padding:10px 0px 25px 0px ;}
+
+.pt2 { padding-top:40px ; margin-bottom:20px ;}
+footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
+.mb10 { padding-bottom:15px ;}
+.footer_ul_amrc { margin:0px ; list-style-type:none ; font-size:14px; padding:0px 0px 10px 0px ; }
+.footer_ul_amrc li {padding:0px 0px 5px 0px;}
+.footer_ul_amrc li a{ color:#CCC;}
+.footer_ul_amrc li a:hover{ color:#fff; text-decoration:none;}
+.fleft { float:left;}
+.padding-right { padding-right:10px; }
+
+.footer_ul2_amrc {margin:0px; list-style-type:none; padding:0px;}
+.footer_ul2_amrc li p { display:table; }
+.footer_ul2_amrc li a:hover { text-decoration:none;}
+.footer_ul2_amrc li i { margin-top:5px;}
+
+.bottom_border { border-bottom:1px solid #323f45; padding-bottom:20px;}
+.foote_bottom_ul_amrc {
+	list-style-type:none;
+	padding:0px;
+	display:table;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+.foote_bottom_ul_amrc li { display:inline;}
+.foote_bottom_ul_amrc li a { color:#999; margin:0 12px;}
+
+.social_footer_ul { display:table; margin:15px auto 0 auto; list-style-type:none;  }
+.social_footer_ul li { padding-left:20px; padding-top:10px; float:left; }
+.social_footer_ul li a { color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;}
+.social_footer_ul li i {  width:20px; height:20px; text-align:center;}
+
+a:focus, a:hover {
+    color: #348e7b;
+    text-decoration: underline;
+}
+.top-bar a.login-btn, .top-bar a.signup-btn ,.top-bar a.logout-btn{
+    color: #eee;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none !important;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-right: 5px;
+}
+i,
+span {
+    display: inline-block;
+    color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+}
+span.decor{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+}
+figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+	position: relative;
+    z-index: 10;
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    transition: transform 0.4s;
+}
+
+figure:hover img {
+    -webkit-transform: scale(0.4);
+    -moz-transform: scale(0.4);
+    -ms-transform: scale(0.4);
+    transform: scale(0.4);
+}
+
+figure:hover figcaption {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+}
+
+figure a {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	padding: 20px;
+	background: none;
+	color: #ed4e6e;
+
+	-webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	-ms-transform: scale(0.7);
+	transform: scale(0.7);
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.4s;
+	transition: transform 0.4s, opacity 0.4s;
+}
+
+figcaption h3 {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+}
+
+figcaption span:before {
+	content: 'by ';
+}
+
+figcaption a {
+    text-align: center;
+    padding: 3px 25px;
+    border-radius: 2px;
+    display: inline-block;
+    background: blue;
+    color: #fff;
+}
+
+figcaption a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.decor{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  }
+</style>
+<body>
+<div class="container">
+    <div class="top-bar">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-md-6 d-md-block d-none">
+                    <p class="decor">Hello, and welcome to the OFFICIAL Teamfight Tactics (TFT) Detailed General Guide for beginners!</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-md-end justify-content-between">
+
+                        <div class="login">
+                            <a href="/" th:href="@{/Login_form}"  class="login-btn">
+                                <i class="fas fa-sign-in-alt "></i><span class="decor">Sign In</span></a>
+                            | &nbsp;
+                            <a href="/" th:href="@{/Register}" class="signup-btn">
+                                <i class="fa fa-user"></i><span class="decor">Sign Up</span></a>
+
+                            <a th:href="@{/logout}" class="signup-btn">
+                                <i class="fas fa-sign-out-alt"></i><span class="decor">Exist</span></a>  </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2017/08/ahrisg.jpg" class="img-fluid" alt="img01">
+                <figcaption>
+                    <h3>Ahri</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2017/10/Super-Galaxy-Annie--573x338.jpg" class="img-fluid" alt="img02">>
+                <figcaption>
+                    <h3>Annie</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2018/08/22011-1.jpg" class="img-fluid" alt="img03">>
+                <figcaption>
+                    <h3>Ashe</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://lienminh.garena.vn/images/Lan_h3lpm3/08_2018/Aurelion_Sol_MechaSkin%20full.jpg" class="img-fluid" alt="img04">
+                <figcaption>
+                    <h3>Aurelion Sol</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://1.bp.blogspot.com/-af2Efnk08yQ/XrrwEf9e_SI/AAAAAAABkGs/-MuzRIc9MCcrSZWbcsX72x-kOSSlEA8XwCLcBGAsYHQ/s1600/432008.jpg" class="img-fluid" alt="img05">
+                <figcaption>
+                    <h3>Bard</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2015/10/Blitzcrank_iBlitzcrankSkin-600x354.jpg" class="img-fluid" alt="img06">
+                <figcaption>
+                    <h3>Blitzcrank</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2017/05/Caitlyn_Splash_11.jpg" class="img-fluid" alt="img07">
+                <figcaption>
+                    <h3>Caitlyn</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2017/09/Cassiopeia_Splash_5.jpg" class="img-fluid" alt="img08">
+                <figcaption>
+                    <h3>Cassiopeia</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2017/03/Darius_Splash_14-573x338.jpg" class="img-fluid" alt="img09">
+                <figcaption>
+                    <h3>Darius</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2016/07/Ekko_Splash_3-573x338.jpg" class="img-fluid" alt="img10">
+                <figcaption>
+                    <h3>Ekko</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2018/09/81005.jpg" class="img-fluid" alt="img11">
+                <figcaption>
+                    <h3>Ezreal</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2015/12/Mo-hinh-Fiora-1812-1-600x354.jpg" class="img-fluid" alt="img12">
+                <figcaption>
+                    <h3>Fiora</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2016/05/Fizz_Splash_9.jpg" class="img-fluid" alt="img13">
+                <figcaption>
+                    <h3>Fizz</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2016/12/Gangplank_Splash_8-1-573x338.jpg" class="img-fluid" alt="img14">
+                <figcaption>
+                    <h3>Gangplank</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://1.bp.blogspot.com/-ZOUgG6a5Ic4/XsWAv4LRLGI/AAAAAAABklk/vrWAz-oXbKQhfOEVTYkWDistFX49BFaYACLcBGAsYHQ/s1600/150015.jpg" class="img-fluid" alt="img15">
+                <figcaption>
+                    <h3>Gnar</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2017/11/Graves_Victorious_splashart-573x338.jpg" class="img-fluid" alt="img16">
+                <figcaption>
+                    <h3>Graves</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2018/02/illaoi-splash.jpg" class="img-fluid" alt="img17">
+                <figcaption>
+                    <h3>Illaoi</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://1.bp.blogspot.com/-Aph8oMQwU98/XS4n5gFsBsI/AAAAAAAAROM/GooPfg0dzWYHFAalTDG66fe_kKrnrxf1wCLcBGAs/s1600/39016.jpg" class="img-fluid" alt="img18">
+                <figcaption>
+                    <h3>Irelia</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/Janna_7.jpg" class="img-fluid" alt="img19">
+                <figcaption>
+                    <h3>Jana</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://lienminh.garena.vn/images/Lan_h3lpm3/jarvan%20iv%20hac%20tinh.jpg" class="img-fluid" alt="img20">
+                <figcaption>
+                    <h3>Javan IV</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://www.mobafire.com/images/champion/skins/landscape/jayce-forsaken.jpg" class="img-fluid" alt="img21">
+                <figcaption>
+                    <h3>Jayce</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://1.bp.blogspot.com/-7D85hpLjSoA/XO7cuPZKu-I/AAAAAAABTk8/ZIBLb1ctgTMe72CyrvhOD0rgv1OSbhuOgCLcBGAs/s1600/202005.jpg" class="img-fluid" alt="img22">
+                <figcaption>
+                    <h3>Jhin</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2018/09/222013.jpg" class="img-fluid" alt="img23">
+                <figcaption>
+                    <h3>Jinx</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2019/05/43008.jpg" class="img-fluid" alt="img24">
+                <figcaption>
+                    <h3>Karma</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://vignette.wikia.nocookie.net/leagueoflegends/images/b/b1/Kog%27Maw_BattlecastSkin.jpg/revision/latest?cb=20181021120624" class="img-fluid" alt="img25">
+                <figcaption>
+                    <h3>Kog'Maw</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2015/08/Leona_Splash_8-600x354.jpg" alt="img26">
+                <figcaption>
+                    <h3>Leona</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://topchiase24h.com/wp-content/uploads/2019/05/hinh-nen-tuong-Lucian-trong-lien-minh-huyen-thoai-10.jpg" class="img-fluid" alt="img27">
+                <figcaption>
+                    <h3>Lucian</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2018/08/117014-1.jpg" class="img-fluid" alt="img28">
+                <figcaption>
+                    <h3>Lulu</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2018/09/malphite-odyssey.jpg" class="img-fluid" alt="img29">
+                <figcaption>
+                    <h3>Malphine</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2015/10/Masteryi_Splash_2_2-600x354.jpg" class="img-fluid" alt="img30">
+                <figcaption>
+                    <h3>Master Yi</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://cdn.vox-cdn.com/thumbor/OLCW3TDjfgH_tnyNbt_bTkgbvUc=/0x0:1215x717/920x0/filters:focal(0x0:1215x717):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/19765082/Mordekaiser_Splash_6.jpg" class="img-fluid" alt="img31">
+                <figcaption>
+                    <h3>Mordekaiser</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2017/08/Astronautilus.jpg" class="img-fluid" alt="img32">
+                <figcaption>
+                    <h3>Natilus</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2019/09/neeko.jpg" class="img-fluid" alt="img33">
+                <figcaption>
+                    <h3>Neeko</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://lienminh.garena.vn/images/articles/Zenerik/LMHT_-_Zenerik/eternum-noc-1.jpg" class="img-fluid" alt="img34">
+                <figcaption>
+                    <h3>Nocturne</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2016/09/Poppy_1920x1080-600x338.jpg" class="img-fluid" alt="img35">
+                <figcaption>
+                    <h3>Poppy</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://streamie.com.br/wp-content/uploads/2017/04/img-rakan-splash.jpg" class="img-fluid" alt="img36">
+                <figcaption>
+                    <h3>Rakan</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://lienminh.garena.vn/images/Lan_h3lpm3/Riven_PulsefireSkin%20full%20size.jpg" class="img-fluid" alt="img37">
+                <figcaption>
+                    <h3>Riven</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://i.ytimg.com/vi/OoYeF4Tm5Nc/maxresdefault.jpg" class="img-fluid" alt="img38">
+                <figcaption>
+                    <h3>Rumble</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://1.bp.blogspot.com/--uUVoH0025U/XO86mgA45HI/AAAAAAAADxc/9kLOsmEBZiA2-KYvZza8wBLrGUBatOS7ACLcBGAs/s1600/shaco-hac-tinh.jpg" class="img-fluid" alt="img39">
+                <figcaption>
+                    <h3>Shaco</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://lienminh.garena.vn/images/Lan_h3lpm3/Shen_PulsefireSkin%20full%20size.jpg" class="img-fluid" alt="img40">
+                <figcaption>
+                    <h3>Shen</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2017/08/SorakaSG.jpg" class="img-fluid" alt="img41">
+                <figcaption>
+                    <h3>Soraka</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2017/08/syndrasg.jpg" class="img-fluid" alt="img42">
+                <figcaption>
+                    <h3>Syndra</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://i.a4vn.com/2014/11/15/top-5-trang-phuc-bua-nhat-lmht-03d205.jpg" class="img-fluid" alt="img43">
+                <figcaption>
+                    <h3>Teemo</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2019/11/thresh.jpg" class="img-fluid" alt="img44">
+                <figcaption>
+                    <h3>Thresh</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://lienminh.garena.vn/images/Lan_h3lpm3/Twisted_Fate_PulsefireSkin%20full%20size.jpg" class="img-fluid" alt="img45">
+                <figcaption>
+                    <h3>Twisted Fate</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2017/07/Urgot_splashart_3.jpg" class="img-fluid" alt="img46">
+                <figcaption>
+                    <h3>Ugot</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://lienminh.garena.vn/sieu-pham-2017/assets/images/skin-vayne-full.jpg" class="img-fluid" alt="img47">
+                <figcaption>
+                    <h3>Vayne</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2017/11/f2abec0e6c0852a0.jpg" class="img-fluid" alt="img48">
+                <figcaption>
+                    <h3>Vi</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2016/12/Viktor_CreatorSkin.jpg" class="img-fluid" alt="img49">
+                <figcaption>
+                    <h3>Viktor</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2018/03/62006-573x338.jpg" class="img-fluid" alt="img50">
+                <figcaption>
+                    <h3>Wukong</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2017/04/xayah_splash_1-573x338.jpg" class="img-fluid" alt="img51">
+                <figcaption>
+                    <h3>Xayah</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://cdn.vox-cdn.com/thumbor/DMznnF6t41rx4xet4RovmF0rmSk=/0x0:1215x717/920x0/filters:focal(0x0:1215x717):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/19765084/Xerath_splash_5.jpg" class="img-fluid" alt="img52">
+                <figcaption>
+                    <h3>Xerath</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2018/08/5020-1.jpg" class="img-fluid" alt="img53">
+                <figcaption>
+                    <h3>Xin Zhao</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="http://lienminh360.vn/wp-content/uploads/2018/09/157010.jpg" class="img-fluid" alt="img54">
+                <figcaption>
+                    <h3>Yasuo</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://3.bp.blogspot.com/-KZJsYD8LyPY/XKOk_bPclwI/AAAAAAABQxk/ZYqtrhjkwaAIsDmHlS_v_bD1wjjrEwW_wCLcBGAs/s1600/238013.jpg" class="img-fluid" alt="img55">
+                <figcaption>
+                    <h3>Zed</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://lienminh.garena.vn/images/827/assets/skin-splash/Ziggs_Odyssey.jpg" class="img-fluid" alt="img56">
+                <figcaption>
+                    <h3>Ziggs</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-sm-4">
+            <figure>
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zoe_9.jpg" class="img-fluid" alt="img57">
+                <figcaption>
+                    <h3>Zoe</h3>
+                    <span>Yusuf</span>
+                    <a href="#">Detail</a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container bottom_border">
+        <div class="row">
+            <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+                <!--headin5_amrc-->
+                <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <p><i class="fa fa-location-arrow"></i> International University </p>
+                <p><i class="fa fa-phone"></i>  0704689783  </p>
+                <p><i class="fa fa fa-envelope"></i> tranminhduy1103@gmail.com  </p>
+
+
+            </div>
+
+
+            <div class=" col-sm-4 col-md  col-6 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                <!--headin5_amrc-->
+                <ul class="footer_ul_amrc">
+                    <li><a href="http://webenlance.com">Image Rectoucing</a></li>
+                    <li><a href="http://webenlance.com">Clipping Path</a></li>
+                    <li><a href="http://webenlance.com">Hollow Man Montage</a></li>
+                    <li><a href="http://webenlance.com">Ebay & Amazon</a></li>
+                    <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                    <li><a href="http://webenlance.com">Image Cropping</a></li>
+                </ul>
+                <!--footer_ul_amrc ends here-->
+            </div>
+
+
+            <div class=" col-sm-4 col-md  col-6 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                <!--headin5_amrc-->
+                <ul class="footer_ul_amrc">
+                    <li><a href="http://webenlance.com">Remove Background</a></li>
+                    <li><a href="http://webenlance.com">Shadows & Mirror Reflection</a></li>
+                    <li><a href="http://webenlance.com">Logo Design</a></li>
+                    <li><a href="http://webenlance.com">Vectorization</a></li>
+                    <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                    <li><a href="http://webenlance.com">Image Cropping</a></li>
+                </ul>
+                <!--footer_ul_amrc ends here-->
+            </div>
+
+
+            <div class=" col-sm-4 col-md  col-12 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+                <!--headin5_amrc ends here-->
+
+                <ul class="footer_ul2_amrc">
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                </ul>
+                <!--footer_ul2_amrc ends here-->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <ul class="foote_bottom_ul_amrc">
+            <li><a href="http://webenlance.com">Home</a></li>
+            <li><a href="http://webenlance.com">About</a></li>
+            <li><a href="http://webenlance.com">Services</a></li>
+            <li><a href="http://webenlance.com">Pricing</a></li>
+            <li><a href="http://webenlance.com">Blog</a></li>
+            <li><a href="http://webenlance.com">Contact</a></li>
+        </ul>
+        <!--foote_bottom_ul_amrc ends here-->
+        <p class="text-center">Copyright @2020 | Designed With by Minh Duy | <a href="#">Green Academy Project</a></p>
+
+        <ul class="social_footer_ul">
+            <li><a href="http://webenlance.com"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="http://webenlance.com"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="http://webenlance.com"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="http://webenlance.com"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <!--social_footer_ul ends here-->
+    </div>
+
+</footer>
+
+</body>
+</html>
+</html>

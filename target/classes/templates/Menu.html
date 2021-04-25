@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Main page</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style4.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/font-awesome/css/font-awesome.min.css">
+</head>
+<style type="text/css">
+
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body,footer {
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background:url(https://apptrigger.com/files/2018/08/tft-galaxies-returntothestars-sky-background-1-compressed.jpg);
+ 	font-family: 'Oxygen', sans-serif;
+	    background-size: cover;
+}
+
+.top-bar {
+margin-right:10px;
+margin left:2px;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 10px 0;
+}
+
+.top-bar .contact-info {
+    margin-right: 60px;
+}
+
+.top-bar ul {
+    margin-bottom: 0;
+}
+
+.top-bar .contact-info a {
+    font-size: 0.8rem;
+}
+
+.top-bar ul.social-custom {
+    margin-left: 10px;
+}
+.top-bar ul {
+    margin-bottom: 0;
+}
+.login{
+margin-right:5px;
+}
+
+.top-bar a.login-btn i, .top-bar a.signup-btn i,.top-bar a.logout-btn i {
+    margin-right: 5px;
+}
+
+.top-bar ul.social-custom a:hover {
+    background: #4fbfa8;
+    color: #fff;
+}
+.top-bar ul.social-custom a {
+    text-decoration: none !important;
+    font-size: 0.7rem;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    color: #999;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0;
+}
+a:focus, a:hover {
+    color: #348e7b;
+    text-decoration: underline;
+}
+.top-bar a.login-btn, .top-bar a.signup-btn ,.top-bar a.logout-btn{
+    color: #eee;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none !important;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+/*footer*/
+.col_white_amrc { color:#FFF;}
+<!--footer { width:100%; background-color:#263238;-->
+<!-- min-height:250px; padding:10px 0px 25px 0px ;}-->
+
+.pt2 { padding-top:40px ; margin-bottom:20px ;}
+footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
+.mb10 { padding-bottom:15px ;}
+.footer_ul_amrc { margin:0px ; list-style-type:none ; font-size:14px; padding:0px 0px 10px 0px ; }
+.footer_ul_amrc li {padding:0px 0px 5px 0px;}
+.footer_ul_amrc li a{ color:#CCC;}
+.footer_ul_amrc li a:hover{ color:#fff; text-decoration:none;}
+.fleft { float:left;}
+.padding-right { padding-right:10px; }
+
+.footer_ul2_amrc {margin:0px; list-style-type:none; padding:0px;}
+.footer_ul2_amrc li p { display:table; }
+.footer_ul2_amrc li a:hover { text-decoration:none;}
+.footer_ul2_amrc li i { margin-top:5px;}
+
+.bottom_border { border-bottom:1px solid #323f45; padding-bottom:20px;}
+.foote_bottom_ul_amrc {
+	list-style-type:none;
+	padding:0px;
+	display:table;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+.foote_bottom_ul_amrc li { display:inline;}
+.foote_bottom_ul_amrc li a { color:#999; margin:0 12px;}
+
+.social_footer_ul { display:table; margin:15px auto 0 auto; list-style-type:none;  }
+.social_footer_ul li { padding-left:20px; padding-top:10px; float:left; }
+.social_footer_ul li a { color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;}
+.social_footer_ul li i {  width:20px; height:20px; text-align:center;}
+
+.login-btn{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+.signup-btn{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+.logout-btn{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;}
+
+.button_decor{
+width:78px;
+height:30px;
+ padding:0px 5px;
+  text-align: center;
+}
+h5.decor{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;}
+strong.decor{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+p.decor{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+i,
+span {
+    display: inline-block;
+    color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+}
+span.decor{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #2e353d;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+}
+
+#sidebar.active .sidebar-header h5,
+#sidebar.active .CTAs {
+    display: none;
+}
+
+#sidebar.active .sidebar-header strong {
+    display: block;
+}
+
+#sidebar ul li a {
+    text-align: left;
+}
+
+#sidebar.active ul li a {
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 0.85em;
+}
+
+#sidebar.active ul li a i {
+    margin-right: 0;
+    display: block;
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+#sidebar.active ul ul a {
+    padding: 10px !important;
+}
+
+#sidebar.active .dropdown-toggle::after {
+    top: auto;
+    bottom: 10px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #2e353d;
+}
+
+#sidebar .sidebar-header strong {
+    display: none;
+    font-size: 1.8em;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #23282e;
+    background: LightSlateGrey;
+}
+
+#sidebar ul li a i {
+    margin-right: 10px;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #23282e;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+
+
+@media (max-width: 768px) {
+    #sidebar {
+        min-width: 80px;
+        max-width: 80px;
+        text-align: center;
+        margin-left: -80px !important;
+    }
+    .dropdown-toggle::after {
+        top: auto;
+        bottom: 10px;
+        right: 50%;
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+    }
+    #sidebar.active {
+        margin-left: 0 !important;
+    }
+    #sidebar .sidebar-header h5,
+    #sidebar .CTAs {
+        display: none;
+    }
+    #sidebar .sidebar-header strong {
+        display: block;
+    }
+    #sidebar ul li a {
+        padding: 20px 10px;
+    }
+    #sidebar ul li a span {
+        font-size: 0.85em;
+    }
+    #sidebar ul li a i {
+        margin-right: 0;
+        display: block;
+    }
+    #sidebar ul ul a {
+        padding: 10px !important;
+    }
+    #sidebar ul li a i {
+        font-size: 1.3em;
+    }
+    #sidebar {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+
+
+
+</style>
+
+<body>
+
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h5 class="decor">Team Fight Tactics</h5>
+            <strong class="decor">TFT</strong>
+        </div>
+        <ul class="list-unstyled components">
+            <li>
+                <a href="/" th:href="@{/listofchamp}">
+                    <img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/warrior-helmet-1831599-1554543.png"
+                         alt="Trulli" width="50" height="50">
+                    <span class="decor">Champion</span>
+                </a>
+
+
+
+                <a href="/" th:href="@{/listofitem}">
+                    <img src="https://cdn2.iconfinder.com/data/icons/rpg-fantasy-game-skill-ui/512/spear_man_warrior_weapon_soldier_shield-128.png"
+                         alt="Trulli" width="50" height="50">
+                    <span class="decor">Items</span>
+                </a>
+
+                <a href="/" th:href="@{/listofSynergies}" >
+                    <img src="https://cdn2.iconfinder.com/data/icons/medieval-fantasy-characters/274/medieval-fantasy-character-006-128.png"
+                         alt="Trulli" width="50" height="50">
+                    <span class="decor">Synergies</span>
+                </a>
+
+            </li>
+            <li>
+                <a  href="/" th:href="@{/teambuilder}">
+                    <img src="https://cdn2.iconfinder.com/data/icons/rpg-fantasy-game-skill-ui/512/knight_sword_medieval_helmet_warrior_war_soldier_ancient_kingdom-128.png"
+                         alt="Trulli" width="50" height="50">
+                    <span class="decor">Team Builder</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-question"></i>
+                    <span class="decor"> FAQ</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-paper-plane"></i>
+                    <span class="decor">Contact</span>
+                </a>
+            </li>
+        </ul>
+
+
+        <button type="button" id="sidebarCollapse" class="btn btn-info button_decor">
+            <i class="fas fa-arrow-left"></i>
+            <span>Menu</span>
+        </button>
+
+
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-6 d-md-block d-none">
+                        <p class="decor">Hello, and welcome to the OFFICIAL Teamfight Tactics (TFT) Detailed General Guide for beginners!</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex justify-content-md-end justify-content-between">
+
+                            <div class="login">
+                                <a href="/" th:href="@{/Login_form}"  class="login-btn">
+                                    <i class="fas fa-sign-in-alt "></i><span class="decor">Sign In</span></a>
+                                | &nbsp;
+                                <a href="/" th:href="@{/Register}" class="signup-btn">
+                                    <i class="fa fa-user"></i><span class="decor">Sign Up</span></a>
+
+                                <a th:href="@{/logout}" class="signup-btn">
+                                    <i class="fas fa-sign-out-alt"></i><span class="decor">Exist</span></a>  </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <p class="decor">Teamfight Tactics Guides</p>
+        <p> Learn how to play TFT with our tips, tricks, and in depth guides.</p>
+        <p>Hi! Welcome to our website about team fight tactics.</p>
+        <p>Before we go into what we have here, I would like to tell you something about the latest version of TFT. Actually, instead of season 4 Riot Game made
+        a decision to create the sub version of season 3 or we can say season 3 part 2.  </p>
+    <p>
+        In this season, we'll have some new synergies called Paragon and Battlecast with full new champions as follow. This season will change everything you've
+        known before about TFT Season3. All the Synergies have been updated and upgraded so as to suitable for a game. Also, the player have know everything about
+        how a new synergies works and the power of each champions though every patch. But don't worry much about that. Our website will provide everything you need
+        in order for you to reach a highest top in a game and in rank as well.</p>
+     <p>  Now, Let's begin!!!</p>
+
+
+        <div class="line"></div>
+
+        <h1 style="color: white;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">
+            Champion</h1>
+
+        <p>This function will help you to know every specific information of each champions in TFT, also some recommended items for that champion</p>
+        <p>- One of the most crucial things you need to know so as to master this game that is about champion. That is right!. When you fully understand about
+        all of the champions, you are able to handle every situations may occur. For example, sometimes the items from the beginning are not as you
+        expected and the champion are not suitable with your team comps, you lack of money compare with the other,...
+            A myriad of tough circumstances may happen.
+        But do not worry about, with a well-known knowledge about champion, you will know what moment your champs is strongest and vice versa. Hence, you can turnaround right away.</p>
+          <p>- And now, let's see what we have about champion!</p>
+
+        <div class="line"></div>
+
+        <h1 style="color: white;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">
+            Items</h1>
+        <p>When you know clearly about our champions, the next one we should consider is the item.
+        In order for champion to reach its highest power, we better know which item is suitable for my champion.
+        In addition, well-knowing about combine items plays an important role as well as knowing the true power of each champion. </p>
+
+        <div class="line"></div>
+
+
+        <h1 style="color: white;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">
+            Synergies</h1>
+        <p>This part is one of the most interesting part of our game. You can combine your champion together in order to build a strongest team comp.
+        So what we have here are classes and origins. When you have some champions have the same class or origin, they will stack together and create som
+        wonderful effect or we can say bonus effect. One champ may have at least two classes or two origins, anh thanks for that you can create an army
+        based on your hobby. Creativity is infinity so build whatever you want ang gain the winning.</p>
+
+        <div class="line"></div>
+
+
+        <h1 style="color: white;text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">
+            Team Builder</h1>
+        <p>This part is one of the most interesting part of our game. You can combine your champion together in order to build a strongest team comp.
+            So what we have here are classes and origins. When you have some champions have the same class or origin, they will stack together and create som
+            wonderful effect or we can say bonus effect. One champ may have at least two classes or two origins, anh thanks for that you can create an army
+            based on your hobby. Creativity is infinity so build whatever you want ang gain the winning.</p>
+
+    </div>
+
+
+</div>
+<footer class="footer">
+    <div class="container bottom_border">
+        <div class="row">
+            <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+                <!--headin5_amrc-->
+                <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <p><i class="fa fa-location-arrow"></i> International University </p>
+                <p><i class="fa fa-phone"></i>  0704689783  </p>
+                <p><i class="fa fa fa-envelope"></i> tranminhduy1103@gmail.com  </p>
+
+
+            </div>
+
+
+            <div class=" col-sm-4 col-md  col-6 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                <!--headin5_amrc-->
+                <ul class="footer_ul_amrc">
+                    <li><a href="http://webenlance.com">Image Rectoucing</a></li>
+                    <li><a href="http://webenlance.com">Clipping Path</a></li>
+                    <li><a href="http://webenlance.com">Hollow Man Montage</a></li>
+                    <li><a href="http://webenlance.com">Ebay & Amazon</a></li>
+                    <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                    <li><a href="http://webenlance.com">Image Cropping</a></li>
+                </ul>
+                <!--footer_ul_amrc ends here-->
+            </div>
+
+
+            <div class=" col-sm-4 col-md  col-6 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                <!--headin5_amrc-->
+                <ul class="footer_ul_amrc">
+                    <li><a href="http://webenlance.com">Remove Background</a></li>
+                    <li><a href="http://webenlance.com">Shadows & Mirror Reflection</a></li>
+                    <li><a href="http://webenlance.com">Logo Design</a></li>
+                    <li><a href="http://webenlance.com">Vectorization</a></li>
+                    <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                    <li><a href="http://webenlance.com">Image Cropping</a></li>
+                </ul>
+                <!--footer_ul_amrc ends here-->
+            </div>
+
+
+            <div class=" col-sm-4 col-md  col-12 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+                <!--headin5_amrc ends here-->
+
+                <ul class="footer_ul2_amrc">
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                </ul>
+                <!--footer_ul2_amrc ends here-->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <ul class="foote_bottom_ul_amrc">
+            <li><a href="http://webenlance.com">Home</a></li>
+            <li><a href="http://webenlance.com">About</a></li>
+            <li><a href="http://webenlance.com">Services</a></li>
+            <li><a href="http://webenlance.com">Pricing</a></li>
+            <li><a href="http://webenlance.com">Blog</a></li>
+            <li><a href="http://webenlance.com">Contact</a></li>
+        </ul>
+        <!--foote_bottom_ul_amrc ends here-->
+        <p class="text-center">Copyright @2020 | Designed With by Minh Duy | <a href="#">Green Academy Project</a></p>
+
+        <ul class="social_footer_ul">
+            <li><a href="http://webenlance.com"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="http://webenlance.com"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="http://webenlance.com"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="http://webenlance.com"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <!--social_footer_ul ends here-->
+    </div>
+
+</footer>
+
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+
+</script>
+</body>
+</html>
+</html>

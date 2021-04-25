@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail of champion</title>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/font-awesome/css/font-awesome.min.css">
+
+</head>
+<style type="text/css">
+
+    body,footer{
+    margin-top:20px;
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background:url(https://apptrigger.com/files/2018/08/tft-galaxies-returntothestars-sky-background-1-compressed.jpg);
+ 	font-family: 'Oxygen', sans-serif;
+	    background-size: cover;
+}
+/**
+ * Panels
+ */
+/*** General styles ***/
+.panel {
+  box-shadow: none;
+  width:1200px;
+background-color: rgba(0,0,0,0.01) !important;
+}
+.panel-heading {
+  border-bottom: 10;
+}
+.panel-title {
+  font-size: 25px;
+}
+.panel-title > small {
+  font-size: .75em;
+  color: #999999;
+}
+.panel-body *:first-child {
+  margin-top: 0;
+}
+.panel-footer {
+font-size:16px;
+border:none;
+background-color: rgba(0,0,0,0.1) !important;
+  float:left;
+
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+
+
+
+.panel-default > .panel-heading {
+    color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    background-color: #263238;
+    border-color: rgba(0, 0, 0, 0.7);
+}
+
+/**
+ * Profile
+ */
+/*** Profile: Header  ***/
+.profile__avatar {
+  float: left;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-right: 20px;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .profile__avatar {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.profile__avatar > img {
+  width: 100%;
+  height: auto;
+}
+.profile__header {
+  padding-right: 5px;
+  padding-left:5px;
+  overflow: hidden;
+}
+.decor{
+ color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  font-size:17px;
+}
+.profile__header p {
+  margin: 20px 0;
+}
+/*** Profile: Table ***/
+@media (min-width: 992px) {
+  .profile__table tbody th {
+    width: 200px;
+  }
+}
+/*** Profile: Recent activity ***/
+.profile-comments__item {
+  position: relative;
+  padding: 15px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.profile-comments__item:last-child {
+  border-bottom: 0;
+}
+
+
+.profile-comments__item:hover,
+.profile-comments__item:focus {
+  background-color: #f5f5f5;
+}
+.profile-comments__item:hover .profile-comments__controls,
+.profile-comments__item:focus .profile-comments__controls {
+  visibility: visible;
+}
+.profile-comments__controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  visibility: hidden;
+}
+.profile-comments__controls > a {
+  display: inline-block;
+  padding: 2px;
+  color: #999999;
+}
+.profile-comments__controls > a:hover,
+.profile-comments__controls > a:focus {
+  color: #333333;
+}
+.profile-comments__avatar {
+  display: block;
+  float: left;
+  margin-right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profile-comments__avatar > img {
+  width: 100%;
+  height: auto;
+}
+.profile-comments__body {
+  overflow: hidden;
+}
+.profile-comments__sender {
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  font-weight: 500;
+  margin: 5px 0;
+}
+.profile-comments__sender > small {
+  margin-left: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #999999;
+}
+@media (max-width: 767px) {
+  .profile-comments__sender > small {
+    display: block;
+    margin: 5px 0 10px;
+  }
+}
+.profile-comments__content {
+  color: #999999;
+}
+/*** Profile: Contact ***/
+.profile__contact-btn {
+  padding: 12px 20px;
+  margin-bottom: 20px;
+}
+.profile__contact-hr {
+  position: relative;
+  border-color: rgba(0, 0, 0, 0.1);
+  margin: 40px 0;
+}
+.icon-left{
+    float:left;
+    padding: 5px 5px 20px 15px;
+    color:#4ECABE;
+}
+
+.text-last{
+text-align:left;
+    margin: 5px 30px 40px 10px;
+    font-size: 15px;
+    color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+.text{
+    text-align:left;
+    margin: 5px 30px 50px 10px;
+    font-size: 19px;
+    color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.text h3{
+    padding-bottom:0px;
+    color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.column{
+
+    margin: 5px 20px 0px 20px;
+}
+.column1{
+    margin: 5px 20px 0px 0px;
+}
+
+
+.top-bar {
+margin-right:10px;
+margin left:2px;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.top-bar .contact-info {
+    margin-right: 60px;
+}
+
+.top-bar ul {
+    margin-bottom: 0;
+}
+
+.top-bar .contact-info a {
+    font-size: 0.8rem;
+}
+
+.top-bar ul.social-custom {
+    margin-left: 10px;
+}
+
+.fix{
+float:right;
+
+}
+.top-bar ul {
+    margin-bottom: 0;
+}
+.login{
+float:left;
+}
+
+.top-bar a.login-btn i, .top-bar a.signup-btn i,.top-bar a.logout-btn i {
+    margin-right: 5px;
+}
+
+.top-bar ul.social-custom a:hover {
+    background: #4fbfa8;
+    color: #fff;
+}
+.top-bar ul.social-custom a {
+    text-decoration: none !important;
+    font-size: 0.7rem;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    color: #999;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0;
+}
+a:focus, a:hover {
+    color: #348e7b;
+    text-decoration: underline;
+}
+.top-bar a.login-btn, .top-bar a.signup-btn ,.top-bar a.logout-btn{
+    color: #eee;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none !important;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 5px;
+}
+.login-btn{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+.signup-btn{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+.logout-btn{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;}
+
+.button_decor{
+width:78px;
+height:30px;
+ padding:0px 5px;
+  text-align: center;
+}
+span.decor{
+color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+}
+
+i,
+span {
+
+font-size:14px;
+    display: inline-block;
+    color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+}
+.b{
+border:1px solid black;
+}
+
+/*footer*/
+.col_white_amrc { color:#FFF;}
+<!--footer { width:100%; background-color:#263238;-->
+<!-- min-height:250px; padding:10px 0px 25px 0px ;}-->
+
+.pt2 { padding-top:40px ; margin-bottom:20px ;}
+footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
+.mb10 { padding-bottom:15px ;}
+.footer_ul_amrc { margin:0px ; list-style-type:none ; font-size:14px; padding:0px 0px 10px 0px ; }
+.footer_ul_amrc li {padding:0px 0px 5px 0px;}
+.footer_ul_amrc li a{ color:#CCC;}
+.footer_ul_amrc li a:hover{ color:#fff; text-decoration:none;}
+.fleft { float:left;}
+.padding-right { padding-right:10px; }
+
+.footer_ul2_amrc {margin:0px; list-style-type:none; padding:0px;}
+.footer_ul2_amrc li p { display:table; }
+.footer_ul2_amrc li a:hover { text-decoration:none;}
+.footer_ul2_amrc li i { margin-top:5px;}
+
+.bottom_border { border-bottom:1px solid #323f45; padding-bottom:20px;}
+.foote_bottom_ul_amrc {
+	list-style-type:none;
+	padding:0px;
+	display:table;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+}
+.foote_bottom_ul_amrc li { display:inline;}
+.foote_bottom_ul_amrc li a { color:#999; margin:0 12px;}
+
+.social_footer_ul { display:table; margin:15px auto 0 auto; list-style-type:none;  }
+.social_footer_ul li { padding-left:20px; padding-top:10px; float:left; }
+.social_footer_ul li a { color:#CCC; border:1px solid #CCC; padding:8px;border-radius:50%;}
+.social_footer_ul li i {  width:20px; height:20px; text-align:center;}
+
+
+</style>
+<body>
+<div class="top-bar ">
+    <div class="container">
+        <div class="row d-flex align-items-center ">
+            <div class="col-md-6 d-md-block d-none ">
+                <p class="decor">Hello, and welcome to the OFFICIAL Teamfight Tactics (TFT) Detailed General Guide for beginners!</p>
+            </div>
+
+            <div class="col-md-6  fix">
+                <div class="d-flex justify-content-md-end justify-content-between  fix">
+                        <a href="/" th:href="@{/Login_form}"  class="login-btn">
+                            <i class="fas fa-sign-in-alt "></i><span class="decor">Sign In</span></a>
+                    &nbsp;
+                        <a href="/" th:href="@{/Register}" class="signup-btn">
+                            <i class="fa fa-user"></i><span class="decor">Sign Up</span></a>
+                        <a th:href="@{/logout}" class="signup-btn">
+                            <i class="fas fa-sign-out-alt"></i><span class="decor">Exist</span></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="container" >
+    <div class="row">
+        <div class="col-xs-12 col-sm-9">
+
+            <!-- User profile -->
+            <div class="panel panel-default">
+                <div class="panel-heading ">
+                    <h4 class="panel-title"  th:text="${champ.name}"></h4>
+                </div>
+
+                <div class="panel-body">
+                    <div class="profile__avatar">
+                        <img th:src="${champ.Image}" alt="...">
+
+                    </div>
+                    <div class="profile__header ">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+                                <div class="column ">
+                                    <div class="icon-left ">
+                                        <img src="https://cdn2.iconfinder.com/data/icons/healthcare-21/100/heart-health-palpitation-256.png" style="width:25px;height:35px;">
+                                    </div>
+
+                                    <div class="text" >
+                                        <h3 >Health</h3>
+                                        <span class="decor" th:text="${champ.Health}"> </span>
+
+                                    </div>
+
+                                    <div class="icon-left ">
+                                        <img src="https://cdn4.iconfinder.com/data/icons/military-elements-7/24/Swords-128.png" style="width:25px;height:25px;">
+                                    </div>
+
+                                    <div class="text ">
+                                        <h3>Damage</h3>
+                                        <span class="decor" th:text="${champ.Damage}"> </span>
+                                    </div>
+
+                                    <div class="icon-left ">
+                                        <img src="https://cdn1.iconfinder.com/data/icons/outlined-medieval-icons-pack/200/weapons_bomb-128.png" style="width:25px;height:25px;">
+                                    </div>
+
+                                    <div class="text ">
+                                        <h3>Dps</h3>
+                                        <span class="decor" th:text="${champ.Dps}"> </span>
+                                    </div>
+
+                                    <div class="icon-left">
+                                        <img src=https://cdn1.iconfinder.com/data/icons/halloween-2339/520/993_Circle_Halloween_magic-256.png style="width:25px;height:25px;">
+                                    </div>
+
+                                    <div class="text">
+                                        <h3>Mr</h3>
+                                        <span class="decor" th:text="${champ.MR}"> </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
+                                <div class="column1 ">
+
+                                    <div class="icon-left ">
+                                        <img src="https://cdn1.iconfinder.com/data/icons/game-design-butterscotch-vol-1/256/Character-128.png" style="width:25px;height:25px;">
+                                    </div>
+                                    <div class="text ">
+                                        <h3>Armor</h3>
+                                        <span class="decor" th:text="${champ.Armor}"> </span>
+                                    </div>
+
+                                    <div class="icon-left ">
+                                        <img src=https://cdn3.iconfinder.com/data/icons/education-4-22/32/Force__Velocity-128.png style="width:25px;height:25px;">
+                                    </div>
+                                    <div class="text ">
+                                        <h3>Speed</h3>
+                                        <span class="decor" th:text="${champ.Speed}"> </span>
+                                    </div>
+
+                                    <div class="icon-left ">
+                                        <img src="https://cdn4.iconfinder.com/data/icons/witchcraft-icons/200/magic_cylinder_flask-128.png" style="width:25px;height:25px;">
+                                    </div>
+                                    <div class="text-last ">
+                                        <h3>Mana</h3>
+                                        <span class="decor" th:text="${champ.Mana}"> </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-footer decor">
+                        <img src="https://cdn3.iconfinder.com/data/icons/business-finance-vol-4-21/512/5_Coin_dollar_money-256.png" style="width:25px;height:25px;"><span th:text="${champ.Cost}">  </span>
+                        <p></p>
+                        <img th:each="class:${classes}" th:if="( ${champ.Categorize} == ${class.name})"th:src="${class.image}" style="width:25px;height:25px;"><span th:text="${champ.Categorize}">   </span>
+                        <p></p>
+                        <img th:each="class:${classes}"  th:if="(${champ.Categorize1} AND ${champ.Categorize1} == ${class.name} )" th:src="${class.image}" style="width:25px;height:25px;"><span th:if="${champ.Categorize1}" th:text="${champ.Categorize1}">   </span>
+                        <img th:each="origin:${origins}"  th:if="(${champ.Origin} == ${origin.name}) " th:src="${origin.image}" style="width:30px;height:35px;"><span th:text="${champ.Origin}">  </span>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!--User info -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Skill</h2>
+
+                </div>
+                <div class="panel-body decor" >
+                    <table class="table profile__table">
+                        <tbody >
+                        <tr >
+                            <th><img th:each="skill:${skills}"  th:if="( ${champ.Skill_name} == ${skill.name})" th:src="${skill.image}"style="width:45px;height:55px;"></th>
+                            <td  th:each="skill:${skills}"th:if="( ${champ.Skill_name} == ${skill.name})" th:text="${skill.name}">
+                            </td>
+                        </tr>
+                        <tr >
+                            <th><strong>Description:</strong></th>
+                            <td th:each="skill:${skills}" th:if="( ${champ.Skill_name} == ${skill.name})" th:text="${skill.des}"></td>
+                        </tr>
+                        <tr >
+                            <th><strong>Specific:</strong></th>
+                            <td th:each="skill:${skills}" th:if="( ${champ.Skill_name} == ${skill.name})" th:text="${skill.dame}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Story</h4>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table profile__table">
+                                    <tbody>
+                                    <tr>
+                                        <td class="decor" th:text="${champ.story}"></td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+
+            <!-- Latest posts -->
+            <div class="panel panel-default" >
+                <div class="panel-heading">
+                    <h2 class="panel-title">Recommend Items</h2>
+                </div>
+
+                <div class="panel-body" >
+                    <div class="profile__comments">
+                        <div class="profile-comments__item" >
+                            <div class="profile-comments__avatar">
+                                <img th:each="item : ${items}"th:if="(${item.name} == ${champ.Re_item1})" th:src="${item.image}" alt="...">
+                            </div>
+                            <div class="profile-comments__body" >
+                                <h5 class="profile-comments__sender decor " th:each="item : ${items}"th:if="(${item.name} == ${champ.Re_item1})"  th:text="${item.name}">
+                                </h5>
+                                <div class="profile-comments__content">
+                                    <span th:each="item : ${items}" th:if="(${item.name} == ${champ.Re_item1})" th:text="${item.des}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-comments__item" >
+                            <div class="profile-comments__avatar">
+                                <img th:each="item : ${items}"th:if="(${item.name} == ${champ.Re_item2})" th:src="${item.image}" alt="...">
+                            </div>
+
+                            <div class="profile-comments__body" >
+                                <h5 class="profile-comments__sender decor" th:each="item : ${items}"th:if="(${item.name} == ${champ.Re_item2})"  th:text="${item.name}">
+                                </h5>
+                                <div class="profile-comments__content">
+                                    <span th:each="item : ${items}"th:if="(${item.name} == ${champ.Re_item2})"  th:text="${item.des}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-comments__item" >
+
+                            <div class="profile-comments__avatar">
+                                <img th:each="item : ${items}" th:if="(${item.name} == ${champ.Re_item3})" th:src="${item.image}"  alt="...">
+                            </div>
+
+                            <div class="profile-comments__body" >
+                                <h5 class="profile-comments__sender decor" th:each="item : ${items}"th:if="(${item.name} == ${champ.Re_item3})" th:text="${item.name}">
+
+                                </h5>
+                                <div class="profile-comments__content">
+                                    <span th:each="item : ${items}" th:if="(${item.name} == ${champ.Re_item3})" th:text="${item.des}"></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container bottom_border">
+        <div class="row">
+            <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+                <!--headin5_amrc-->
+                <p class="mb10">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <p><i class="fa fa-location-arrow"></i> International University </p>
+                <p><i class="fa fa-phone"></i>  0704689783  </p>
+                <p><i class="fa fa fa-envelope"></i> tranminhduy1103@gmail.com  </p>
+
+
+            </div>
+
+
+            <div class=" col-sm-4 col-md  col-6 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                <!--headin5_amrc-->
+                <ul class="footer_ul_amrc">
+                    <li><a href="http://webenlance.com">Image Rectoucing</a></li>
+                    <li><a href="http://webenlance.com">Clipping Path</a></li>
+                    <li><a href="http://webenlance.com">Hollow Man Montage</a></li>
+                    <li><a href="http://webenlance.com">Ebay & Amazon</a></li>
+                    <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                    <li><a href="http://webenlance.com">Image Cropping</a></li>
+                </ul>
+                <!--footer_ul_amrc ends here-->
+            </div>
+
+
+            <div class=" col-sm-4 col-md  col-6 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+                <!--headin5_amrc-->
+                <ul class="footer_ul_amrc">
+                    <li><a href="http://webenlance.com">Remove Background</a></li>
+                    <li><a href="http://webenlance.com">Shadows & Mirror Reflection</a></li>
+                    <li><a href="http://webenlance.com">Logo Design</a></li>
+                    <li><a href="http://webenlance.com">Vectorization</a></li>
+                    <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+                    <li><a href="http://webenlance.com">Image Cropping</a></li>
+                </ul>
+                <!--footer_ul_amrc ends here-->
+            </div>
+
+
+            <div class=" col-sm-4 col-md  col-12 col">
+                <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+                <!--headin5_amrc ends here-->
+
+                <ul class="footer_ul2_amrc">
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                    <li><a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a><p>Lorem Ipsum is simply dummy text of the printing...<a href="#">https://www.lipsum.com/</a></p></li>
+                </ul>
+                <!--footer_ul2_amrc ends here-->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <ul class="foote_bottom_ul_amrc">
+            <li><a href="http://webenlance.com">Home</a></li>
+            <li><a href="http://webenlance.com">About</a></li>
+            <li><a href="http://webenlance.com">Services</a></li>
+            <li><a href="http://webenlance.com">Pricing</a></li>
+            <li><a href="http://webenlance.com">Blog</a></li>
+            <li><a href="http://webenlance.com">Contact</a></li>
+        </ul>
+        <!--foote_bottom_ul_amrc ends here-->
+        <p class="text-center">Copyright @2020 | Designed With by Minh Duy | <a href="#">Green Academy Project</a></p>
+
+        <ul class="social_footer_ul">
+            <li><a href="http://webenlance.com"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="http://webenlance.com"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="http://webenlance.com"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="http://webenlance.com"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <!--social_footer_ul ends here-->
+    </div>
+
+</footer>
+
+</body>
+</html>
