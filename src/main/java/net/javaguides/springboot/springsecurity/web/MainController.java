@@ -32,40 +32,34 @@ public class MainController {
     @Autowired
     FileService fileService;
 
-    @Autowired
-    PCRepository pc_test;
-
 
     @GetMapping("/")
     public String root(Model model) {
-        return "redirect:/listofuser  ";
+
+        return "redirect:/Product";
+
     }
 
-//    @GetMapping("/test")
-//    public String test(Model model) {
-//        return "test2";
-//    }
+
+    @GetMapping("/login")
+    public String login(Model model) {
+        return "login";
+    }
+
 
     @GetMapping("/Menu")
     public String userView() {
         return "mainpage";
     }
 
-
-    @GetMapping("/LIST")
-    public String testlist(Model model) {
-        model.addAttribute("PCS", pc_test.findAll());
-        return "test";
-    }
-
-    @GetMapping("/Login_form")
-    public String login(Model model) {
-        return "login";
-    }
-
     @GetMapping("/Register")
     public String userView() {
         return "Register";
+    }
+
+    @GetMapping("/Product")
+    public String userView() {
+        return "Product";
     }
 
     @GetMapping("/champ")
@@ -87,7 +81,7 @@ public class MainController {
     @RequestMapping(path = {"/add"})
     public String addEmployeeById(Model model, @PathVariable("id") Optional<Long> id) {
         model.addAttribute("user", new User());
-        return "Add_member";
+        return "add-member";
     }
 
     @RequestMapping(path = "/create", method = RequestMethod.POST)
@@ -107,7 +101,7 @@ public class MainController {
     public String listofUser(Model model) {
         List<User> list = userService.getAllUsers();
         model.addAttribute("users", list);
-        return "test2";
+        return "Manage_member";
     }
 
 

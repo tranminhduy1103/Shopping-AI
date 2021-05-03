@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-
-<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
-
+<html xmlns:th="http://www.thymeleaf.org">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
     <title>IU Mall</title>
@@ -11,7 +9,7 @@
     <meta name="description" content="IU Mall project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" th:href="@{/styles/bootstrap4/bootstrap.min.css}" type="text/css">
-    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css}"/>
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css}" />
     <link rel="stylesheet" th:href="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.css}" type="text/css">
     <link rel="stylesheet" th:href="@{/plugins/OwlCarousel2-2.2.1/owl.theme.default.css}" type="text/css">
     <link rel="stylesheet" th:href="@{/plugins/OwlCarousel2-2.2.1/animate.css}" type="text/css">
@@ -43,8 +41,8 @@
                                 <a href="">IUMall@iu.vn</div>
                             <div class="top_bar_user">
                                 <div class="user_icon"><img alt="" src="/images/user.svg"></div>
-                                <div><a href="#">Register</a></div>
-                            <div class="top_bar_user"><a href="#">Sign in</a></div>
+                                <div><a href="/Register">Register</a></div>
+                            <div class="top_bar_user"><a href="/login">Sign in</a></div>
                         </div>
                     </div>
                 </div>
@@ -86,7 +84,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <button type="submit" class="header_search_button trans_300" value="Submit"><img src="images/search.png" alt=""></button>
+                                    <button type="submit" class="header_search_button trans_300" value="Submit"><img src="/images/search.png" alt=""></button>
                                 </form>
                             </div>
                         </div>
