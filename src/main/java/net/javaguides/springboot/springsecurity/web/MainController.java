@@ -36,14 +36,14 @@ public class MainController {
     @GetMapping("/")
     public String root(Model model) {
 
-        return "redirect:/Menu";
+        return "redirect:/Product";
 
     }
 
 
-    @GetMapping("/Login_form")
+    @GetMapping("/login")
     public String login(Model model) {
-        return "Login_form";
+        return "login";
     }
 
 
@@ -55,6 +55,11 @@ public class MainController {
     @GetMapping("/Register")
     public String userView() {
         return "Register";
+    }
+
+    @GetMapping("/Product")
+    public String userView() {
+        return "Product";
     }
 
     @GetMapping("/champ")
