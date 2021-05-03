@@ -36,7 +36,7 @@ public class MainController {
     @GetMapping("/")
     public String root(Model model) {
 
-        return "redirect:/Product";
+        return "redirect:/Menu";
 
     }
 
@@ -46,26 +46,23 @@ public class MainController {
         return "login";
     }
 
-
+//thì để view
     @GetMapping("/Menu")
     public String userView() {
         return "mainpage";
     }
 
-    @GetMapping("/Register")
-    public String userView() {
-        return "Register";
-    }
+    // @GetMapping("/Register")
+    // public String userView() {
+    //     return "Register";
+    // }
 
     @GetMapping("/Product")
     public String userView() {
         return "Product";
     }
 
-    @GetMapping("/champ")
-    public String champView() {
-        return "champ";
-    }
+   
 
     @RequestMapping("/403")
     public String accessDenied() {
@@ -76,7 +73,6 @@ public class MainController {
     public String adminView() {
         return "/Admin-page";
     }
-
 
     @RequestMapping(path = {"/add"})
     public String addEmployeeById(Model model, @PathVariable("id") Optional<Long> id) {
