@@ -63,6 +63,11 @@ public class MainController {
         return "login";
     }
 
+    @GetMapping("/Register")
+    public String userView() {
+        return "Register";
+    }
+
     @GetMapping("/champ")
     public String champView() {
         return "champ";

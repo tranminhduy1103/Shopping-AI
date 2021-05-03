@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FinalProjectApplication<final-project>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "net.javaguides.springboot.springsecurity.FinalProjectApplication",
+            "projectName": "final-project",
+            "args": ""
+        }
+    ]
+}
