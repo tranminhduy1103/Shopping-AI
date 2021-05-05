@@ -50,7 +50,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/adminview").hasAuthority("ROLE_ADMIN")
                 // .antMatchers("/supplierview").hasAuthority("ROLE_SUPPLIER")
 
-                .and().formLogin().loginPage("/Login_form").loginProcessingUrl("/Login_form").successHandler(successHandler)
+                .and().formLogin().loginPage("/login").loginProcessingUrl("/Login_form").successHandler(successHandler)
 
 
                 .and()

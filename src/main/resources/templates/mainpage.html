@@ -18,10 +18,14 @@
     <link rel="stylesheet" th:href="@{/plugins/slick-1.8.0/slick.css}" type="text/css">
     <link rel="stylesheet" th:href="@{/styles/main_styles.css}" type="text/css">
     <link rel="stylesheet" th:href="@{/styles/responsive.css}" type="text/css">
+    <script
+            crossorigin="anonymous"
+            src="https://kit.fontawesome.com/836a943e18.js"
+    ></script>
 </head>
 
-<body>
 
+<body>
     <div class="super_container">
 
         <!-- Header -->
@@ -40,16 +44,17 @@
                             </div>
                             <div class="top_bar_contact_item">
                                 <div class="top_bar_icon"><img alt="" src="/images/mail.png"></div>
-                                <a href="">IUMall@iu.vn</div>
+                                <a href="">IUMall@iu.vn</a></div>
                             <div class="top_bar_user">
                                 <div class="user_icon"><img alt="" src="/images/user.svg"></div>
                                 <div><a href="#">Register</a></div>
-                            <div class="top_bar_user"><a href="#">Sign in</a></div>
+                                <div class="top_bar_user"><a href="#">Sign in</a></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
+        </header>
     </div>
 
     <!-- Header Main -->
@@ -4770,7 +4775,6 @@
             </div>
         </div>
     </div>
-    </div>
 
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/styles/bootstrap4/popper.js"></script>
@@ -4787,8 +4791,14 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+
     <script>
-        window.dataLayer = window.dataLayer || [];
+    document.querySelector("#checkbox").addEventListener("change", () => {
+    document.querySelector(".container").classList.toggle("dark")
+})
+
+
+    window.dataLayer = window.dataLayer || [];
 
         function gtag() {
             dataLayer.push(arguments);
@@ -4796,6 +4806,7 @@
         gtag('js', new Date());
 
         gtag('config', 'UA-23581568-13');
+
     </script>
 
 </body>

@@ -32,24 +32,36 @@ public class MainController {
     @Autowired
     FileService fileService;
 
+    @Autowired
+    PCRepository pc_test;
+
 
     @GetMapping("/")
     public String root(Model model) {
+        return "redirect:/Menu  ";
+    }
 
-        return "redirect:/Menu";
+    @GetMapping("/khanh")
+    public String test(Model model) {
+        return "khanh";
+    }
 
+    @GetMapping("/Menu")
+    public String userView() {
+        return "mainpage";
+    }
+
+
+    @GetMapping("/LIST")
+    public String testlist(Model model) {
+        model.addAttribute("PCS", pc_test.findAll());
+        return "test";
     }
 
 
     @GetMapping("/Login_form")
     public String login(Model model) {
-        return "Login_form";
-    }
-
-
-    @GetMapping("/Menu")
-    public String userView() {
-        return "mainpage";
+        return "login";
     }
 
     @GetMapping("/champ")

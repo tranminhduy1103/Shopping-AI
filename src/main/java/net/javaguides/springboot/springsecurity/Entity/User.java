@@ -1,5 +1,7 @@
 package net.javaguides.springboot.springsecurity.Entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -33,7 +35,9 @@ public class User {
 
     @Column(nullable = false)
     private String Phone;
+
     @Column(nullable = false)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private String DateOfBirth;
 
 //    @ManyToMany
@@ -50,6 +54,7 @@ public class User {
         DateOfBirth = dateOfBirth;
         this.roles = roles;
     }
+
 
     public String getPhone() {
         return Phone;
