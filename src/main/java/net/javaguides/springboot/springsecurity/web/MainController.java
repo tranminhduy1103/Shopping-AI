@@ -38,12 +38,12 @@ public class MainController {
 
     @GetMapping("/")
     public String root(Model model) {
-        return "redirect:/Menu  ";
+        return "redirect:/test  ";
     }
 
-    @GetMapping("/khanh")
+    @GetMapping("/test")
     public String test(Model model) {
-        return "khanh";
+        return "test2";
     }
 
     @GetMapping("/Menu")
@@ -83,7 +83,7 @@ public class MainController {
     @RequestMapping(path = {"/add"})
     public String addEmployeeById(Model model, @PathVariable("id") Optional<Long> id) {
         model.addAttribute("user", new User());
-        return "add-member";
+        return "Add_member";
     }
 
     @RequestMapping(path = "/create", method = RequestMethod.POST)
@@ -103,7 +103,7 @@ public class MainController {
     public String listofUser(Model model) {
         List<User> list = userService.getAllUsers();
         model.addAttribute("users", list);
-        return "Manage_member";
+        return "test2";
     }
 
 

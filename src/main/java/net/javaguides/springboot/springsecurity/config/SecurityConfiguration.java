@@ -44,6 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                             "/plugins/**",
                             "/styles/**",
                             "/img/**",
+                            "/fonts/**",
                             "/webjars/**").permitAll();
         http.csrf().requireCsrfProtectionMatcher(new AntPathRequestMatcher("**/Login_form")).and().authorizeRequests()
                 .antMatchers("/Menu").hasAuthority("ROLE_USER")
