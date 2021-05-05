@@ -47,19 +47,19 @@ public class MainController {
     }
 
 //thì để view
-    @GetMapping("/Menu")
-    public String userView() {
-        return "mainpage";
-    }
+    // @GetMapping("/Menu")
+    // public String userView() {
+    //     return "mainpage";
+    // }
 
     // @GetMapping("/Register")
     // public String userView() {
     //     return "Register";
     // }
 
-    @GetMapping("/Product")
+    @GetMapping("/listlaptop")
     public String userView() {
-        return "Product";
+        return "list_laptop";
     }
 
    
