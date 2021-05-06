@@ -12,7 +12,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
 
-    <title>Table #6</title>
+    <title>List of Users</title>
 </head>
 <style type="text/css">
     body {
@@ -93,6 +93,7 @@ h2 {
     .custom-table .box td, .custom-table .box th {
       border: none !important; }
 
+
 </style>
 <body>
 <div class="container my-5" th:switch="${users}">
@@ -108,7 +109,7 @@ h2 {
     <div th:case="*">
         <div class="content">
             <div class="container">
-                <h2 class="mb-5">Table #6</h2>
+                <h2 class="mb-5">List of Users</h2>
                 <div class="table-responsive">
                     <table class="table table-striped custom-table">
                         <thead>
@@ -134,7 +135,7 @@ h2 {
                             <td th:text="${user.email}"></td>
                             <td th:text="${user.Gender}"></td>
                             <td th:text="${user.Phone}"></td>
-                            <td th:text="${#dates.format(user.DateOfBirth, 'dd-MM-yyyy')}"></td>
+                            <td th:text="${#dates.format(new java.util.Date(user.DateOfBirth), 'MM-dd-yyyy')}"></td>
 
                             <td><a class="btn btn-primary">
                                 <i class="fas fa-user-edit ml-2"></i>

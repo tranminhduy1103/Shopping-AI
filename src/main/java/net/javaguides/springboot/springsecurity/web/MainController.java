@@ -38,13 +38,13 @@ public class MainController {
 
     @GetMapping("/")
     public String root(Model model) {
-        return "redirect:/test  ";
+        return "redirect:/listofuser  ";
     }
 
-    @GetMapping("/test")
-    public String test(Model model) {
-        return "test2";
-    }
+//    @GetMapping("/test")
+//    public String test(Model model) {
+//        return "test2";
+//    }
 
     @GetMapping("/Menu")
     public String userView() {
@@ -57,7 +57,6 @@ public class MainController {
         model.addAttribute("PCS", pc_test.findAll());
         return "test";
     }
-
 
     @GetMapping("/Login_form")
     public String login(Model model) {
