@@ -4,17 +4,19 @@
 <head>
     <title>Shop</title>
     <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="OneTech shop project">
+    <meta name="description" content="IU Mall project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
-    <link href="plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-    <link rel="stylesheet" type="text/css" href="plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="styles/shop_styles.css">
-    <link rel="stylesheet" type="text/css" href="styles/shop_responsive.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/bootstrap4/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{plugins/fontawesome-free-5.0.1/css/fontawesome-all.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/OwlCarousel2-2.2.1/owl.theme.default.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/OwlCarousel2-2.2.1/animate.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/shop_styles.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/shop_responsive.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/plugins/jquery-ui-1.12.1.custom/jquery-ui.css}">
+
 
 </head>
 
@@ -347,7 +349,7 @@
         <div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/shop_background.jpg"></div>
         <div class="home_overlay"></div>
         <div class="home_content d-flex flex-column align-items-center justify-content-center">
-            <h2 class="home_title">Smartphones & Tablets</h2>
+            <h2 class="home_title">Laptops</h2>
         </div>
     </div>
 
@@ -363,15 +365,10 @@
                         <div class="sidebar_section">
                             <div class="sidebar_title">Categories</div>
                             <ul class="sidebar_categories">
-                                <li><a href="#">Computers & Laptops</a></li>
-                                <li><a href="#">Cameras & Photos</a></li>
-                                <li><a href="#">Hardware</a></li>
-                                <li><a href="#">Smartphones & Tablets</a></li>
-                                <li><a href="#">TV & Audio</a></li>
-                                <li><a href="#">Gadgets</a></li>
-                                <li><a href="#">Car Electronics</a></li>
-                                <li><a href="#">Video Games & Consoles</a></li>
-                                <li><a href="#">Accessories</a></li>
+                                <li><a href="#">Laptops</a></li>
+                                <li><a href="#">PCs</a></li>
+                                <li><a href="#">Components</a></li>
+
                             </ul>
                         </div>
                         <div class="sidebar_section filter_by_section">
@@ -410,13 +407,12 @@
                             <div class="sidebar_subtitle brands_subtitle">Brands</div>
                             <ul class="brands_list">
                                 <li class="brand"><a href="#">Apple</a></li>
-                                <li class="brand"><a href="#">Beoplay</a></li>
-                                <li class="brand"><a href="#">Google</a></li>
-                                <li class="brand"><a href="#">Meizu</a></li>
-                                <li class="brand"><a href="#">OnePlus</a></li>
-                                <li class="brand"><a href="#">Samsung</a></li>
-                                <li class="brand"><a href="#">Sony</a></li>
-                                <li class="brand"><a href="#">Xiaomi</a></li>
+                                <li class="brand"><a href="#">H&P</a></li>
+                                <li class="brand"><a href="#">DELL</a></li>
+                                <li class="brand"><a href="#">Lenovo</a></li>
+                                <li class="brand"><a href="#">Asus</a></li>
+                                <li class="brand"><a href="#">Acer</a></li>
+
                             </ul>
                         </div>
                     </div>
@@ -928,81 +924,7 @@
         </div>
     </div>
 
-    <!-- Brands -->
 
-    <div class="brands">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="brands_slider_container">
-
-                        <!-- Brands Slider -->
-
-                        <div class="owl-carousel owl-theme brands_slider">
-
-                            <div class="owl-item">
-                                <div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_1.jpg" alt=""></div>
-                            </div>
-                            <div class="owl-item">
-                                <div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_2.jpg" alt=""></div>
-                            </div>
-                            <div class="owl-item">
-                                <div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_3.jpg" alt=""></div>
-                            </div>
-                            <div class="owl-item">
-                                <div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_4.jpg" alt=""></div>
-                            </div>
-                            <div class="owl-item">
-                                <div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_5.jpg" alt=""></div>
-                            </div>
-                            <div class="owl-item">
-                                <div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_6.jpg" alt=""></div>
-                            </div>
-                            <div class="owl-item">
-                                <div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_7.jpg" alt=""></div>
-                            </div>
-                            <div class="owl-item">
-                                <div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_8.jpg" alt=""></div>
-                            </div>
-
-                        </div>
-
-                        <!-- Brands Slider Navigation -->
-                        <div class="brands_nav brands_prev"><i class="fas fa-chevron-left"></i></div>
-                        <div class="brands_nav brands_next"><i class="fas fa-chevron-right"></i></div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Newsletter -->
-
-    <div class="newsletter">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">
-                        <div class="newsletter_title_container">
-                            <div class="newsletter_icon"><img src="images/send.png" alt=""></div>
-                            <div class="newsletter_title">Sign up for Newsletter</div>
-                            <div class="newsletter_text">
-                                <p>...and receive %20 coupon for first shopping.</p>
-                            </div>
-                        </div>
-                        <div class="newsletter_content clearfix">
-                            <form action="#" class="newsletter_form">
-                                <input type="email" class="newsletter_input" required="required" placeholder="Enter your email address">
-                                <button class="newsletter_button">Subscribe</button>
-                            </form>
-                            <div class="newsletter_unsubscribe_link"><a href="#">unsubscribe</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
 
@@ -1013,13 +935,13 @@
                 <div class="col-lg-3 footer_col">
                     <div class="footer_column footer_contact">
                         <div class="logo_container">
-                            <div class="logo"><a href="#">OneTech</a></div>
+                            <div class="logo"><a href="#">IU Mart</a></div>
                         </div>
                         <div class="footer_title">Got Question? Call Us 24/7</div>
-                        <div class="footer_phone">+38 068 005 3570</div>
+                        <div class="footer_phone">0123 456 789</div>
                         <div class="footer_contact_text">
-                            <p>17 Princess Road, London</p>
-                            <p>Grester London NW18JR, UK</p>
+                            <p>International University - VNU</p>
+                            <p>HCM City, Vietnam</p>
                         </div>
                         <div class="footer_social">
                             <ul>
@@ -1037,30 +959,15 @@
                     <div class="footer_column">
                         <div class="footer_title">Find it Fast</div>
                         <ul class="footer_list">
-                            <li><a href="#">Computers & Laptops</a></li>
-                            <li><a href="#">Cameras & Photos</a></li>
-                            <li><a href="#">Hardware</a></li>
-                            <li><a href="#">Smartphones & Tablets</a></li>
-                            <li><a href="#">TV & Audio</a></li>
-                        </ul>
-                        <div class="footer_subtitle">Gadgets</div>
-                        <ul class="footer_list">
-                            <li><a href="#">Car Electronics</a></li>
+                            <li><a href="#">Laptops</a></li>
+                            <li><a href="#">Hi-End Gaming</a></li>
+                            <li><a href="#">Office Devices</a></li>
+                            <li><a href="#">Sound Devices</a></li>
+                            <li><a href="#">Equipments</a></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="col-lg-2">
-                    <div class="footer_column">
-                        <ul class="footer_list footer_list_2">
-                            <li><a href="#">Video Games & Consoles</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">Cameras & Photos</a></li>
-                            <li><a href="#">Hardware</a></li>
-                            <li><a href="#">Computers & Laptops</a></li>
-                        </ul>
-                    </div>
-                </div>
 
                 <div class="col-lg-2">
                     <div class="footer_column">
