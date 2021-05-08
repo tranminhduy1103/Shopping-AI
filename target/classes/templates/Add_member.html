@@ -10,7 +10,7 @@
     <meta content="Colorlib Templates" name="keywords">
 
     <!-- Title Page-->
-    <title>Add new member</title>
+    <title>Au Register Forms by Colorlib</title>
 
     <!-- Icons font CSS-->
     <link media="all" rel="stylesheet" th:href="@{/vendor/mdi-font/css/material-design-iconic-font.min.css}">
@@ -37,7 +37,7 @@
                 <div class="card-body">
                     <h2 class="title">Registration Info</h2>
                     <form method="POST">
-                        <div class="row row-space">
+                        <div class="row row-spqce">
                             <div class="input-group">
                                 <input class="input--style-1" name="firstname" placeholder="First Name"
                                        th:field="*{firstName}" type="text">
@@ -60,9 +60,9 @@
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <select name="gender">
                                             <option disabled="disabled" selected="selected">GENDER</option>
-                                            <option th:field="*{Gender}" value="Male">Male</option>
-                                            <option th:field="*{Gender}" value="Female">Female</option>
-                                            <option th:field="*{Gender}" value="Other">Other</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                            <option>Other</option>
                                         </select>
                                         <div class="select-dropdown"></div>
                                     </div>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="Role">
+                                <select name="class" th:field="*{roles}">
                                     <option disabled="disabled" selected="selected" th:field="*{roles}" value="Role">
                                         Role
                                     </option>
