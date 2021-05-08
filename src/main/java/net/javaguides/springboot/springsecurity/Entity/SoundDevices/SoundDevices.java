@@ -6,6 +6,7 @@ import javax.validation.constraints.NotEmpty;
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "Id"))
 public class SoundDevices {
+
     @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
@@ -31,6 +32,15 @@ public class SoundDevices {
     private String ImageID;
 
     private String Type;
+    private String Image_ID;
+
+    public String getImage_ID() {
+        return Image_ID;
+    }
+
+    public void setImage_ID(String image_ID) {
+        Image_ID = image_ID;
+    }
 
     public SoundDevices() {
     }

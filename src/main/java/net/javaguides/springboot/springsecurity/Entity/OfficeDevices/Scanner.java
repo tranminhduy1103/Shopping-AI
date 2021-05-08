@@ -41,12 +41,6 @@ public class Scanner {
         Connection_gate = connection_gate;
     }
 
-    public String getName() {
-        return this.Name;
-    }
-    public void setName(String Name) {
-        this.Name = Name;
-    }
 
     public String getSub_Office() {
         return this.Sub_Office;

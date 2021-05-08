@@ -26,14 +26,8 @@ public class Equips {
         Feature = feature;
     }
 
-public String getName() {
-	return this.Name;
-}
-public void setName(String Name) {
-	this.Name = Name;
-}
 
-public String getSub_Office() {
+    public String getSub_Office() {
 	return this.Sub_Office;
 }
 public void setSub_Office(String Sub_Office) {
