@@ -32,37 +32,41 @@ public class MainController {
     @Autowired
     FileService fileService;
 
+    @Autowired
+    PCRepository pc_test;
+
 
     @GetMapping("/")
     public String root(Model model) {
+        return "redirect:/listofuser  ";
+    }
 
-        return "redirect:/Menu";
+//    @GetMapping("/test")
+//    public String test(Model model) {
+//        return "test2";
+//    }
 
+    @GetMapping("/Menu")
+    public String userView() {
+        return "mainpage";
     }
 
 
-    @GetMapping("/login")
+    @GetMapping("/LIST")
+    public String testlist(Model model) {
+        model.addAttribute("PCS", pc_test.findAll());
+        return "test";
+    }
+
+    @GetMapping("/Login_form")
     public String login(Model model) {
         return "login";
     }
 
-//thì để view
-    // @GetMapping("/Menu")
-    // public String userView() {
-    //     return "mainpage";
-    // }
-
-    // @GetMapping("/Register")
-    // public String userView() {
-    //     return "Register";
-    // }
-
-    @GetMapping("/listlaptop")
-    public String userView() {
-        return "list_laptop";
+    @GetMapping("/champ")
+    public String champView() {
+        return "champ";
     }
-
-   
 
     @RequestMapping("/403")
     public String accessDenied() {
@@ -74,10 +78,11 @@ public class MainController {
         return "/Admin-page";
     }
 
+
     @RequestMapping(path = {"/add"})
     public String addEmployeeById(Model model, @PathVariable("id") Optional<Long> id) {
         model.addAttribute("user", new User());
-        return "add-member";
+        return "Add_member";
     }
 
     @RequestMapping(path = "/create", method = RequestMethod.POST)
@@ -97,7 +102,7 @@ public class MainController {
     public String listofUser(Model model) {
         List<User> list = userService.getAllUsers();
         model.addAttribute("users", list);
-        return "Manage_member";
+        return "test2";
     }
 
 

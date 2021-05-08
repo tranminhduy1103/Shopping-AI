@@ -44,13 +44,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                             "/plugins/**",
                             "/styles/**",
                             "/img/**",
+                            "/fonts/**",
                             "/webjars/**").permitAll();
         http.csrf().requireCsrfProtectionMatcher(new AntPathRequestMatcher("**/Login_form")).and().authorizeRequests()
                 .antMatchers("/Menu").hasAuthority("ROLE_USER")
                 .antMatchers("/adminview").hasAuthority("ROLE_ADMIN")
-                // .antMatchers("/supplierview").hasAuthority("ROLE_SUPPLIER")
+                .antMatchers("/supplierview").hasAuthority("ROLE_SUPPLIER")
 
-                .and().formLogin().loginPage("/Login_form").loginProcessingUrl("/Login_form").successHandler(successHandler)
+                .and().formLogin().loginPage("/login").loginProcessingUrl("/Login_form").successHandler(successHandler)
 
 
                 .and()

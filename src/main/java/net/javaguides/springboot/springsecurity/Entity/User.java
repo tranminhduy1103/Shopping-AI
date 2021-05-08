@@ -1,5 +1,7 @@
 package net.javaguides.springboot.springsecurity.Entity;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -33,23 +35,34 @@ public class User {
 
     @Column(nullable = false)
     private String Phone;
+    private String Gender;
+
     @Column(nullable = false)
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private String DateOfBirth;
 
-//    @ManyToMany
-//    private Set<Role> roles;
-
-
-    public User(Long id, @NotEmpty @Size(min = 2, max = 32, message = "Name must be between 2 and 32 characters long") String firstName, @NotEmpty String lastName, @NotEmpty String email, @NotEmpty String password, String phone, String dateOfBirth, Collection<Role> roles) {
+    public User(Long id, String firstName, String lastName, String email, String password, String phone, String gender, String dateOfBirth, Collection<Role> roles) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         Phone = phone;
+        Gender = gender;
         DateOfBirth = dateOfBirth;
         this.roles = roles;
     }
+
+    public String getGender() {
+        return Gender;
+    }
+
+    public void setGender(String gender) {
+        Gender = gender;
+    }
+    //    @ManyToMany
+//    private Set<Role> roles;
+
 
     public String getPhone() {
         return Phone;
