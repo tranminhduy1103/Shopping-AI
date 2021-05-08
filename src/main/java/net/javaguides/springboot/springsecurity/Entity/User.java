@@ -33,10 +33,13 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @NotEmpty
     @Column(nullable = false)
     private String Phone;
+
     private String Gender;
 
+    @NotEmpty
     @Column(nullable = false)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private String DateOfBirth;
