@@ -38,13 +38,13 @@ public class MainController {
 
     @GetMapping("/")
     public String root(Model model) {
-        return "redirect:/listofuser  ";
+        return "redirect:/test";
     }
 
-//    @GetMapping("/test")
-//    public String test(Model model) {
-//        return "test2";
-//    }
+    @GetMapping("/test")
+    public String test(Model model) {
+        return "list_laptop";
+    }
 
     @GetMapping("/Menu")
     public String userView() {
