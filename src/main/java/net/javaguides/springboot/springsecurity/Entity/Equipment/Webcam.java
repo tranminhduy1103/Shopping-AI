@@ -3,12 +3,11 @@ package net.javaguides.springboot.springsecurity.Entity.Equipment;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-public class webcam {
-	
-	@javax.persistence.Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
+public class Webcam {
 
+    @javax.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
 
 
     private String Sub_Name;
@@ -21,26 +20,27 @@ public class webcam {
 
     private String Connection_Gate;
 
-  
+
     private String Resolution;
     private String Quantities;
     private String Size;
-    
+
     private String Weight;
     private String Feature;
-    
-    public webcam() {}
-    
-    public webcam(Long id, String resolution, String sub_Name, String color, String size, String fps,
-    		String operatingSystem, String feature, String range, String connection_Gate ,String quantities) {
-    	Id = id;
+
+    public Webcam() {
+    }
+
+    public Webcam(Long id, String resolution, String sub_Name, String color, String size, String fps,
+                  String operatingSystem, String feature, String range, String connection_Gate, String quantities) {
+        Id = id;
         Sub_Name = sub_Name;
         Resolution = resolution;
-    
+
         Color = color;
         OperatingSystem = operatingSystem;
         FPS = fps;
-      
+
         Connection_Gate = connection_Gate;
        
         Weight = range;

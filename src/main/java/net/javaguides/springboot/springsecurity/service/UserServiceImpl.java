@@ -79,8 +79,8 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    public User create(User user) {
 
+    public User create(User user) {
         User newEntity = user;
         newEntity.setEmail(user.getEmail());
         newEntity.setFirstName(user.getFirstName());
@@ -91,7 +91,6 @@ public class UserServiceImpl implements UserService {
         newEntity.setDateOfBirth(user.getDateOfBirth());
         newEntity.setRoles(user.getRoles());
         newEntity = userRepository.save(newEntity);
-
         return newEntity;
     }
 

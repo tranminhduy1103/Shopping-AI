@@ -137,13 +137,13 @@ h2 {
                             <td th:text="${user.Phone}"></td>
                             <td th:text="${#dates.format(new java.util.Date(user.DateOfBirth), 'MM-dd-yyyy')}"></td>
 
-                            <td><a class="btn btn-primary">
+                            <td><a class="btn btn-primary" th:href="@{/edit/{id}(id=${user.id})}">
                                 <i class="fas fa-user-edit ml-2"></i>
                             </a>
                             </td>
 
                             <td>
-                                <a class="btn btn-primary">
+                                <a class="btn btn-primary" th:href="@{/delete/{id}(id=${user.id})}">
                                     <i class="fas fa-user-times ml-2"></i>
                                 </a>
                             </td>

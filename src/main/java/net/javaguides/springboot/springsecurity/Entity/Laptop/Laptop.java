@@ -1,13 +1,17 @@
 package net.javaguides.springboot.springsecurity.Entity.Laptop;
 
-import javax.persistence.Column;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
+@Entity
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = "Id"))
+
 public class Laptop {
-	//Laptop(Id,Name,Price,Supplier,cpu,Screen,RAM,Graphics,Storage,Operating_System,Cell,Weight,
-	//Description, `Guarantee-info`, color, `Other-info`, ImageID,Type)
-	
-	private Long id;
+    //Laptop(Id,Name,Price,Supplier,cpu,Screen,RAM,Graphics,Storage,Operating_System,Cell,Weight,
+    //Description, `Guarantee-info`, color, `Other-info`, ImageID,Type)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @NotEmpty
     @Column(nullable = false)
@@ -70,11 +74,48 @@ public class Laptop {
     @NotEmpty
     @Column(nullable = false)
     private String Type;
-    
+
+    private String Description;
+
     public Laptop() {
     }
 
-    ;
+    public Laptop(Long id, String name, String price, String supplier, String CPU, String screen, String RAM, String graphics, String storage, String operating_System, String cell, String weight, String guarantee_info, String color, String other_info, String imageID, String type, String description) {
+        this.id = id;
+        Name = name;
+        Price = price;
+        Supplier = supplier;
+        this.CPU = CPU;
+        Screen = screen;
+        this.RAM = RAM;
+        Graphics = graphics;
+        Storage = storage;
+        Operating_System = operating_System;
+        Cell = cell;
+        Weight = weight;
+        Guarantee_info = guarantee_info;
+        Color = color;
+        Other_info = other_info;
+        ImageID = imageID;
+        Type = type;
+        Description = description;
+    }
+
+    public String getSupplier() {
+        return Supplier;
+    }
+
+    public void setSupplier(String supplier) {
+        Supplier = supplier;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
+    }
 
     public Long getId() {
         return id;
@@ -187,7 +228,7 @@ public class Laptop {
     public void setColor(String color) {
         Color = color;
     }
-    
+
     public String getImageID() {
         return ImageID;
     }
@@ -211,8 +252,6 @@ public class Laptop {
     public void setOther_info(String other_info) {
         Other_info = other_info;
     }
-
-    
 
 
 }
