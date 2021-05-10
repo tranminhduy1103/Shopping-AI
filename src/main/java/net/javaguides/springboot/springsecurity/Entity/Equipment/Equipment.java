@@ -3,17 +3,17 @@ package net.javaguides.springboot.springsecurity.Entity.Equipment;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-public class equipment {
-	
+public class Equipment {
+
 	@javax.persistence.Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long Id;
 
 
-    private String Name;
+	private String Name;
 
 
-    private String Price;
+	private String Price;
 
 
     private String Sub_Name;
@@ -30,19 +30,19 @@ public class equipment {
     private String Type;
 
 
-    public equipment() {
-    }
+	public Equipment() {
+	}
 
-    public equipment(Long id, String name, String price, String sub_Name, String supplier, String guarantee_info, String image_ID, String type) {
-        Id = id;
-        Name = name;
-        Price = price;
-        Sub_Name = sub_Name;
-        Supplier = supplier;
-        Guarantee_info = guarantee_info;
-        
-        Image_ID = image_ID;
-        Type = type;
+	public Equipment(Long id, String name, String price, String sub_Name, String supplier, String guarantee_info, String image_ID, String type) {
+		Id = id;
+		Name = name;
+		Price = price;
+		Sub_Name = sub_Name;
+		Supplier = supplier;
+		Guarantee_info = guarantee_info;
+
+		Image_ID = image_ID;
+		Type = type;
      
     }
 

@@ -3,19 +3,18 @@ package net.javaguides.springboot.springsecurity.Entity.Hi_EndGaming;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-public class keyboard {
-	
-	@javax.persistence.Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
+public class Pads {
 
+    @javax.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
 
 
     private String Sub_Name;
 
     private String Color;
 
-    private String Size;
+    private String OperatingSystem;
 
     private String Connection_Way;
 
@@ -24,21 +23,22 @@ public class keyboard {
   
     private String Quantities;
     
-    private String KeyBoard_Type;
-    
-    public keyboard() {}
-    
-    public keyboard(Long id, String sub_Name, String color, String size, String connection_Way, String keyboard_Type, String connection_Gate ,String quantities) {
-    	Id = id;
+    private String Range;
+
+    public Pads() {
+    }
+
+    public Pads(Long id, String sub_Name, String color, String operatingSystem, String connection_Way, String range, String connection_Gate, String quantities) {
+        Id = id;
         Sub_Name = sub_Name;
-    
+
         Color = color;
-        Size = size;
+        OperatingSystem = operatingSystem;
         Connection_Way = connection_Way;
-      
+
         Connection_Gate = connection_Gate;
-       
-        KeyBoard_Type = keyboard_Type;
+
+        Range = range;
        
         Quantities = quantities;
     }
@@ -67,12 +67,12 @@ public class keyboard {
 		Color = color;
 	}
 
-	public String getSize() {
-		return Size;
+	public String getOperatingSystem() {
+		return OperatingSystem;
 	}
 
-	public void setSize(String size) {
-		Size = size;
+	public void setOperatingSystem(String operatingSystem) {
+		OperatingSystem = operatingSystem;
 	}
 
 	public String getConnection_Way() {
@@ -99,17 +99,11 @@ public class keyboard {
 		Quantities = quantities;
 	}
 
-	public String getKeyBoard_Type() {
-		return KeyBoard_Type;
+	public String getRange() {
+		return Range;
 	}
 
-	public void setKeyBoard_Type(String keyBoard_Type) {
-		KeyBoard_Type = keyBoard_Type;
+	public void setRange(String range) {
+		Range = range;
 	}
-    
-  
-    
-
 }
-
-

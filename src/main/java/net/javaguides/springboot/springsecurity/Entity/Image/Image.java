@@ -19,6 +19,9 @@ public class Image {
     private String Image6;
     private String Image7;
 
+    public Image() {
+    }
+
     public Image(Long id, String type, String imageID, String image1, String image2, String image3, String image4, String image5, String image6, String image7) {
         Id = id;
         Type = type;

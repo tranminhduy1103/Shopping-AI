@@ -3,12 +3,11 @@ package net.javaguides.springboot.springsecurity.Entity.Hi_EndGaming;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-public class mouse {
-	
-	@javax.persistence.Id
+public class Mouse {
+
+    @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-
 
 
     private String Sub_Name;
@@ -25,19 +24,20 @@ public class mouse {
     private String Quantities;
     
     private String Sensor_Type;
-    
-    mouse() {}
-    
-    public mouse(Long id, String sub_Name, String color, String resolution, String connection_Way, String sensor_Type, String connection_Gate ,String quantities) {
+
+    Mouse() {
+    }
+
+    public Mouse(Long id, String sub_Name, String color, String resolution, String connection_Way, String sensor_Type, String connection_Gate, String quantities) {
         Id = id;
         Sub_Name = sub_Name;
-    
+
         Color = color;
         Resolution = resolution;
         Connection_Way = connection_Way;
-      
+
         Connection_Gate = connection_Gate;
-       
+
         Sensor_Type = sensor_Type;
        
         Quantities = quantities;

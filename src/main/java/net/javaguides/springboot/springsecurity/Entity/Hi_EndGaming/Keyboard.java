@@ -3,19 +3,18 @@ package net.javaguides.springboot.springsecurity.Entity.Hi_EndGaming;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-public class pads {
-	
-	@javax.persistence.Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
+public class Keyboard {
 
+    @javax.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long Id;
 
 
     private String Sub_Name;
 
     private String Color;
 
-    private String OperatingSystem;
+    private String Size;
 
     private String Connection_Way;
 
@@ -24,21 +23,22 @@ public class pads {
   
     private String Quantities;
     
-    private String Range;
-    
-    public pads() {}
-    
-    public pads(Long id, String sub_Name, String color, String operatingSystem, String connection_Way, String range, String connection_Gate ,String quantities) {
-    	Id = id;
+    private String KeyBoard_Type;
+
+    public Keyboard() {
+    }
+
+    public Keyboard(Long id, String sub_Name, String color, String size, String connection_Way, String keyboard_Type, String connection_Gate, String quantities) {
+        Id = id;
         Sub_Name = sub_Name;
-    
+
         Color = color;
-        OperatingSystem = operatingSystem;
+        Size = size;
         Connection_Way = connection_Way;
-      
+
         Connection_Gate = connection_Gate;
-       
-        Range = range;
+
+        KeyBoard_Type = keyboard_Type;
        
         Quantities = quantities;
     }
@@ -67,12 +67,12 @@ public class pads {
 		Color = color;
 	}
 
-	public String getOperatingSystem() {
-		return OperatingSystem;
+	public String getSize() {
+		return Size;
 	}
 
-	public void setOperatingSystem(String operatingSystem) {
-		OperatingSystem = operatingSystem;
+	public void setSize(String size) {
+		Size = size;
 	}
 
 	public String getConnection_Way() {
@@ -99,11 +99,17 @@ public class pads {
 		Quantities = quantities;
 	}
 
-	public String getRange() {
-		return Range;
+	public String getKeyBoard_Type() {
+		return KeyBoard_Type;
 	}
 
-	public void setRange(String range) {
-		Range = range;
+	public void setKeyBoard_Type(String keyBoard_Type) {
+		KeyBoard_Type = keyBoard_Type;
 	}
+    
+  
+    
+
 }
+
+

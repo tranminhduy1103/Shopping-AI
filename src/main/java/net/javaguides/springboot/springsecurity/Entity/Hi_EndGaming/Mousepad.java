@@ -3,12 +3,11 @@ package net.javaguides.springboot.springsecurity.Entity.Hi_EndGaming;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-public class mousepad {
-	
-	@javax.persistence.Id
+public class Mousepad {
+
+    @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-
 
 
     private String Sub_Name;
@@ -25,19 +24,20 @@ public class mousepad {
     private String Quantities;
     
     private String Series;
-    
-    public mousepad() {}
-    
-    public mousepad(Long id, String sub_Name, String color, String material, String size, String series, String size_Type ,String quantities) {
+
+    public Mousepad() {
+    }
+
+    public Mousepad(Long id, String sub_Name, String color, String material, String size, String series, String size_Type, String quantities) {
         Id = id;
         Sub_Name = sub_Name;
-    
+
         Color = color;
         Material = material;
         Size = size;
-      
+
         Size_Type = size_Type;
-       
+
         Series = series;
        
         Quantities = quantities;
