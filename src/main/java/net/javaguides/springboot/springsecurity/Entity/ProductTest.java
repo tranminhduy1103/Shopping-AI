@@ -16,7 +16,7 @@ public class ProductTest {
     private String Name;
 
     @Column(nullable = false)
-    private int Price;
+    private float Price;
 
     @NotEmpty
     @Column(nullable = false)
@@ -47,7 +47,7 @@ public class ProductTest {
         Name = name;
     }
 
-    public int getPrice() {
+    public float getPrice() {
         return Price;
     }
 

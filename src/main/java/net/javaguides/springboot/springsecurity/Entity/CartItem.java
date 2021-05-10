@@ -8,11 +8,11 @@ import javax.persistence.*;
 public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn( name = "PC_id")
-    private PCs pcs;
+    private ProductTest product;
 
     @ManyToOne
     @JoinColumn(name = "User_id")
@@ -20,13 +20,13 @@ public class CartItem {
 
     private int quantity;
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public void setPcs(PCs pcs) {
-        this.pcs = pcs;
-    }
+//    public void setPcs(PCs pcs) {
+//        this.pcs = pcs;
+//    }
 
     public void setUser(User user) {
         this.user = user;
@@ -36,13 +36,13 @@ public class CartItem {
         this.quantity = quantity;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public PCs getPcs() {
-        return pcs;
-    }
+//    public PCs getPcs() {
+//        return pcs;
+//    }
 
     public User getUser() {
         return user;
@@ -50,5 +50,18 @@ public class CartItem {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public void setProduct(ProductTest product) {
+        this.product = product;
+    }
+
+    public ProductTest getProduct() {
+        return product;
+    }
+
+    @Transient
+    public float getSubtotal(){
+        return this.product.getPrice() * quantity;
     }
 }

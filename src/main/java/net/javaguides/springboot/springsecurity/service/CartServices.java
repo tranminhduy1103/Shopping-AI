@@ -1,10 +1,10 @@
 package net.javaguides.springboot.springsecurity.service;
 
 import net.javaguides.springboot.springsecurity.Entity.CartItem;
-import net.javaguides.springboot.springsecurity.Entity.PCs;
+import net.javaguides.springboot.springsecurity.Entity.ProductTest;
 import net.javaguides.springboot.springsecurity.Entity.User;
 import net.javaguides.springboot.springsecurity.repository.CartRepository;
-import net.javaguides.springboot.springsecurity.repository.PcsRepository;
+import net.javaguides.springboot.springsecurity.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,19 +17,35 @@ public class CartServices {
     private CartRepository cartRepo;
 
     @Autowired
-    private PcsRepository pcsRepo;
+    private ProductRepository proRepo;
 
     public List<CartItem> listCartItems(User user){
         return cartRepo.findByUser(user);
     }
 
-    public Integer addProduct(Long pcId, Integer num, User user){
-        PCs newpc = pcsRepo.findById(pcId).get();
-        CartItem cart = new CartItem();
-        cart.setUser(user);
-        cart.setQuantity(num);
-        cart.setPcs(newpc);
-        return num;
+    public Integer addProduct(Long productId, User user, Integer quantity){
+        Integer addedNum = quantity;
+
+        ProductTest product = proRepo.findById(productId).get();
+
+        CartItem cart = cartRepo.findByUserAndProduct(user, product);
+
+        if (cart != null) {
+            addedNum = cart.getQuantity() + quantity;
+            cart.setQuantity(addedNum);
+        } else{
+            cart = new CartItem();
+            cart.setUser(user);
+            cart.setQuantity(quantity);
+            cart.setProduct(product);
+            return quantity;
+        }
+        return addedNum;
+    }
+
+    public void removeProduct(Long productId, Long userId){
+        cartRepo.deleteByUserAndProduct(userId, productId);
+
     }
 
 }

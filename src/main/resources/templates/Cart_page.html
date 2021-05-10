@@ -1,4 +1,5 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"
+      xmlns="http://www.w3.org/1999/html">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <html xmlns:th="http://www.thymeleaf.org">
@@ -13,7 +14,7 @@
                     <th>Product</th>
                     <th>Quantity</th>
                     <th class="text-center">Price</th>
-                    <th class="text-center">Total</th>
+                    <th class="text-center">Subtotal</th>
                     <th> </th>
                 </tr>
                 </thead>
@@ -33,35 +34,35 @@
                         <td class="col-sm-1 col-md-1" style="text-align: center">
                             <input type="email" class="form-control" id="exampleInputEmail1" th:value="${item.quantity}">
                         </td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong th:text="${product.Price}">..</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong th:text="${product.Price}">price</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong th:text="${item.getSubtotal()}">Subtotal</strong></td>
                         <td class="col-sm-1 col-md-1">
                             <button type="button" class="btn btn-danger">
-                                <span class="glyphicon glyphicon-remove"></span> Remove
+                                <span class="glyphicon glyphicon-remove"></span> Delete
                             </button></td>
                         </div>
                     </tr>
                 </th:block>
-                <tr>
-                    <td>   </td>
-                    <td>   </td>
-                    <td>   </td>
-                    <td><h5>Subtotal</h5></td>
-                    <td class="text-right"><h5><strong>$24.59</strong></h5></td>
-                </tr>
-                <tr>
-                    <td>   </td>
-                    <td>   </td>
-                    <td>   </td>
-                    <td><h5>Estimated shipping</h5></td>
-                    <td class="text-right"><h5><strong>$6.94</strong></h5></td>
-                </tr>
+<!--                <tr>-->
+<!--                    <td>   </td>-->
+<!--                    <td>   </td>-->
+<!--                    <td>   </td>-->
+<!--                    <td><h5><b>Total</b></h5></td>-->
+<!--                    <td class="text-right"><h5><strong th:text="${Total}">Total</strong></h5></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>   </td>-->
+<!--                    <td>   </td>-->
+<!--                    <td>   </td>-->
+<!--                    <td><h5>Estimated shipping</h5></td>-->
+<!--                    <td class="text-right"><h5><strong>$6.94</strong></h5></td>-->
+<!--                </tr>-->
                 <tr>
                     <td>   </td>
                     <td>   </td>
                     <td>   </td>
                     <td><h3>Total</h3></td>
-                    <td class="text-right"><h3><strong>$31.53</strong></h3></td>
+                    <td class="text-right"><h3><strong th:text="${Total}">Total</strong></h3></td>
                 </tr>
                 <tr>
                     <td>   </td>
