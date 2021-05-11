@@ -112,9 +112,7 @@ public class MainController {
     }
 
 
-    /**
-     * CRUD User
-     */
+    /*** CRUD User*/
     @RequestMapping(path = {"/add"})
     public String addEmployeeById(Model model, @PathVariable("id") Optional<Long> id) {
         model.addAttribute("user", new User());
@@ -147,6 +145,18 @@ public class MainController {
             throws RecordNotFoundException {
         userService.deleteUserById(id);
         return "redirect:/";
+    }
+
+    @RequestMapping(path = {"/edit", "/edit/{id}"})
+    public String editUserById(Model model, @PathVariable("id") Optional<Long> id)
+            throws RecordNotFoundException {
+        if (id.isPresent()) {
+            User entity = userService.getUserById(id.get());
+            model.addAttribute("user", entity);
+        } else {
+            model.addAttribute("user", new User());
+        }
+        return "Edit_member";
     }
 
 
