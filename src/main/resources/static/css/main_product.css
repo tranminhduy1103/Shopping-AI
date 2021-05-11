@@ -22343,10 +22343,9 @@ input[type="number"] {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    min-height: 50px;
+    min-height: 0px;
     font-size: 13px;
     font-weight: 600;
-    padding: 0 50px;
     border-radius: 3px;
     text-transform: uppercase;
     line-height: 1;
@@ -27641,7 +27640,7 @@ input[type="number"] {
 
 @media (min-width: 768px) {
     .shop-toolbar {
-        padding: 2.5px 20px;
+        padding: 2.5px 300px;
     }
 }
 
