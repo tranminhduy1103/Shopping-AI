@@ -18,16 +18,16 @@ public class CartRestController {
     @PostMapping("/cart/add/{pid}/{qty}")
     public String addProductToCart(@PathVariable("pid") Long pcId,
     @PathVariable("qty") Integer quantity){
-        //User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        //Integer addednum = cartService.addProduct(pcId, user, quantity);
+//        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        Integer addednum = cartService.addProduct(pcId, user, quantity);
         return "added";
     }
-    @PostMapping("/cart/remove/{id}")
-    public String removeProductFromCart(Long productId){
+//    @PostMapping("/cart/remove/{id}")
+//    public String removeProductFromCart(@PathVariable("id") Long id){
 //        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//        cartService.removeProduct(productId,user.getId());
-        return "deleted";
-    }
+//        cartService.removeProduct(id,user.getId());
+//        return "redirect:../../cart";
+//    }
 
 
 }

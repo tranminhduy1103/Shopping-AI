@@ -48,4 +48,12 @@ public class CartServices {
 
     }
 
+//    public float updateQuantity(Long productId, int quantity, Long userId){
+//        cartRepo.updateQuantity(quantity, productId, userId);
+//        ProductTest product = proRepo.findById(productId).get();
+//
+//        float subtotal = product.getPrice()*quantity;
+//        return subtotal;
+//    }
+
 }

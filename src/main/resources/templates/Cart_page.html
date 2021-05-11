@@ -32,14 +32,14 @@
                                 </div>
                             </div></td>
                         <td class="col-sm-1 col-md-1" style="text-align: center">
-                            <input type="email" class="form-control" id="exampleInputEmail1" th:value="${item.quantity}">
+                            <input type="number" th:value="${item.quantity}" name="quantity" style="width: 50px;">
                         </td>
                         <td class="col-sm-1 col-md-1 text-center"><strong th:text="${product.Price}">price</strong></td>
                         <td class="col-sm-1 col-md-1 text-center"><strong th:text="${item.getSubtotal()}">Subtotal</strong></td>
                         <td class="col-sm-1 col-md-1">
                             <button type="button" class="btn btn-danger">
-                                <span class="glyphicon glyphicon-remove"></span> Delete
-                            </button></td>
+                                <span class="glyphicon glyphicon-remove"></span><a th:href="${'/cart/remove/' + product.id}"> Remove
+                            </a></button></td>
                         </div>
                     </tr>
                 </th:block>
@@ -68,13 +68,26 @@
                     <td>   </td>
                     <td>   </td>
                     <td>   </td>
+                    <td><h5></h5></td>
+                    <td><h5>
+                        <button type="button" class="btn btn-primary">
+                            Update <span class="glyphicon glyphicon-refresh"></span>
+                        </button>
+                    </h5></td>
+                </tr>
+                <tr>
+                    <td>   </td>
+                    <td>   </td>
+                    <td>   </td>
                     <td>
                         <button type="button" class="btn btn-default">
                             <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
                         </button></td>
                     <td>
                         <button type="button" class="btn btn-success">
-                            Checkout <span class="glyphicon glyphicon-play"></span>
+                            <a th:href="${'/checkout'}" style="color:white;">
+                                Checkout <span class="glyphicon glyphicon-play"></span>
+                            </a>
                         </button></td>
                 </tr>
                 </tbody>
