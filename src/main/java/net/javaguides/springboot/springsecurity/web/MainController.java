@@ -75,7 +75,7 @@ public class MainController {
 
     @GetMapping("/detail")
     public String Product_Detail(Model model) {
-        return "product";
+        return "laptopDetail";
     }
 
 
