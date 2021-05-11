@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link href="fonts/icomoon/style.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <title>List of Users</title>
+</head>
+<style type="text/css">
+    body {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  background-color: #3c373e;
+  font-weight: 300; }
+
+p {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300; }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
+
+a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease; }
+  a, a:hover {
+    text-decoration: none !important; }
+
+.content {
+  padding: 7rem 0; }
+
+h2 {
+  font-size: 20px;
+  color: #fff; }
+
+.custom-table {
+  min-width: 900px; }
+  .custom-table thead tr, .custom-table thead th {
+    padding-bottom: 30px;
+    border-top: none;
+    border-bottom: none !important;
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .2rem; }
+  .custom-table tbody th, .custom-table tbody td {
+    color: #777;
+    font-weight: 400;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-weight: 300;
+    border: none;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; }
+    .custom-table tbody th small, .custom-table tbody td small {
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: 300; }
+    .custom-table tbody th a, .custom-table tbody td a {
+      color: rgba(255, 255, 255, 0.3); }
+    .custom-table tbody th .more, .custom-table tbody td .more {
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .2rem; }
+  .custom-table tbody tr {
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; }
+    .custom-table tbody tr:hover td, .custom-table tbody tr:focus td {
+      color: #fff; }
+      .custom-table tbody tr:hover td a, .custom-table tbody tr:focus td a {
+        color: #fdd114; }
+      .custom-table tbody tr:hover td .more, .custom-table tbody tr:focus td .more {
+        color: #fdd114; }
+  .custom-table .td-box-wrap {
+    padding: 0; }
+  .custom-table .box {
+    background: #fff;
+    border-radius: 4px;
+    margin-top: 15px;
+    margin-bottom: 15px; }
+    .custom-table .box td, .custom-table .box th {
+      border: none !important; }
+
+
+</style>
+<body>
+<div class="container my-5" th:switch="${users}">
+
+    <p class="my-5">
+        <a class="btn btn-primary" href="/add">
+            <i class="fas fa-user-plus ml-2"> Add New User </i></a>
+    </p>
+    <a class="btn btn-primary" href="/adminview">
+        <i class="fas fa-home ml-2"> Back to Admin Page </i></a>
+
+    <h2 th:case="null">No record found !!</h2>
+    <div th:case="*">
+        <div class="content">
+            <div class="container">
+                <h2 class="mb-5">List of Users</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Order</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Date of Birth</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr scope="row" th:each="user : ${users}">
+                            <td th:text="${user.Id}">
+                            </td>
+                            <td th:text="${user.firstName}"><a href="#"></a></td>
+                            <td th:text="${user.lastName}"><a href="#"></a></td>
+
+                            <td th:text="${user.email}"></td>
+                            <td th:text="${user.Gender}"></td>
+                            <td th:text="${user.Phone}"></td>
+                            <td th:text="${#dates.format(new java.util.Date(user.DateOfBirth), 'MM-dd-yyyy')}"></td>
+
+                            <td><a class="btn btn-primary" th:href="@{/edit/{id}(id=${user.id})}">
+                                <i class="fas fa-user-edit ml-2"></i>
+                            </a>
+                            </td>
+
+                            <td>
+                                <a class="btn btn-primary" th:href="@{/delete/{id}(id=${user.id})}">
+                                    <i class="fas fa-user-times ml-2"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+

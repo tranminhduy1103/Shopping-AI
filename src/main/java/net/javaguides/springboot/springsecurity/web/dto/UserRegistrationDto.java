@@ -8,6 +8,7 @@ import javax.validation.constraints.Size;
 
 import com.sun.istack.NotNull;
 import net.javaguides.springboot.springsecurity.constraint.FieldMatch;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**This class is used as a form of registration( for register function)**/
 
@@ -26,6 +27,18 @@ public class UserRegistrationDto {
     @NotNull
     @NotEmpty
     private String lastName;
+
+    @NotNull
+    @NotEmpty
+    private String Phone;
+
+    @NotNull
+    @NotEmpty
+    private String Gender;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @NotNull
+    @NotEmpty
+    private String DateOfBirth;
 
 
     @NotNull
@@ -48,6 +61,30 @@ public class UserRegistrationDto {
 
     @AssertTrue
     private Boolean terms;
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String phone) {
+        Phone = phone;
+    }
+
+    public String getGender() {
+        return Gender;
+    }
+
+    public void setGender(String gender) {
+        Gender = gender;
+    }
+
+    public String getDateOfBirth() {
+        return DateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        DateOfBirth = dateOfBirth;
+    }
 
     public String getFirstName() {
         return firstName;
