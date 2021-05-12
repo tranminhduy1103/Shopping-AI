@@ -1,5 +1,6 @@
 package net.javaguides.springboot.springsecurity.service;
 
+import net.javaguides.springboot.springsecurity.Exception.RecordNotFoundException;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import net.javaguides.springboot.springsecurity.Entity.User;
@@ -11,4 +12,6 @@ public interface UserService extends UserDetailsService {
 
 
     User save(UserRegistrationDto registration);
+
+    User getUserById(Long uid) throws RecordNotFoundException;
 }

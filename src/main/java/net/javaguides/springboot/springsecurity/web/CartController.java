@@ -1,5 +1,7 @@
 package net.javaguides.springboot.springsecurity.web;
 
+import net.javaguides.springboot.springsecurity.Entity.CartItem;
+import net.javaguides.springboot.springsecurity.Entity.User;
 import net.javaguides.springboot.springsecurity.Exception.RecordNotFoundException;
 import net.javaguides.springboot.springsecurity.service.CartServices;
 import net.javaguides.springboot.springsecurity.service.UserService;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class CartController {
@@ -45,14 +48,19 @@ public class CartController {
         }
     }
 
-    @GetMapping("/cart")
-    public String showShoppingCart(Model model) {
+    @GetMapping("/{uid}/cart")
+    public String showShoppingCart(Model model, @PathVariable("uid") Long uid) throws RecordNotFoundException{
 
         //User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userService.getUserById(uid);
+        List<CartItem> cart = cartServices.listCartItems(user);
+        float total = 0.0f;
+        for (CartItem item : cart) {
+            total += item.getSubtotal();
+        }
+        model.addAttribute("cartItems", cart);
 
-        model.addAttribute("cartItems", cartItems);
-
-        model.addAttribute("Total", Total);
+        model.addAttribute("Total", total);
 
         return "Cart_page";
     }
@@ -201,8 +209,6 @@ class Cart{
 
     private int quantity;
 
-    private float Subtotal;
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -225,7 +231,6 @@ class Cart{
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-        updateSubtotal();
     }
 
     public Long getId() {
@@ -236,17 +241,14 @@ class Cart{
         return quantity;
     }
 
-    public void updateSubtotal(){
-        Subtotal = this.product.getPrice() * quantity;
+    public float getSubtotal(){
+        return this.product.getPrice() * quantity;
     }
-
-    public float getSubtotal(){ return Subtotal; }
 
     public Cart(Long id, Product product, Customer customer, int quantity) {
         this.id = id;
         this.product = product;
         this.customer = customer;
         this.quantity = quantity;
-        this.Subtotal = product.getPrice() * quantity;
     }
 }

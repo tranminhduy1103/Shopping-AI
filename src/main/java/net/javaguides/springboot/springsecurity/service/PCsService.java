@@ -1,6 +1,6 @@
 package net.javaguides.springboot.springsecurity.service;
 
-import net.javaguides.springboot.springsecurity.Entity.PCs;
+import net.javaguides.springboot.springsecurity.Entity.PCs.PCs;
 import net.javaguides.springboot.springsecurity.repository.PcsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
