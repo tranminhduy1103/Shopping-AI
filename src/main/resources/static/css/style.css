@@ -414,7 +414,7 @@ figure {
 .form-group {
     position: relative;
     margin-bottom: 25px;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .form-group:last-child {
@@ -423,7 +423,7 @@ figure {
 
 input {
     width: 100%;
-    display: block;
+    display: inline-block;
     border: none;
     border-bottom: 1px solid #999;
     padding: 6px 30px;
@@ -472,7 +472,7 @@ input[type=checkbox]:not(old) {
     margin: 0;
     padding: 0;
     font-size: 1em;
-    display: none;
+    display: inline;
 }
 
 input[type=checkbox]:not(old)+label {
