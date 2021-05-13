@@ -86,7 +86,7 @@
                                 <div class="top_bar_user">
                                     <div class="user_icon"><img alt="" src="/images/user.svg"></div>
                                     <div><a href="/Register">Register</a></div>
-                                    <div><a href="/login">Sign in</a></div>
+                                    <div><a href="/Login_form">Sign in</a></div>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                         <!-- Logo -->
                         <div class="col-lg-2 col-sm-3 col-3 order-1">
                             <div class="logo_container">
-                                <div class="logo"><a href="#">IU MALL</a></div>
+                                <div class="logo"><a href="/Menu">IU MALL</a></div>
                             </div>
                         </div>
 
@@ -185,9 +185,9 @@
 
                                     <ul class="cat_menu">
                                         <li class="hassubs">
-                                            <a href="#">💻 Laptops & PCs<i class="fas fa-chevron-right"></i></a>
+                                            <a href="/Laptops">💻 Laptops & PCs<i class="fas fa-chevron-right"></i></a>
                                             <ul>
-                                                <li><a href="#">Laptops<i class="fas fa-chevron-right"></i></a></li>
+                                                <li><a href="/Laptops">Laptops<i class="fas fa-chevron-right"></i></a></li>
                                                 <li><a href="#">PCs<i class="fas fa-chevron-right"></i></a></li>
                                                 <li><a href="#">Components<i class="fas fa-chevron-right"></i></a></li>
                                             </ul>
@@ -403,7 +403,7 @@
             <div class="home_background parallax-window" data-image-src="images/shop_background.jpg" data-parallax="scroll"></div>
             <div class="home_overlay"></div>
             <div class="home_content d-flex flex-column align-items-center justify-content-center">
-                <h2 class="home_title">Laptops</h2>
+                <h2 class="home_title">Office Devices</h2>
             </div>
         </div>
 
@@ -413,46 +413,37 @@
             <div class="shop-toolbar mb--30">
                 <table>
                     <tr height="45px">
-                        <th width="120px">Brand:</th>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Acer" href="#">Acer </a></td>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".HP" href="#">HP</a>
-                        </td>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".DELL" href="#">DELL</a></td>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Apple" href="#">Apple</a></td>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Asus" href="#">Asus</a></td>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Lenovo" href="#">Lenovo</a>
-                        </td>
+                        <th width="200px">Brand:</th>
+                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Logitech" href="#">HP </a></td>
+                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Asus" href="#">Brother</a></td>
+                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Akko" href="#">D-Link</a></td>
+                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".MSI" href="#">TPLINK</a></td>
+                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Acer" href="#">Epson</a></td>
+
                     </tr>
                     <tr height="45px">
-                        <th width="120px">RAM:</th>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".4GB" href="#">4GB </a>
-                        </td>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".8GB" href="#">8GB</a>
-                        </td>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".16GB" href="#">16GB</a></td>
+                        <th width="200px">Frequency band:</th>
+                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".RGB" href="#">2.4 GHz/5 Ghz </a> </td>
+                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".White" href="#">2.4 GHz</a></td>
+
+
                     </tr>
                     <tr height="45px">
-                        <th width="120px">HDD memory:</th>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".500GB" href="#">500GB </a></td>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".1TB" href="#">1TB</a>
-                        </td>
+                        <th width="200px">Connection standard:</th>
+                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Wireless" href="#">802.11 a/b/g/n/ac </a></td>
+                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Wireless" href="#">802.11 b/g/n </a></td>
+                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Wireless" href="#">802.11 a/b/g/n </a></td>
+
+
                     </tr>
                     <tr height="45px">
-                        <th width="120px">SSD memory:</th>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".256GB" href="#">256GB </a></td>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".512GB" href="#">512GB</a></td>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".1TB" href="#">1TB</a>
+                        <th width="200px">Antenna Strength: </th>
+                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".NVIDIA" href="#">3 dBi </a></td>
+                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Intel" href="#">5 dBi</a></td>
+                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".AMD" href="#">7 dBi</a>
                         </td>
                     </tr>
-                    <tr height="45px">
-                        <th width="120px">OS:</th>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Window" href="#">Window </a>
-                        </td>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Linux" href="#">Linux</a></td>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".MacOS" href="#">MacOS</a></td>
-                        <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Ubuntu" href="#">Ubuntu</a>
-                        </td>
-                    </tr>
+
                 </table>
             </div>
             <div class="container">
