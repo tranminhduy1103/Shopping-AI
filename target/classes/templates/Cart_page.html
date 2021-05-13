@@ -118,8 +118,10 @@
                                 <div th:with="product = ${item.laptop}">
                                     <td class="col-sm-8 col-md-6">
                                         <div class="media">
-                                            <a class="thumbnail pull-left" href="#"> <img alt="" th:each="image:${Images}"
-                                                                                          th:if="(${image.ImageID} == ${product.ImageID})" th:src="${image.Image1}"
+                                            <a class="thumbnail pull-left" href="#"> <img alt=""
+                                                                                          th:each="image:${Images}"
+                                                                                          th:if="(${image.ImageID} == ${product.ImageID})"
+                                                                                          th:src="${image.Image1}"
                                                                                           style="width: 72px; height: 72px;">
                                             </a>
                                             <div class="media-body">
@@ -193,9 +195,10 @@
                             <td>  </td>
                             <td>
                                 <h3>
-                                    <button type="button" class="btn btn-default">
+                                    <button type="button" class="btn btn-default"><a th:href="${'/Laptops'}"
+                                                                                     style="color:black;">
                                         <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                                    </button>
+                                    </a></button>
                                 </h3>
                             </td>
                             <td>
