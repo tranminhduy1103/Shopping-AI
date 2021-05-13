@@ -93,7 +93,7 @@ public class MainController {
 
     @GetMapping("/Login_form")
     public String login(Model model) {
-        return "login";
+        return "Login_form";
     }
 
     @GetMapping("/champ")

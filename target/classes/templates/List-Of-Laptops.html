@@ -13,7 +13,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!------ Include the above in your HEAD tag ---------->
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
     <link rel="stylesheet" type="text/css" th:href="@{/styles/bootstrap4/bootstrap.min.css}">
@@ -24,9 +24,8 @@
     <link rel="stylesheet" type="text/css" th:href="@{/styles/shop_styles.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/styles/shop_responsive.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/plugins/jquery-ui-1.12.1.custom/jquery-ui.css}">
-    <link rel="stylesheet" type="text/css" media="screen" th:href="@{/css/plugins.css}" />
-    <link rel="stylesheet" type="text/css" media="screen" th:href="@{/css/main_product.css}" />
-
+    <link media="screen" rel="stylesheet" th:href="@{/css/plugins.css}" type="text/css"/>
+    <link media="screen" rel="stylesheet" th:href="@{/css/main_product.css}" type="text/css"/>
 
 
 </head>
@@ -61,333 +60,104 @@
 
 <body>
 
-    <div class="super_container">
+<div class="super_container">
 
-        <!-- Header -->
+    <!-- Header -->
 
-        <header class="header">
+    <header class="header">
 
-            <!-- Top Bar -->
+        <!-- Top Bar -->
 
-            <div class="top_bar">
-                <div class="container">
-                    <div class="row">
-                        <div class="col d-flex flex-row">
-                            <div class="top_bar_contact_item">
-                                <div class="top_bar_icon"><img alt="" src="/images/phone.png"></div>
-                                0704689783
+        <div class="top_bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col d-flex flex-row">
+                        <div class="top_bar_contact_item">
+                            <div class="top_bar_icon"><img alt="" src="/images/phone.png"></div>
+                            0704689783
+                        </div>
+                        <div class="top_bar_contact_item">
+                            <div class="top_bar_icon"><img alt="" src="/images/mail.png"></div>
+                            <a href="">IUMall@iu.vn</a></div>
+                        <div class="top_bar_content ml-auto">
+                            <div class="top_bar_menu">
+
                             </div>
-                            <div class="top_bar_contact_item">
-                                <div class="top_bar_icon"><img alt="" src="/images/mail.png"></div>
-                                <a href="">IUMall@iu.vn</a></div>
-                            <div class="top_bar_content ml-auto">
-                                <div class="top_bar_menu">
-
-                                </div>
-                                <div class="top_bar_user">
-                                    <div class="user_icon"><img alt="" src="/images/user.svg"></div>
-                                    <div><a href="/Register">Register</a></div>
-                                    <div><a href="/login">Sign in</a></div>
-                                </div>
+                            <div class="top_bar_user">
+                                <div class="user_icon"><img alt="" src="/images/user.svg"></div>
+                                <div><a href="/Register">Register</a></div>
+                                <div><a href="/login">Sign in</a></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Header Main -->
+        <!-- Header Main -->
 
-            <div class="header_main">
-                <div class="container">
-                    <div class="row">
+        <div class="header_main">
+            <div class="container">
+                <div class="row">
 
-                        <!-- Logo -->
-                        <div class="col-lg-2 col-sm-3 col-3 order-1">
-                            <div class="logo_container">
-                                <div class="logo"><a href="#">IU MALL</a></div>
-                            </div>
+                    <!-- Logo -->
+                    <div class="col-lg-2 col-sm-3 col-3 order-1">
+                        <div class="logo_container">
+                            <div class="logo"><a href="#">IU MALL</a></div>
                         </div>
+                    </div>
 
-                        <!-- Search -->
-                        <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
-                            <div class="header_search">
-                                <div class="header_search_content">
-                                    <div class="header_search_form_container">
-                                        <form action="#" class="header_search_form clearfix">
-                                            <input class="header_search_input" placeholder="Search for products..." required="required" type="search">
-                                            <div class="custom_dropdown">
-                                                <div class="custom_dropdown_list">
-                                                    <span class="custom_dropdown_placeholder clc">All Categories</span>
-                                                    <i class="fas fa-chevron-down"></i>
-                                                    <ul class="custom_list clc">
-                                                        <li><a class="clc" href="#">All Categories</a></li>
-                                                        <li><a class="clc" href="#">Laptops</a></li>
-                                                        <li><a class="clc" href="#">Hi-End Gaming</a></li>
-                                                        <li><a class="clc" href="#">Office Devices</a></li>
-                                                        <li><a class="clc" href="#">Sound Devices</a></li>
-                                                        <li><a class="clc" href="#">Equipments</a></li>
-                                                    </ul>
-                                                </div>
+                    <!-- Search -->
+                    <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
+                        <div class="header_search">
+                            <div class="header_search_content">
+                                <div class="header_search_form_container">
+                                    <form action="#" class="header_search_form clearfix">
+                                        <input class="header_search_input" placeholder="Search for products..."
+                                               required="required" type="search">
+                                        <div class="custom_dropdown">
+                                            <div class="custom_dropdown_list">
+                                                <span class="custom_dropdown_placeholder clc">All Categories</span>
+                                                <i class="fas fa-chevron-down"></i>
+                                                <ul class="custom_list clc">
+                                                    <li><a class="clc" href="#">All Categories</a></li>
+                                                    <li><a class="clc" href="#">Laptops</a></li>
+                                                    <li><a class="clc" href="#">Hi-End Gaming</a></li>
+                                                    <li><a class="clc" href="#">Office Devices</a></li>
+                                                    <li><a class="clc" href="#">Sound Devices</a></li>
+                                                    <li><a class="clc" href="#">Equipments</a></li>
+                                                </ul>
                                             </div>
-                                            <button class="header_search_button trans_300" type="submit" value="Submit"><img
+                                        </div>
+                                        <button class="header_search_button trans_300" type="submit" value="Submit"><img
                                                 alt="" src="/images/search.png"></button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Wishlist -->
-                        <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
-                            <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-                                <div class="wishlist d-flex flex-row align-items-center justify-content-end">
-                                    <div class="wishlist_icon"><img alt="" src="/images/heart.png"></div>
-                                    <div class="wishlist_content">
-                                        <div class="wishlist_text"><a href="#">Wishlist</a></div>
-                                        <div class="wishlist_count">0</div>
-                                    </div>
-                                </div>
-
-                                <!-- Cart -->
-                                <div class="cart">
-                                    <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                                        <div class="cart_icon">
-                                            <img alt="" src="/images/cart.png">
-                                            <div class="cart_count"><span>10</span></div>
-                                        </div>
-                                        <div class="cart_content">
-                                            <div class="cart_text"><a href="#">Cart</a></div>
-                                            <div class="cart_price">$85</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Main Navigation -->
-
-            <nav class="main_nav">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-
-                            <div class="main_nav_content d-flex flex-row">
-
-                                <!-- Categories Menu -->
-
-                                <div class="cat_menu_container">
-                                    <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
-                                        <div class="cat_burger"><span></span><span></span><span></span></div>
-                                        <div class="cat_menu_text">categories</div>
-                                    </div>
-
-                                    <ul class="cat_menu">
-                                        <li class="hassubs">
-                                            <a href="#">💻 Laptops & PCs<i class="fas fa-chevron-right"></i></a>
-                                            <ul>
-                                                <li><a href="#">Laptops<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">PCs<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">Components<i class="fas fa-chevron-right"></i></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="hassubs">
-                                            <a href="#">🎮 Hi-End Gaming<i class="fas fa-chevron-right"></i></a>
-                                            <ul>
-                                                <li><a href="#">Mouses<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">Keyboards<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">Mousepad<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">Pads<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">Video game<i class="fas fa-chevron-right"></i></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="hassubs">
-                                            <a href="#">☎ Office Devices<i class="fas fa-chevron-right"></i></a>
-                                            <ul>
-                                                <li><a href="#">Printers<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">Scanners<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">Projectors<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">DeskPhone<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">Different Devices<i class="fas fa-chevron-right"></i></a>
-                                                </li>
-                                                <li><a href="#">Software<i class="fas fa-chevron-right"></i></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="hassubs">
-                                            <a href="#">🎧 Sound Devices<i class="fas fa-chevron-right"></i></a>
-                                            <ul>
-                                                <li><a href="#">Speaker<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">EH-Phone<i class="fas fa-chevron-right"></i></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="hassubs">
-                                            <a href="#">⌨ Equipments<i class="fas fa-chevron-right"></i></a>
-                                            <ul>
-                                                <li><a href="#">Mouse<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">KeyBoard<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">Pads<i class="fas fa-chevron-right"></i></a></li>
-                                                <li><a href="#">Webcam<i class="fas fa-chevron-right"></i></a></li>
-                                            </ul>
-                                        </li>
-
-                                    </ul>
-                                </div>
-
-                                <!-- Main Nav Menu -->
-
-                                <div class="main_nav_menu ml-auto">
-                                    <ul class="standard_dropdown main_nav_dropdown">
-                                        <li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
-                                        <li class="hassubs">
-                                            <a href="#">Super Deals<i class="fas fa-chevron-down"></i></a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
-                                                    <ul>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
-                                                        </li>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
-                                                        </li>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="hassubs">
-                                            <a href="#">Featured Brands<i class="fas fa-chevron-down"></i></a>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
-                                                    <ul>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
-                                                        </li>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
-                                                        </li>
-                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="hassubs">
-                                            <a href="#">Pages<i class="fas fa-chevron-down"></i></a>
-                                            <ul>
-                                                <li><a href="shop.html">Shop<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="product.html">Product<i class="fas fa-chevron-down"></i></a>
-                                                </li>
-                                                <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="blog_single.html">Blog Post<i class="fas fa-chevron-down"></i></a>
-                                                </li>
-                                                <li><a href="regular.html">Regular Post<i
-                                                    class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="cart.html">Cart<i class="fas fa-chevron-down"></i></a></li>
-                                                <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
-                                        <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
-                                    </ul>
-                                </div>
-
-                                <!-- Menu Trigger -->
-
-                                <div class="menu_trigger_container ml-auto">
-                                    <div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
-                                        <div class="menu_burger">
-                                            <div class="menu_trigger_text">menu</div>
-                                            <div class="cat_burger menu_burger_inner">
-                                                <span></span><span></span><span></span></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-
-            <!-- Menu -->
-
-            <div class="page_menu">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div class="page_menu_content">
-
-                                <div class="page_menu_search">
-                                    <form action="#">
-                                        <input class="page_menu_search_input" placeholder="Search for products..." required="required" type="search">
                                     </form>
                                 </div>
-                                <ul class="page_menu_nav">
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Wishlist -->
+                    <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+                        <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
+                            <div class="wishlist d-flex flex-row align-items-center justify-content-end">
+                                <div class="wishlist_icon"><img alt="" src="/images/heart.png"></div>
+                                <div class="wishlist_content">
+                                    <div class="wishlist_text"><a href="#">Wishlist</a></div>
+                                    <div class="wishlist_count">0</div>
+                                </div>
+                            </div>
 
-                                    <li class="page_menu_item">
-                                        <a href="#">Home<i class="fa fa-angle-down"></i></a>
-                                    </li>
-                                    <li class="page_menu_item has-children">
-                                        <a href="#">Super Deals<i class="fa fa-angle-down"></i></a>
-                                        <ul class="page_menu_selection">
-                                            <li><a href="#">Super Deals<i class="fa fa-angle-down"></i></a></li>
-                                            <li class="page_menu_item has-children">
-                                                <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
-                                                <ul class="page_menu_selection">
-                                                    <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="page_menu_item has-children">
-                                        <a href="#">Featured Brands<i class="fa fa-angle-down"></i></a>
-                                        <ul class="page_menu_selection">
-                                            <li><a href="#">Featured Brands<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="page_menu_item has-children">
-                                        <a href="#">Trending Styles<i class="fa fa-angle-down"></i></a>
-                                        <ul class="page_menu_selection">
-                                            <li><a href="#">Trending Styles<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="page_menu_item"><a href="blog.html">blog<i class="fa fa-angle-down"></i></a>
-                                    </li>
-                                    <li class="page_menu_item"><a href="contact.html">contact<i
-                                        class="fa fa-angle-down"></i></a></li>
-                                </ul>
-
-                                <div class="menu_contact">
-                                    <div class="menu_contact_item">
-                                        <div class="menu_contact_icon"><img alt="" src="/images/phone_white.png"></div>
-                                        +38 068 005 3570
+                            <!-- Cart -->
+                            <div class="cart">
+                                <div class="cart_container d-flex flex-row align-items-center justify-content-end">
+                                    <div class="cart_icon">
+                                        <img alt="" src="/images/cart.png">
+                                        <div class="cart_count"><span>10</span></div>
                                     </div>
-                                    <div class="menu_contact_item">
-                                        <div class="menu_contact_icon"><img alt="" src="/images/mail_white.png"></div>
-                                        <a href="https://colorlib.com/cdn-cgi/l/email-protection#fd9b9c8e898e9c91988ebd9a909c9491d39e9290"><span
-                                            class="__cf_email__"
-                                            data-cfemail="5f393e2c2b2c3e333a2c1f38323e3633713c3032">[email&#160;protected]</span></a>
+                                    <div class="cart_content">
+                                        <div class="cart_text"><a href="#">Cart</a></div>
+                                        <div class="cart_price">$85</div>
                                     </div>
                                 </div>
                             </div>
@@ -395,468 +165,725 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-        </header>
+        <!-- Main Navigation -->
 
-        <!-- Home -->
+        <nav class="main_nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
 
-        <div class="home">
-            <div class="home_background parallax-window" data-image-src="images/shop_background.jpg" data-parallax="scroll"></div>
-            <div class="home_overlay"></div>
-            <div class="home_content d-flex flex-column align-items-center justify-content-center">
-                <h2 class="home_title">Laptops</h2>
+                        <div class="main_nav_content d-flex flex-row">
+
+                            <!-- Categories Menu -->
+
+                            <div class="cat_menu_container">
+                                <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
+                                    <div class="cat_burger"><span></span><span></span><span></span></div>
+                                    <div class="cat_menu_text">categories</div>
+                                </div>
+
+                                <ul class="cat_menu">
+                                    <li class="hassubs">
+                                        <a href="#">💻 Laptops & PCs<i class="fas fa-chevron-right"></i></a>
+                                        <ul>
+                                            <li><a href="#">Laptops<i class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#">PCs<i class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#">Components<i class="fas fa-chevron-right"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="hassubs">
+                                        <a href="#">🎮 Hi-End Gaming<i class="fas fa-chevron-right"></i></a>
+                                        <ul>
+                                            <li><a href="#">Mouses<i class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#">Keyboards<i class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#">Mousepad<i class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#">Pads<i class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#">Video game<i class="fas fa-chevron-right"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="hassubs">
+                                        <a href="#">☎ Office Devices<i class="fas fa-chevron-right"></i></a>
+                                        <ul>
+                                            <li><a href="#">Printers<i class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#">Scanners<i class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#">Projectors<i class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#">DeskPhone<i class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#">Different Devices<i class="fas fa-chevron-right"></i></a>
+                                            </li>
+                                            <li><a href="#">Software<i class="fas fa-chevron-right"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="hassubs">
+                                        <a href="#">🎧 Sound Devices<i class="fas fa-chevron-right"></i></a>
+                                        <ul>
+                                            <li><a href="#">Speaker<i class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#">EH-Phone<i class="fas fa-chevron-right"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="hassubs">
+                                        <a href="#">⌨ Equipments<i class="fas fa-chevron-right"></i></a>
+                                        <ul>
+                                            <li><a href="#">Mouse<i class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#">KeyBoard<i class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#">Pads<i class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#">Webcam<i class="fas fa-chevron-right"></i></a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <!-- Main Nav Menu -->
+
+                            <div class="main_nav_menu ml-auto">
+                                <ul class="standard_dropdown main_nav_dropdown">
+                                    <li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
+                                    <li class="hassubs">
+                                        <a href="#">Super Deals<i class="fas fa-chevron-down"></i></a>
+                                        <ul>
+                                            <li>
+                                                <a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
+                                                <ul>
+                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
+                                                    </li>
+                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
+                                                    </li>
+                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
+                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
+                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="hassubs">
+                                        <a href="#">Featured Brands<i class="fas fa-chevron-down"></i></a>
+                                        <ul>
+                                            <li>
+                                                <a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
+                                                <ul>
+                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
+                                                    </li>
+                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
+                                                    </li>
+                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
+                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
+                                            <li><a href="#">Menu Item<i class="fas fa-chevron-down"></i></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="hassubs">
+                                        <a href="#">Pages<i class="fas fa-chevron-down"></i></a>
+                                        <ul>
+                                            <li><a href="shop.html">Shop<i class="fas fa-chevron-down"></i></a></li>
+                                            <li><a href="product.html">Product<i class="fas fa-chevron-down"></i></a>
+                                            </li>
+                                            <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
+                                            <li><a href="blog_single.html">Blog Post<i class="fas fa-chevron-down"></i></a>
+                                            </li>
+                                            <li><a href="regular.html">Regular Post<i
+                                                    class="fas fa-chevron-down"></i></a></li>
+                                            <li><a href="cart.html">Cart<i class="fas fa-chevron-down"></i></a></li>
+                                            <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Menu Trigger -->
+
+                            <div class="menu_trigger_container ml-auto">
+                                <div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
+                                    <div class="menu_burger">
+                                        <div class="menu_trigger_text">menu</div>
+                                        <div class="cat_burger menu_burger_inner">
+                                            <span></span><span></span><span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menu -->
+
+        <div class="page_menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="page_menu_content">
+
+                            <div class="page_menu_search">
+                                <form action="#">
+                                    <input class="page_menu_search_input" placeholder="Search for products..."
+                                           required="required" type="search">
+                                </form>
+                            </div>
+                            <ul class="page_menu_nav">
+
+
+                                <li class="page_menu_item">
+                                    <a href="#">Home<i class="fa fa-angle-down"></i></a>
+                                </li>
+                                <li class="page_menu_item has-children">
+                                    <a href="#">Super Deals<i class="fa fa-angle-down"></i></a>
+                                    <ul class="page_menu_selection">
+                                        <li><a href="#">Super Deals<i class="fa fa-angle-down"></i></a></li>
+                                        <li class="page_menu_item has-children">
+                                            <a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
+                                            <ul class="page_menu_selection">
+                                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                                <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                    </ul>
+                                </li>
+                                <li class="page_menu_item has-children">
+                                    <a href="#">Featured Brands<i class="fa fa-angle-down"></i></a>
+                                    <ul class="page_menu_selection">
+                                        <li><a href="#">Featured Brands<i class="fa fa-angle-down"></i></a></li>
+                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                    </ul>
+                                </li>
+                                <li class="page_menu_item has-children">
+                                    <a href="#">Trending Styles<i class="fa fa-angle-down"></i></a>
+                                    <ul class="page_menu_selection">
+                                        <li><a href="#">Trending Styles<i class="fa fa-angle-down"></i></a></li>
+                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                        <li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+                                    </ul>
+                                </li>
+                                <li class="page_menu_item"><a href="blog.html">blog<i class="fa fa-angle-down"></i></a>
+                                </li>
+                                <li class="page_menu_item"><a href="contact.html">contact<i
+                                        class="fa fa-angle-down"></i></a></li>
+                            </ul>
+
+                            <div class="menu_contact">
+                                <div class="menu_contact_item">
+                                    <div class="menu_contact_icon"><img alt="" src="/images/phone_white.png"></div>
+                                    +38 068 005 3570
+                                </div>
+                                <div class="menu_contact_item">
+                                    <div class="menu_contact_icon"><img alt="" src="/images/mail_white.png"></div>
+                                    <a href="https://colorlib.com/cdn-cgi/l/email-protection#fd9b9c8e898e9c91988ebd9a909c9491d39e9290"><span
+                                            class="__cf_email__"
+                                            data-cfemail="5f393e2c2b2c3e333a2c1f38323e3633713c3032">[email&#160;protected]</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Shop -->
+    </header>
 
-        <div class="shop">
-            <div class="shop-toolbar mb--30">
-                <table>
-                    <tr height="45px">
-                        <th width="120px">Brand: </th>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".Acer">Acer </a></td>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".HP">HP</a></td>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".DELL">DELL</a></td>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".Apple">Apple</a></td>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".Asus">Asus</a></td>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".Lenovo">Lenovo</a></td>
-                    </tr>
-                    <tr height="45px">
-                        <th width="120px">RAM: </th>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".4GB">4GB </a></td>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".8GB">8GB</a></td>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".16GB">16GB</a></td>
-                    </tr>
-                    <tr height="45px">
-                        <th width="120px">HDD memory: </th>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".500GB">500GB </a></td>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".1TB">1TB</a></td>
-                    </tr>
-                    <tr height="45px">
-                        <th width="120px">SSD memory: </th>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".256GB">256GB </a></td>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".512GB">512GB</a></td>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".1TB">1TB</a></td>
-                    </tr>
-                    <tr height="45px">
-                        <th width="120px">OS: </th>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".Window">Window </a></td>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".Linux">Linux</a></td>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".MacOS">MacOS</a></td>
-                        <td width="80px" align="center"><a href="#" class="btn btn-outline-dark" data-filter=".Ubuntu">Ubuntu</a></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <!-- <div class="col-lg-3">
+    <!-- Home -->
 
-                        
-                        <div class="shop_sidebar">
-                            <div class="sidebar_section">
-                                <div class="sidebar_title">Categories</div>
-                                <ul class="sidebar_categories">
-                                    <li><a href="#">Laptops</a></li>
-                                    <li><a href="#">PCs</a></li>
-                                    <li><a href="#">Components</a></li>
+    <div class="home">
+        <div class="home_background parallax-window" data-image-src="images/shop_background.jpg"
+             data-parallax="scroll"></div>
+        <div class="home_overlay"></div>
+        <div class="home_content d-flex flex-column align-items-center justify-content-center">
+            <h2 class="home_title">Laptops</h2>
+        </div>
+    </div>
 
-                                </ul>
+    <!-- Shop -->
+
+    <div class="shop">
+        <div class="shop-toolbar mb--30">
+            <table>
+                <tr height="45px">
+                    <th width="120px">Brand:</th>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Acer"
+                                                       href="#">Acer </a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".HP" href="#">HP</a>
+                    </td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".DELL"
+                                                       href="#">DELL</a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Apple"
+                                                       href="#">Apple</a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Asus"
+                                                       href="#">Asus</a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Lenovo" href="#">Lenovo</a>
+                    </td>
+                </tr>
+                <tr height="45px">
+                    <th width="120px">RAM:</th>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".4GB" href="#">4GB </a>
+                    </td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".8GB" href="#">8GB</a>
+                    </td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".16GB"
+                                                       href="#">16GB</a></td>
+                </tr>
+                <tr height="45px">
+                    <th width="120px">HDD memory:</th>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".500GB"
+                                                       href="#">500GB </a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".1TB" href="#">1TB</a>
+                    </td>
+                </tr>
+                <tr height="45px">
+                    <th width="120px">SSD memory:</th>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".256GB"
+                                                       href="#">256GB </a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".512GB"
+                                                       href="#">512GB</a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".1TB" href="#">1TB</a>
+                    </td>
+                </tr>
+                <tr height="45px">
+                    <th width="120px">OS:</th>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Window" href="#">Window </a>
+                    </td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Linux"
+                                                       href="#">Linux</a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".MacOS"
+                                                       href="#">MacOS</a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Ubuntu" href="#">Ubuntu</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-lg-3">
+
+
+                    <div class="shop_sidebar">
+                        <div class="sidebar_section">
+                            <div class="sidebar_title">Categories</div>
+                            <ul class="sidebar_categories">
+                                <li><a href="#">Laptops</a></li>
+                                <li><a href="#">PCs</a></li>
+                                <li><a href="#">Components</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="sidebar_section filter_by_section">
+                            <div class="sidebar_title">Filter By</div>
+                            <div class="sidebar_subtitle">Price</div>
+                            <div class="filter_price">
+                                <div id="slider-range" class="slider_range"></div>
+                                <p>Range: </p>
+                                <p><input class="amount" id="amount" readonly style="border:0; font-weight:bold;" type="text"></p>
                             </div>
-                            <div class="sidebar_section filter_by_section">
-                                <div class="sidebar_title">Filter By</div>
-                                <div class="sidebar_subtitle">Price</div>
-                                <div class="filter_price">
-                                    <div id="slider-range" class="slider_range"></div>
-                                    <p>Range: </p>
-                                    <p><input class="amount" id="amount" readonly style="border:0; font-weight:bold;" type="text"></p>
-                                </div>
-                            </div>
-                            <div class="sidebar_section">
-                                <div class="sidebar_subtitle color_subtitle">Color</div>
-                                <ul class="colors_list">
-                                    <li class="color">
-                                        <a href="#" style="background: #b19c83;"></a>
-                                    </li>
-                                    <li class="color">
-                                        <a href="#" style="background: #000000;"></a>
-                                    </li>
-                                    <li class="color">
-                                        <a href="#" style="background: #999999;"></a>
-                                    </li>
-                                    <li class="color">
-                                        <a href="#" style="background: #0e8ce4;"></a>
-                                    </li>
-                                    <li class="color">
-                                        <a href="#" style="background: #df3b3b;"></a>
-                                    </li>
-                                    <li class="color">
-                                        <a href="#" style="background: #ffffff; border: solid 1px #e1e1e1;"></a>
-                                    </li>
-                                </ul>
-                            </div>
+                        </div>
+                        <div class="sidebar_section">
+                            <div class="sidebar_subtitle color_subtitle">Color</div>
+                            <ul class="colors_list">
+                                <li class="color">
+                                    <a href="#" style="background: #b19c83;"></a>
+                                </li>
+                                <li class="color">
+                                    <a href="#" style="background: #000000;"></a>
+                                </li>
+                                <li class="color">
+                                    <a href="#" style="background: #999999;"></a>
+                                </li>
+                                <li class="color">
+                                    <a href="#" style="background: #0e8ce4;"></a>
+                                </li>
+                                <li class="color">
+                                    <a href="#" style="background: #df3b3b;"></a>
+                                </li>
+                                <li class="color">
+                                    <a href="#" style="background: #ffffff; border: solid 1px #e1e1e1;"></a>
+                                </li>
+                            </ul>
+                        </div>
 
-                            <div class="sidebar_section">
-                                <div class="sidebar_subtitle brands_subtitle">Brands</div>
-                                <ul class="brands_list">
-                                    <li class="btn btn-outline-dark" data-filter=".ASUS"><a>ACER</a></li>
-                                    <li class="btn btn-outline-dark" data-filter=".HP"><a href="#">HP</a></li>
-                                    <li class="btn btn-outline-dark" data-filter=".DELL"><a href="#">DELL</a></li>
+                        <div class="sidebar_section">
+                            <div class="sidebar_subtitle brands_subtitle">Brands</div>
+                            <ul class="brands_list">
+                                <li class="btn btn-outline-dark" data-filter=".ASUS"><a>ACER</a></li>
+                                <li class="btn btn-outline-dark" data-filter=".HP"><a href="#">HP</a></li>
+                                <li class="btn btn-outline-dark" data-filter=".DELL"><a href="#">DELL</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div> -->
+
+                <div class="col-lg-12">
+
+                    <!-- Shop Content -->
+
+                    <div class="shop_content">
+                        <div class="shop_bar clearfix">
+                            <div class="shop_product_count"><span>186</span> products found</div>
+                            <div class="shop_sorting">
+                                <span>Sort by:</span>
+                                <ul>
+                                    <li>
+                                            <span class="sorting_text">highest rated<i
+                                                    class="fas fa-chevron-down"></i></span>
+                                        <ul>
+                                            <li class="shop_sorting_button"
+                                                data-isotope-option='{ "sortBy": "original-order" }'>highest rated
+                                            </li>
+                                            <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "name" }'>
+                                                name
+                                            </li>
+                                            <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "price" }'>
+                                                price
+                                            </li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
 
-                    </div> -->
+                        <div class="product_grid">
 
-                    <div class="col-lg-12">
+                            <div class="product_grid_border"></div>
+                            <!-- Product Item -->
+                            <div class="product_item" th:each="laptop:${Laptops}">
+                                <div class="product_border"></div>
+                                <div class="product_image d-flex flex-column align-items-center justify-content-center">
+                                    <a th:href="${ '/Laptops/' + laptop.id}">
+                                        <img alt="" th:each="image:${Images}"
+                                             th:if="(${image.ImageID} == ${laptop.ImageID})" th:src="${image.Image1}">
+                                    </a>
+                                </div>
+                                <div class="product_content">
+                                    <div class="product_price" th:text="${laptop.Price}"></div>
+                                    <div class="product_name">
+                                        <div th:text="${laptop.Name}"></div>
+                                    </div>
+                                </div>
+                                <!--                                <div class="product_fav"><i class="fas fa-heart"></i></div>-->
+                                <!--                                <ul class="product_marks">-->
+                                <!--                                    <li class="product_mark product_discount">-25%</li>-->
+                                <!--                                    <li class="product_mark product_new">new</li>-->
+                                <!--                                </ul>-->
 
-                        <!-- Shop Content -->
+                            </div>
 
-                        <div class="shop_content">
-                            <div class="shop_bar clearfix">
-                                <div class="shop_product_count"><span>186</span> products found</div>
-                                <div class="shop_sorting">
-                                    <span>Sort by:</span>
-                                    <ul>
-                                        <li>
-                                            <span class="sorting_text">highest rated<i
-                                                class="fas fa-chevron-down"></i></span>
-                                            <ul>
-                                                <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "original-order" }'>highest rated
-                                                </li>
-                                                <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "name" }'>
-                                                    name
-                                                </li>
-                                                <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "price" }'>
-                                                    price
-                                                </li>
-                                            </ul>
-                                        </li>
+                            <!-- Product Item -->
+                            <!--                            <div class="product_item is_new">-->
+                            <!--                                <div class="product_border"></div>-->
+                            <!--                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/new_5.jpg" alt=""></div>-->
+                            <!--                                <div class="product_content">-->
+                            <!--                                    <div class="product_price">$225</div>-->
+                            <!--                                    <div class="product_name">-->
+                            <!--                                        <div><a href="#" tabindex="0">Philips BT6900A</a></div>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="product_fav"><i class="fas fa-heart"></i></div>-->
+                            <!--                                <ul class="product_marks">-->
+                            <!--                                    <li class="product_mark product_discount">-25%</li>-->
+                            <!--                                    <li class="product_mark product_new">new</li>-->
+                            <!--                                </ul>-->
+                            <!--                            </div>-->
+
+                            <!--                            &lt;!&ndash; Product Item &ndash;&gt;-->
+                            <!--                            <div class="product_item discount">-->
+                            <!--                                <div class="product_border"></div>-->
+                            <!--                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/featured_1.png" alt=""></div>-->
+                            <!--                                <div class="product_content">-->
+                            <!--                                    <div class="product_price">$225<span>$300</span></div>-->
+                            <!--                                    <div class="product_name">-->
+                            <!--                                        <div><a href="#" tabindex="0">Huawei MediaPad...</a></div>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="product_fav"><i class="fas fa-heart"></i></div>-->
+                            <!--                                <ul class="product_marks">-->
+                            <!--                                    <li class="product_mark product_discount">-25%</li>-->
+                            <!--                                    <li class="product_mark product_new">new</li>-->
+                            <!--                                </ul>-->
+                            <!--                            </div>-->
+
+                            <!--                            &lt;!&ndash; Product Item &ndash;&gt;-->
+                            <!--                            <div class="product_item">-->
+                            <!--                                <div class="product_border"></div>-->
+                            <!--                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/featured_2.png" alt=""></div>-->
+                            <!--                                <div class="product_content">-->
+                            <!--                                    <div class="product_price">$379</div>-->
+                            <!--                                    <div class="product_name">-->
+                            <!--                                        <div><a href="#" tabindex="0">Apple iPod shuffle</a></div>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="product_fav"><i class="fas fa-heart"></i></div>-->
+                            <!--                                <ul class="product_marks">-->
+                            <!--                                    <li class="product_mark product_discount">-25%</li>-->
+                            <!--                                    <li class="product_mark product_new">new</li>-->
+                            <!--                                </ul>-->
+                            <!--                            </div>-->
+
+
+                        </div>
+
+                        <!-- Shop Page Navigation -->
+
+                        <div class="shop_page_nav d-flex flex-row">
+                            <div class="page_prev d-flex flex-column align-items-center justify-content-center"><i
+                                    class="fas fa-chevron-left"></i></div>
+                            <ul class="page_nav d-flex flex-row">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">...</a></li>
+                                <li><a href="#">21</a></li>
+                            </ul>
+                            <div class="page_next d-flex flex-column align-items-center justify-content-center"><i
+                                    class="fas fa-chevron-right"></i></div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recently Viewed -->
+
+    <div class="viewed">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="viewed_title_container">
+                        <h3 class="viewed_title">Recently Viewed</h3>
+                        <div class="viewed_nav_container">
+                            <div class="viewed_nav viewed_prev"><i class="fas fa-chevron-left"></i></div>
+                            <div class="viewed_nav viewed_next"><i class="fas fa-chevron-right"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="viewed_slider_container">
+
+                        <!-- Recently Viewed Slider -->
+
+                        <div class="owl-carousel owl-theme viewed_slider">
+
+                            <!-- Recently Viewed Item -->
+                            <div class="owl-item">
+                                <div class="viewed_item discount d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="viewed_image"><img alt="" src="images/view_1.jpg"></div>
+                                    <div class="viewed_content text-center">
+                                        <div class="viewed_price">$225<span>$300</span></div>
+                                        <div class="viewed_name"><a href="#">Beoplay H7</a></div>
+                                    </div>
+                                    <ul class="item_marks">
+                                        <li class="item_mark item_discount">-25%</li>
+                                        <li class="item_mark item_new">new</li>
                                     </ul>
                                 </div>
                             </div>
 
-                            <div class="product_grid">
-
-                                <div class="product_grid_border"></div>
-                                <!-- Product Item -->
-                                <div class="product_item" th:each="laptop:${Laptops}">
-                                    <div class="product_border"></div>
-                                    <div class="product_image d-flex flex-column align-items-center justify-content-center">
-                                        <a th:href="${ '/Laptops/' + laptop.id}">
-                                            <img alt="" th:each="image:${Images}" th:if="(${image.ImageID} == ${laptop.ImageID})" th:src="${image.Image1}">
-                                        </a>
+                            <!-- Recently Viewed Item -->
+                            <div class="owl-item">
+                                <div class="viewed_item d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="viewed_image"><img alt="" src="images/view_2.jpg"></div>
+                                    <div class="viewed_content text-center">
+                                        <div class="viewed_price">$379</div>
+                                        <div class="viewed_name"><a href="#">LUNA Smartphone</a></div>
                                     </div>
-                                    <div class="product_content">
-                                        <div class="product_price" th:text="${laptop.Price}"></div>
-                                        <div class="product_name">
-                                            <div th:text="${laptop.Name}"></div>
-                                        </div>
-                                    </div>
-                                    <!--                                <div class="product_fav"><i class="fas fa-heart"></i></div>-->
-                                    <!--                                <ul class="product_marks">-->
-                                    <!--                                    <li class="product_mark product_discount">-25%</li>-->
-                                    <!--                                    <li class="product_mark product_new">new</li>-->
-                                    <!--                                </ul>-->
-
-                                </div>
-
-                                <!-- Product Item -->
-                                <!--                            <div class="product_item is_new">-->
-                                <!--                                <div class="product_border"></div>-->
-                                <!--                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/new_5.jpg" alt=""></div>-->
-                                <!--                                <div class="product_content">-->
-                                <!--                                    <div class="product_price">$225</div>-->
-                                <!--                                    <div class="product_name">-->
-                                <!--                                        <div><a href="#" tabindex="0">Philips BT6900A</a></div>-->
-                                <!--                                    </div>-->
-                                <!--                                </div>-->
-                                <!--                                <div class="product_fav"><i class="fas fa-heart"></i></div>-->
-                                <!--                                <ul class="product_marks">-->
-                                <!--                                    <li class="product_mark product_discount">-25%</li>-->
-                                <!--                                    <li class="product_mark product_new">new</li>-->
-                                <!--                                </ul>-->
-                                <!--                            </div>-->
-
-                                <!--                            &lt;!&ndash; Product Item &ndash;&gt;-->
-                                <!--                            <div class="product_item discount">-->
-                                <!--                                <div class="product_border"></div>-->
-                                <!--                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/featured_1.png" alt=""></div>-->
-                                <!--                                <div class="product_content">-->
-                                <!--                                    <div class="product_price">$225<span>$300</span></div>-->
-                                <!--                                    <div class="product_name">-->
-                                <!--                                        <div><a href="#" tabindex="0">Huawei MediaPad...</a></div>-->
-                                <!--                                    </div>-->
-                                <!--                                </div>-->
-                                <!--                                <div class="product_fav"><i class="fas fa-heart"></i></div>-->
-                                <!--                                <ul class="product_marks">-->
-                                <!--                                    <li class="product_mark product_discount">-25%</li>-->
-                                <!--                                    <li class="product_mark product_new">new</li>-->
-                                <!--                                </ul>-->
-                                <!--                            </div>-->
-
-                                <!--                            &lt;!&ndash; Product Item &ndash;&gt;-->
-                                <!--                            <div class="product_item">-->
-                                <!--                                <div class="product_border"></div>-->
-                                <!--                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/featured_2.png" alt=""></div>-->
-                                <!--                                <div class="product_content">-->
-                                <!--                                    <div class="product_price">$379</div>-->
-                                <!--                                    <div class="product_name">-->
-                                <!--                                        <div><a href="#" tabindex="0">Apple iPod shuffle</a></div>-->
-                                <!--                                    </div>-->
-                                <!--                                </div>-->
-                                <!--                                <div class="product_fav"><i class="fas fa-heart"></i></div>-->
-                                <!--                                <ul class="product_marks">-->
-                                <!--                                    <li class="product_mark product_discount">-25%</li>-->
-                                <!--                                    <li class="product_mark product_new">new</li>-->
-                                <!--                                </ul>-->
-                                <!--                            </div>-->
-
-
-                            </div>
-
-                            <!-- Shop Page Navigation -->
-
-                            <div class="shop_page_nav d-flex flex-row">
-                                <div class="page_prev d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-left"></i></div>
-                                <ul class="page_nav d-flex flex-row">
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">...</a></li>
-                                    <li><a href="#">21</a></li>
-                                </ul>
-                                <div class="page_next d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-right"></i></div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Recently Viewed -->
-
-        <div class="viewed">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="viewed_title_container">
-                            <h3 class="viewed_title">Recently Viewed</h3>
-                            <div class="viewed_nav_container">
-                                <div class="viewed_nav viewed_prev"><i class="fas fa-chevron-left"></i></div>
-                                <div class="viewed_nav viewed_next"><i class="fas fa-chevron-right"></i></div>
-                            </div>
-                        </div>
-
-                        <div class="viewed_slider_container">
-
-                            <!-- Recently Viewed Slider -->
-
-                            <div class="owl-carousel owl-theme viewed_slider">
-
-                                <!-- Recently Viewed Item -->
-                                <div class="owl-item">
-                                    <div class="viewed_item discount d-flex flex-column align-items-center justify-content-center text-center">
-                                        <div class="viewed_image"><img src="images/view_1.jpg" alt=""></div>
-                                        <div class="viewed_content text-center">
-                                            <div class="viewed_price">$225<span>$300</span></div>
-                                            <div class="viewed_name"><a href="#">Beoplay H7</a></div>
-                                        </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!-- Recently Viewed Item -->
-                                <div class="owl-item">
-                                    <div class="viewed_item d-flex flex-column align-items-center justify-content-center text-center">
-                                        <div class="viewed_image"><img src="images/view_2.jpg" alt=""></div>
-                                        <div class="viewed_content text-center">
-                                            <div class="viewed_price">$379</div>
-                                            <div class="viewed_name"><a href="#">LUNA Smartphone</a></div>
-                                        </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!-- Recently Viewed Item -->
-                                <div class="owl-item">
-                                    <div class="viewed_item d-flex flex-column align-items-center justify-content-center text-center">
-                                        <div class="viewed_image"><img src="images/view_3.jpg" alt=""></div>
-                                        <div class="viewed_content text-center">
-                                            <div class="viewed_price">$225</div>
-                                            <div class="viewed_name"><a href="#">Samsung J730F...</a></div>
-                                        </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!-- Recently Viewed Item -->
-                                <div class="owl-item">
-                                    <div class="viewed_item is_new d-flex flex-column align-items-center justify-content-center text-center">
-                                        <div class="viewed_image"><img src="images/view_4.jpg" alt=""></div>
-                                        <div class="viewed_content text-center">
-                                            <div class="viewed_price">$379</div>
-                                            <div class="viewed_name"><a href="#">Huawei MediaPad...</a></div>
-                                        </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!-- Recently Viewed Item -->
-                                <div class="owl-item">
-                                    <div class="viewed_item discount d-flex flex-column align-items-center justify-content-center text-center">
-                                        <div class="viewed_image"><img src="images/view_5.jpg" alt=""></div>
-                                        <div class="viewed_content text-center">
-                                            <div class="viewed_price">$225<span>$300</span></div>
-                                            <div class="viewed_name"><a href="#">Sony PS4 Slim</a></div>
-                                        </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!-- Recently Viewed Item -->
-                                <div class="owl-item">
-                                    <div class="viewed_item d-flex flex-column align-items-center justify-content-center text-center">
-                                        <div class="viewed_image"><img src="images/view_6.jpg" alt=""></div>
-                                        <div class="viewed_content text-center">
-                                            <div class="viewed_price">$375</div>
-                                            <div class="viewed_name"><a href="#">Speedlink...</a></div>
-                                        </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
-                                    </div>
+                                    <ul class="item_marks">
+                                        <li class="item_mark item_discount">-25%</li>
+                                        <li class="item_mark item_new">new</li>
+                                    </ul>
                                 </div>
                             </div>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Footer -->
-
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-3 footer_col">
-                        <div class="footer_column footer_contact">
-                            <div class="logo_container">
-                                <div class="logo"><a href="#">IU Mart</a></div>
+                            <!-- Recently Viewed Item -->
+                            <div class="owl-item">
+                                <div class="viewed_item d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="viewed_image"><img alt="" src="images/view_3.jpg"></div>
+                                    <div class="viewed_content text-center">
+                                        <div class="viewed_price">$225</div>
+                                        <div class="viewed_name"><a href="#">Samsung J730F...</a></div>
+                                    </div>
+                                    <ul class="item_marks">
+                                        <li class="item_mark item_discount">-25%</li>
+                                        <li class="item_mark item_new">new</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="footer_title">Got Question? Call Us 24/7</div>
-                            <div class="footer_phone">0123 456 789</div>
-                            <div class="footer_contact_text">
-                                <p>International University - VNU</p>
-                                <p>HCM City, Vietnam</p>
+
+                            <!-- Recently Viewed Item -->
+                            <div class="owl-item">
+                                <div class="viewed_item is_new d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="viewed_image"><img alt="" src="images/view_4.jpg"></div>
+                                    <div class="viewed_content text-center">
+                                        <div class="viewed_price">$379</div>
+                                        <div class="viewed_name"><a href="#">Huawei MediaPad...</a></div>
+                                    </div>
+                                    <ul class="item_marks">
+                                        <li class="item_mark item_discount">-25%</li>
+                                        <li class="item_mark item_new">new</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="footer_social">
-                                <ul>
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-google"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
-                                </ul>
+
+                            <!-- Recently Viewed Item -->
+                            <div class="owl-item">
+                                <div class="viewed_item discount d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="viewed_image"><img alt="" src="images/view_5.jpg"></div>
+                                    <div class="viewed_content text-center">
+                                        <div class="viewed_price">$225<span>$300</span></div>
+                                        <div class="viewed_name"><a href="#">Sony PS4 Slim</a></div>
+                                    </div>
+                                    <ul class="item_marks">
+                                        <li class="item_mark item_discount">-25%</li>
+                                        <li class="item_mark item_new">new</li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="col-lg-2 offset-lg-2">
-                        <div class="footer_column">
-                            <div class="footer_title">Find it Fast</div>
-                            <ul class="footer_list">
-                                <li><a href="#">Laptops</a></li>
-                                <li><a href="#">Hi-End Gaming</a></li>
-                                <li><a href="#">Office Devices</a></li>
-                                <li><a href="#">Sound Devices</a></li>
-                                <li><a href="#">Equipments</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-2">
-                        <div class="footer_column">
-                            <div class="footer_title">Customer Care</div>
-                            <ul class="footer_list">
-                                <li><a href="#">My Account</a></li>
-                                <li><a href="#">Order Tracking</a></li>
-                                <li><a href="#">Wish List</a></li>
-                                <li><a href="#">Customer Services</a></li>
-                                <li><a href="#">Returns / Exchange</a></li>
-                                <li><a href="#">FAQs</a></li>
-                                <li><a href="#">Product Support</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </footer>
-
-        <!-- Copyright -->
-
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-
-                        <div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
-                            <div class="copyright_content">
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;
-                                <script>
-                                    document.write(new Date().getFullYear());
-                                </script>
-                                All rights reserved | This template is made with <i aria-hidden="true" class="fa fa-heart"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            </div>
-                            <div class="logos ml-sm-auto">
-                                <ul class="logos_list">
-                                    <li>
-                                        <a href="#"><img src="images/logos_1.png" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="images/logos_2.png" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="images/logos_3.png" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <a href="#"><img src="images/logos_4.png" alt=""></a>
-                                    </li>
-                                </ul>
+                            <!-- Recently Viewed Item -->
+                            <div class="owl-item">
+                                <div class="viewed_item d-flex flex-column align-items-center justify-content-center text-center">
+                                    <div class="viewed_image"><img alt="" src="images/view_6.jpg"></div>
+                                    <div class="viewed_content text-center">
+                                        <div class="viewed_price">$375</div>
+                                        <div class="viewed_name"><a href="#">Speedlink...</a></div>
+                                    </div>
+                                    <ul class="item_marks">
+                                        <li class="item_mark item_discount">-25%</li>
+                                        <li class="item_mark item_new">new</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script th:inline="javascript">
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 footer_col">
+                    <div class="footer_column footer_contact">
+                        <div class="logo_container">
+                            <div class="logo"><a href="#">IU Mart</a></div>
+                        </div>
+                        <div class="footer_title">Got Question? Call Us 24/7</div>
+                        <div class="footer_phone">0123 456 789</div>
+                        <div class="footer_contact_text">
+                            <p>International University - VNU</p>
+                            <p>HCM City, Vietnam</p>
+                        </div>
+                        <div class="footer_social">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 offset-lg-2">
+                    <div class="footer_column">
+                        <div class="footer_title">Find it Fast</div>
+                        <ul class="footer_list">
+                            <li><a href="#">Laptops</a></li>
+                            <li><a href="#">Hi-End Gaming</a></li>
+                            <li><a href="#">Office Devices</a></li>
+                            <li><a href="#">Sound Devices</a></li>
+                            <li><a href="#">Equipments</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-2">
+                    <div class="footer_column">
+                        <div class="footer_title">Customer Care</div>
+                        <ul class="footer_list">
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Order Tracking</a></li>
+                            <li><a href="#">Wish List</a></li>
+                            <li><a href="#">Customer Services</a></li>
+                            <li><a href="#">Returns / Exchange</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Product Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright -->
+
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
+                        <div class="copyright_content">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>
+                                    document.write(new Date().getFullYear());
+
+                            </script>
+                            All rights reserved | This template is made with <i aria-hidden="true"
+                                                                                class="fa fa-heart"></i> by <a
+                                href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </div>
+                        <div class="logos ml-sm-auto">
+                            <ul class="logos_list">
+                                <li>
+                                    <a href="#"><img alt="" src="images/logos_1.png"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img alt="" src="images/logos_2.png"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img alt="" src="images/logos_3.png"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img alt="" src="images/logos_4.png"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:inline="javascript">
         // $('.portfolio-item').isotope({
         //  	itemSelector: '.item',
         //  	layoutMode: 'fitRows'
@@ -880,25 +907,26 @@
                 }
             });
         });
-    </script>
+
+</script>
 
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="styles/bootstrap4/popper.js"></script>
-    <script src="styles/bootstrap4/bootstrap.min.js"></script>
-    <script src="plugins/greensock/TweenMax.min.js"></script>
-    <script src="plugins/greensock/TimelineMax.min.js"></script>
-    <script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-    <script src="plugins/greensock/animation.gsap.min.js"></script>
-    <script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-    <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-    <script src="plugins/easing/easing.js"></script>
-    <script src="plugins/Isotope/isotope.pkgd.min.js"></script>
-    <script src="plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-    <script src="plugins/parallax-js-master/parallax.min.js"></script>
-    <script src="js/shop_custom.js"></script>
-    <!-- <script src="/js/plugins.js"></script> -->
-    <script src="/js/custom_product.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/greensock/TweenMax.min.js"></script>
+<script src="plugins/greensock/TimelineMax.min.js"></script>
+<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="plugins/greensock/animation.gsap.min.js"></script>
+<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="js/shop_custom.js"></script>
+<!-- <script src="/js/plugins.js"></script> -->
+<script src="/js/custom_product.js"></script>
 </body>
 
 </html>
