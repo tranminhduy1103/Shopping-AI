@@ -1,13 +1,14 @@
 package net.javaguides.springboot.springsecurity.service;
 
 import net.javaguides.springboot.springsecurity.Entity.CartItem;
-import net.javaguides.springboot.springsecurity.Entity.ProductTest;
+import net.javaguides.springboot.springsecurity.Entity.Laptop.Laptop;
 import net.javaguides.springboot.springsecurity.Entity.User;
 import net.javaguides.springboot.springsecurity.repository.CartRepository;
-import net.javaguides.springboot.springsecurity.repository.ProductRepository;
+import net.javaguides.springboot.springsecurity.repository.LaptopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -17,43 +18,38 @@ public class CartServices {
     private CartRepository cartRepo;
 
     @Autowired
-    private ProductRepository proRepo;
+    private LaptopRepository lapRepo;
 
     public List<CartItem> listCartItems(User user){
         return cartRepo.findByUser(user);
     }
 
-    public Integer addProduct(Long productId, User user, Integer quantity){
+    @Transactional
+    public Integer addProduct(Long lapId, User user, Integer quantity){
         Integer addedNum = quantity;
 
-        ProductTest product = proRepo.findById(productId).get();
+        Laptop laptop = lapRepo.findById(lapId).get();
 
-        CartItem cart = cartRepo.findByUserAndProduct(user, product);
+        CartItem cart = cartRepo.findByUserAndLaptop(user, laptop);
 
         if (cart != null) {
             addedNum = cart.getQuantity() + quantity;
             cart.setQuantity(addedNum);
+            cartRepo.save(cart);
         } else{
             cart = new CartItem();
             cart.setUser(user);
             cart.setQuantity(quantity);
-            cart.setProduct(product);
+            cart.setLaptop(laptop);
+            cartRepo.save(cart);
             return quantity;
         }
         return addedNum;
     }
-
-    public void removeProduct(Long productId, Long userId){
-        cartRepo.deleteByUserAndProduct(userId, productId);
+    @Transactional
+    public void removeProduct(Long userId, Long lapId){
+        cartRepo.deleteByUserAndProduct(userId, lapId);
 
     }
-
-//    public float updateQuantity(Long productId, int quantity, Long userId){
-//        cartRepo.updateQuantity(quantity, productId, userId);
-//        ProductTest product = proRepo.findById(productId).get();
-//
-//        float subtotal = product.getPrice()*quantity;
-//        return subtotal;
-//    }
 
 }

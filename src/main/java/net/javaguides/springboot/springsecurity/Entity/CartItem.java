@@ -1,5 +1,7 @@
 package net.javaguides.springboot.springsecurity.Entity;
 
+import net.javaguides.springboot.springsecurity.Entity.Laptop.Laptop;
+
 import javax.persistence.*;
 
 
@@ -11,8 +13,8 @@ public class CartItem {
     private Long id;
 
     @ManyToOne
-    @JoinColumn( name = "PC_id")
-    private ProductTest product;
+    @JoinColumn( name = "laptop_id")
+    private Laptop laptop;
 
     @ManyToOne
     @JoinColumn(name = "User_id")
@@ -52,16 +54,16 @@ public class CartItem {
         return quantity;
     }
 
-    public void setProduct(ProductTest product) {
-        this.product = product;
+    public Laptop getLaptop() {
+        return laptop;
     }
 
-    public ProductTest getProduct() {
-        return product;
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
     }
 
     @Transient
     public float getSubtotal(){
-        return this.product.getPrice() * quantity;
+        return this.laptop.getPrice() * quantity;
     }
 }

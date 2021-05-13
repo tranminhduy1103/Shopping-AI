@@ -24,36 +24,38 @@
     <link rel="stylesheet" type="text/css" th:href="@{/styles/shop_styles.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/styles/shop_responsive.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/plugins/jquery-ui-1.12.1.custom/jquery-ui.css}">
+    <link media="screen" rel="stylesheet" th:href="@{/css/plugins.css}" type="text/css"/>
+    <link media="screen" rel="stylesheet" th:href="@{/css/main_product.css}" type="text/css"/>
 
 
 </head>
 <style type="text/css">
-    .portfolio-menu{
-	text-align:center;
-}
-.portfolio-menu ul li{
-	display:inline-block;
-	margin:0;
-	list-style:none;
-	padding:10px 15px;
-	cursor:pointer;
-	-webkit-transition:all 05s ease;
-	-moz-transition:all 05s ease;
-	-ms-transition:all 05s ease;
-	-o-transition:all 05s ease;
-	transition:all .5s ease;
-}
-
-.portfolio-item{
-	/*width:100%;*/
-}
-.portfolio-item .item{
-	/*width:303px;*/
-	float:left;
-	margin-bottom:10px;
-}
-
-
+    .portfolio-menu {
+        text-align: center;
+    }
+    
+    .portfolio-menu ul li {
+        display: inline-block;
+        margin: 0;
+        list-style: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        -webkit-transition: all 05s ease;
+        -moz-transition: all 05s ease;
+        -ms-transition: all 05s ease;
+        -o-transition: all 05s ease;
+        transition: all .5s ease;
+    }
+    
+    .portfolio-item {
+        /*width:100%;*/
+    }
+    
+    .portfolio-item .item {
+        /*width:303px;*/
+        float: left;
+        margin-bottom: 10px;
+    }
 </style>
 
 <body>
@@ -112,8 +114,7 @@
                                 <div class="header_search_form_container">
                                     <form action="#" class="header_search_form clearfix">
                                         <input class="header_search_input" placeholder="Search for products..."
-                                               required="required"
-                                               type="search">
+                                               required="required" type="search">
                                         <div class="custom_dropdown">
                                             <div class="custom_dropdown_list">
                                                 <span class="custom_dropdown_placeholder clc">All Categories</span>
@@ -327,8 +328,7 @@
                             <div class="page_menu_search">
                                 <form action="#">
                                     <input class="page_menu_search_input" placeholder="Search for products..."
-                                           required="required"
-                                           type="search">
+                                           required="required" type="search">
                                 </form>
                             </div>
                             <ul class="page_menu_nav">
@@ -413,11 +413,66 @@
     <!-- Shop -->
 
     <div class="shop">
+        <div class="shop-toolbar mb--30">
+            <table>
+                <tr height="45px">
+                    <th width="120px">Brand:</th>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Acer"
+                                                       href="#">Acer </a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".HP" href="#">HP</a>
+                    </td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".DELL"
+                                                       href="#">DELL</a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Apple"
+                                                       href="#">Apple</a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Asus"
+                                                       href="#">Asus</a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Lenovo" href="#">Lenovo</a>
+                    </td>
+                </tr>
+                <tr height="45px">
+                    <th width="120px">RAM:</th>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".4GB" href="#">4GB </a>
+                    </td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".8GB" href="#">8GB</a>
+                    </td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".16GB"
+                                                       href="#">16GB</a></td>
+                </tr>
+                <tr height="45px">
+                    <th width="120px">HDD memory:</th>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".500GB"
+                                                       href="#">500GB </a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".1TB" href="#">1TB</a>
+                    </td>
+                </tr>
+                <tr height="45px">
+                    <th width="120px">SSD memory:</th>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".256GB"
+                                                       href="#">256GB </a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".512GB"
+                                                       href="#">512GB</a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".1TB" href="#">1TB</a>
+                    </td>
+                </tr>
+                <tr height="45px">
+                    <th width="120px">OS:</th>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Window" href="#">Window </a>
+                    </td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Linux"
+                                                       href="#">Linux</a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".MacOS"
+                                                       href="#">MacOS</a></td>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Ubuntu" href="#">Ubuntu</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+                <!-- <div class="col-lg-3">
 
-                    <!-- Shop Sidebar -->
+
                     <div class="shop_sidebar">
                         <div class="sidebar_section">
                             <div class="sidebar_title">Categories</div>
@@ -434,8 +489,7 @@
                             <div class="filter_price">
                                 <div id="slider-range" class="slider_range"></div>
                                 <p>Range: </p>
-                                <p><input class="amount" id="amount" readonly style="border:0; font-weight:bold;"
-                                          type="text"></p>
+                                <p><input class="amount" id="amount" readonly style="border:0; font-weight:bold;" type="text"></p>
                             </div>
                         </div>
                         <div class="sidebar_section">
@@ -466,19 +520,15 @@
                             <div class="sidebar_subtitle brands_subtitle">Brands</div>
                             <ul class="brands_list">
                                 <li class="btn btn-outline-dark" data-filter=".ASUS"><a>ACER</a></li>
-                                <li class="btn btn-outline-dark" data-filter=".ASUS"><a href="#">HP</a></li>
-                                <li class="btn btn-outline-dark" data-filter=".ASUS"><a href="#">DELL</a></li>
-                                <li class="brand"><a data-filter=".ASUS" href="#">ASUS</a></li>
-                                <li class="brand"><a data-filter=".ASUS" href="#">MSI</a></li>
-
-
+                                <li class="btn btn-outline-dark" data-filter=".HP"><a href="#">HP</a></li>
+                                <li class="btn btn-outline-dark" data-filter=".DELL"><a href="#">DELL</a></li>
                             </ul>
                         </div>
                     </div>
 
-                </div>
+                </div> -->
 
-                <div class="col-lg-9">
+                <div class="col-lg-12">
 
                     <!-- Shop Content -->
 
@@ -489,8 +539,8 @@
                                 <span>Sort by:</span>
                                 <ul>
                                     <li>
-                                        <span class="sorting_text">highest rated<i
-                                                class="fas fa-chevron-down"></i></span>
+                                            <span class="sorting_text">highest rated<i
+                                                    class="fas fa-chevron-down"></i></span>
                                         <ul>
                                             <li class="shop_sorting_button"
                                                 data-isotope-option='{ "sortBy": "original-order" }'>highest rated
@@ -633,7 +683,7 @@
                             <!-- Recently Viewed Item -->
                             <div class="owl-item">
                                 <div class="viewed_item discount d-flex flex-column align-items-center justify-content-center text-center">
-                                    <div class="viewed_image"><img src="images/view_1.jpg" alt=""></div>
+                                    <div class="viewed_image"><img alt="" src="images/view_1.jpg"></div>
                                     <div class="viewed_content text-center">
                                         <div class="viewed_price">$225<span>$300</span></div>
                                         <div class="viewed_name"><a href="#">Beoplay H7</a></div>
@@ -648,7 +698,7 @@
                             <!-- Recently Viewed Item -->
                             <div class="owl-item">
                                 <div class="viewed_item d-flex flex-column align-items-center justify-content-center text-center">
-                                    <div class="viewed_image"><img src="images/view_2.jpg" alt=""></div>
+                                    <div class="viewed_image"><img alt="" src="images/view_2.jpg"></div>
                                     <div class="viewed_content text-center">
                                         <div class="viewed_price">$379</div>
                                         <div class="viewed_name"><a href="#">LUNA Smartphone</a></div>
@@ -663,7 +713,7 @@
                             <!-- Recently Viewed Item -->
                             <div class="owl-item">
                                 <div class="viewed_item d-flex flex-column align-items-center justify-content-center text-center">
-                                    <div class="viewed_image"><img src="images/view_3.jpg" alt=""></div>
+                                    <div class="viewed_image"><img alt="" src="images/view_3.jpg"></div>
                                     <div class="viewed_content text-center">
                                         <div class="viewed_price">$225</div>
                                         <div class="viewed_name"><a href="#">Samsung J730F...</a></div>
@@ -678,7 +728,7 @@
                             <!-- Recently Viewed Item -->
                             <div class="owl-item">
                                 <div class="viewed_item is_new d-flex flex-column align-items-center justify-content-center text-center">
-                                    <div class="viewed_image"><img src="images/view_4.jpg" alt=""></div>
+                                    <div class="viewed_image"><img alt="" src="images/view_4.jpg"></div>
                                     <div class="viewed_content text-center">
                                         <div class="viewed_price">$379</div>
                                         <div class="viewed_name"><a href="#">Huawei MediaPad...</a></div>
@@ -693,7 +743,7 @@
                             <!-- Recently Viewed Item -->
                             <div class="owl-item">
                                 <div class="viewed_item discount d-flex flex-column align-items-center justify-content-center text-center">
-                                    <div class="viewed_image"><img src="images/view_5.jpg" alt=""></div>
+                                    <div class="viewed_image"><img alt="" src="images/view_5.jpg"></div>
                                     <div class="viewed_content text-center">
                                         <div class="viewed_price">$225<span>$300</span></div>
                                         <div class="viewed_name"><a href="#">Sony PS4 Slim</a></div>
@@ -708,7 +758,7 @@
                             <!-- Recently Viewed Item -->
                             <div class="owl-item">
                                 <div class="viewed_item d-flex flex-column align-items-center justify-content-center text-center">
-                                    <div class="viewed_image"><img src="images/view_6.jpg" alt=""></div>
+                                    <div class="viewed_image"><img alt="" src="images/view_6.jpg"></div>
                                     <div class="viewed_content text-center">
                                         <div class="viewed_price">$375</div>
                                         <div class="viewed_name"><a href="#">Speedlink...</a></div>
@@ -802,7 +852,7 @@
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;
                             <script>
-                                document.write(new Date().getFullYear());
+                                    document.write(new Date().getFullYear());
 
 
                             </script>
@@ -814,16 +864,16 @@
                         <div class="logos ml-sm-auto">
                             <ul class="logos_list">
                                 <li>
-                                    <a href="#"><img src="images/logos_1.png" alt=""></a>
+                                    <a href="#"><img alt="" src="images/logos_1.png"></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/logos_2.png" alt=""></a>
+                                    <a href="#"><img alt="" src="images/logos_2.png"></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/logos_3.png" alt=""></a>
+                                    <a href="#"><img alt="" src="images/logos_3.png"></a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="images/logos_4.png" alt=""></a>
+                                    <a href="#"><img alt="" src="images/logos_4.png"></a>
                                 </li>
                             </ul>
                         </div>
@@ -835,29 +885,29 @@
 </div>
 
 <script th:inline="javascript">
-         // $('.portfolio-item').isotope({
+        // $('.portfolio-item').isotope({
         //  	itemSelector: '.item',
         //  	layoutMode: 'fitRows'
         //  });
 
-         $('.portfolio-menu ul li').click(function(){
-         	$('.portfolio-menu ul li').removeClass('active');
-         	$(this).addClass('active');
-         	var selector = $(this).attr('data-filter');
-         	$('.portfolio-item').isotope({
-         		filter:selector
-         	});
-         	return  false;
-         });
-         $(document).ready(function() {
-         var popup_btn = $('.popup-btn');
-         popup_btn.magnificPopup({
-         type : 'image',
-         gallery : {
-         	enabled : true
-         }
-         });
-         });
+        $('.portfolio-menu ul li').click(function() {
+            $('.portfolio-menu ul li').removeClass('active');
+            $(this).addClass('active');
+            var selector = $(this).attr('data-filter');
+            $('.portfolio-item').isotope({
+                filter: selector
+            });
+            return false;
+        });
+        $(document).ready(function() {
+            var popup_btn = $('.popup-btn');
+            popup_btn.magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        });
 
 
 </script>
@@ -877,6 +927,8 @@
 <script src="plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/shop_custom.js"></script>
+<!-- <script src="/js/plugins.js"></script> -->
+<script src="/js/custom_product.js"></script>
 </body>
 
 </html>

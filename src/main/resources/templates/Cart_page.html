@@ -8,7 +8,7 @@
     <title>IU Mall</title>
 
     <link rel="stylesheet" th:href="@{/styles/bootstrap4/bootstrap.min.css}" type="text/css">
-    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css}" />
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css}"/>
     <link rel="stylesheet" th:href="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.css}" type="text/css">
     <link rel="stylesheet" th:href="@{/plugins/OwlCarousel2-2.2.1/owl.theme.default.css}" type="text/css">
     <link rel="stylesheet" th:href="@{/plugins/OwlCarousel2-2.2.1/animate.css}" type="text/css">
@@ -72,7 +72,8 @@
                             <div class="header_search_content">
                                 <div class="header_search_form_container">
                                     <form action="#" class="header_search_form clearfix">
-                                        <input type="search" required="required" class="header_search_input" placeholder="Search for products...">
+                                        <input type="search" required="required" class="header_search_input"
+                                               placeholder="Search for products...">
                                         <div class="custom_dropdown">
                                             <div class="custom_dropdown_list">
                                                 <span class="custom_dropdown_placeholder clc">All Categories</span>
@@ -87,7 +88,8 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <button type="submit" class="header_search_button trans_300" value="Submit"><img src="/images/search.png" alt=""></button>
+                                        <button type="submit" class="header_search_button trans_300" value="Submit"><img
+                                                src="/images/search.png" alt=""></button>
                                     </form>
                                 </div>
                             </div>
@@ -107,80 +109,104 @@
                             <th>Quantity</th>
                             <th class="text-center">&nbsp;Price&nbsp;</th>
                             <th class="text-center">Subtotal</th>
-                            <th> </th>
+                            <th>&emsp;&emsp;&emsp;&emsp;&emsp;</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <th:block th:each ="item, status: ${cartItems}">
+                        <th:block th:each="item, status: ${cartItems}">
                             <tr>
-                                <div th:with = "product = ${item.product}">
-                                <td class="col-sm-8 col-md-6">
-                                    <div class="media">
-                                        <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
-                                        <div class="media-body">
-                                            <h4 class="media-heading"><a href="#" th:text="${product.Name}">Name</a></h4>
-                                            <h5 class="media-heading"> by <a href="#"><span th:text="${product.Product_Supplier}">Brand name</span></a></h5>
-                                            <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
+                                <div th:with="product = ${item.laptop}">
+                                    <td class="col-sm-8 col-md-6">
+                                        <div class="media">
+                                            <a class="thumbnail pull-left" href="#"> <img alt="" th:each="image:${Images}"
+                                                                                          th:if="(${image.ImageID} == ${product.ImageID})" th:src="${image.Image1}"
+                                                                                          style="width: 72px; height: 72px;">
+                                            </a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading"><a href="#" th:text="${product.Name}">Name</a>
+                                                </h4>
+                                                <h5 class="media-heading"> by <a href="#"><span
+                                                        th:text="${product.Supplier}">Brand name</span></a></h5>
+                                                <span>Status: </span><span
+                                                    class="text-success"><strong>In Stock</strong></span>
+                                            </div>
                                         </div>
-                                    </div></td>
-                                <td class="col-sm-1 col-md-1" style="text-align: center">
-                                    <input type="number" th:value="${item.quantity}" name="quantity" style="width: 50px;">
-                                </td>
-                                <td class="col-sm-1 col-md-1 text-center"><strong>$ <span th:text="${product.Price}">price</span></strong></td>
-                                <td class="col-sm-1 col-md-1 text-center"><strong>$ <span th:text="${item.getSubtotal()}">Subtotal</span></strong></td>
-                                <td class="col-sm-1 col-md-1">
-                                    <button type="button" class="btn btn-danger">
-                                        <span class="glyphicon glyphicon-remove"></span><a th:href="${'/cart/remove/' + product.id}" style="color:white;"> Remove
-                                    </a></button></td>
+                                    </td>
+                                    <td class="col-sm-1 col-md-1" style="text-align: center">
+                                        <input type="number" th:value="${item.quantity}" name="quantity"
+                                               style="width: 50px;">
+                                    </td>
+                                    <td class="col-sm-1 col-md-1 text-center"><strong><span
+                                            th:text="${product.Price}">price</span></strong></td>
+                                    <td class="col-sm-1 col-md-1 text-center"><strong><span
+                                            th:text="${item.getSubtotal()}">Subtotal</span></strong></td>
+                                    <td class="col-sm-1 col-md-1">
+                                        <button type="button" class="btn btn-danger">
+                                            <span class="glyphicon glyphicon-remove"></span><a
+                                                th:href="${'/cart/remove/' + product.id}" style="color:white;"> Remove
+                                        </a></button>
+                                    </td>
                                 </div>
                             </tr>
                         </th:block>
-        <!--                <tr>-->
-        <!--                    <td>   </td>-->
-        <!--                    <td>   </td>-->
-        <!--                    <td>   </td>-->
-        <!--                    <td><h5><b>Total</b></h5></td>-->
-        <!--                    <td class="text-right"><h5><strong th:text="${Total}">Total</strong></h5></td>-->
-        <!--                </tr>-->
-        <!--                <tr>-->
-        <!--                    <td>   </td>-->
-        <!--                    <td>   </td>-->
-        <!--                    <td>   </td>-->
-        <!--                    <td><h5>Estimated shipping</h5></td>-->
-        <!--                    <td class="text-right"><h5><strong>$6.94</strong></h5></td>-->
-        <!--                </tr>-->
+                        <!--                <tr>-->
+                        <!--                    <td>   </td>-->
+                        <!--                    <td>   </td>-->
+                        <!--                    <td>   </td>-->
+                        <!--                    <td><h5><b>Total</b></h5></td>-->
+                        <!--                    <td class="text-right"><h5><strong th:text="${Total}">Total</strong></h5></td>-->
+                        <!--                </tr>-->
+                        <!--                <tr>-->
+                        <!--                    <td>   </td>-->
+                        <!--                    <td>   </td>-->
+                        <!--                    <td>   </td>-->
+                        <!--                    <td><h5>Estimated shipping</h5></td>-->
+                        <!--                    <td class="text-right"><h5><strong>$6.94</strong></h5></td>-->
+                        <!--                </tr>-->
                         <tr>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>   </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
                             <td><h3>Total</h3></td>
-                            <td class="text-right"><h3><strong><span th:text="'$ ' +${Total}">Total</span></strong></h3></td>
+                            <td class="text-right">
+                                <h3><strong>
+                                    <div th:text="${Total}">Total</div>
+                                </strong></h3>
+                            </td>
                         </tr>
                         <tr>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>   </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
                             <td><h5></h5></td>
-                            <td><h5>
-                                <button type="button" class="btn btn-primary">
-                                    Update <span class="glyphicon glyphicon-refresh"></span>
-                                </button>
-                            </h5></td>
+                            <td>
+                                <h3>
+                                    <button type="button" class="btn btn-primary">
+                                        Update <span class="glyphicon glyphicon-refresh"></span>
+                                    </button>
+                                </h3>
+                            </td>
                         </tr>
                         <tr>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>   </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
                             <td>
-                                <button type="button" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                                </button></td>
+                                <h3>
+                                    <button type="button" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                                    </button>
+                                </h3>
+                            </td>
                             <td>
-                                <button type="button" class="btn btn-success">
-                                    <a th:href="${'/checkout'}" style="color:white;">
-                                        Checkout <span class="glyphicon glyphicon-play"></span>
-                                    </a>
-                                </button></td>
+                                <h3>
+                                    <button type="button" class="btn btn-success">
+                                        <a th:href="${'/checkout'}" style="color:white;">
+                                            Checkout <span class="glyphicon glyphicon-play"></span>
+                                        </a>
+                                    </button>
+                                </h3>
+                            </td>
                         </tr>
                         </tbody>
                     </table>

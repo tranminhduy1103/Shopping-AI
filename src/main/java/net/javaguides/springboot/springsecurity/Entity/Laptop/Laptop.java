@@ -17,9 +17,8 @@ public class Laptop {
     @Column(nullable = false)
     private String Name;
 
-    @NotEmpty
     @Column(nullable = false)
-    private String Price;
+    private float Price;
 
     @NotEmpty
     @Column(nullable = false)
@@ -80,7 +79,7 @@ public class Laptop {
     public Laptop() {
     }
 
-    public Laptop(Long id, String name, String price, String supplier, String CPU, String screen, String RAM, String graphics, String storage, String operating_System, String cell, String weight, String guarantee_info, String color, String other_info, String imageID, String type, String description) {
+    public Laptop(Long id, String name, float price, String supplier, String CPU, String screen, String RAM, String graphics, String storage, String operating_System, String cell, String weight, String guarantee_info, String color, String other_info, String imageID, String type, String description) {
         this.id = id;
         Name = name;
         Price = price;
@@ -133,11 +132,11 @@ public class Laptop {
         Name = name;
     }
 
-    public String getPrice() {
+    public float getPrice() {
         return Price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(float price) {
         Price = price;
     }
 
