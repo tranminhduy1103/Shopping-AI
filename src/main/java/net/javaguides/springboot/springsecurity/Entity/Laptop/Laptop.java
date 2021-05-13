@@ -13,65 +13,47 @@ public class Laptop {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty
-    @Column(nullable = false)
     private String Name;
 
-    @Column(nullable = false)
-    private float Price;
+    private double Price;
 
-    @NotEmpty
-    @Column(nullable = false)
     private String Supplier;
 
-    @NotEmpty
-    @Column(nullable = false)
+
     private String CPU;
 
-    @NotEmpty
-    @Column(nullable = false)
+
     private String Screen;
 
-    @Column(nullable = false)
     private String RAM;
 
-    @Column(nullable = false)
     private String Graphics;
 
-    @NotEmpty
-    @Column(nullable = false)
+
     private String Storage;
 
-    @NotEmpty
-    @Column(nullable = false)
+
     private String Operating_System;
 
-    @NotEmpty
-    @Column(nullable = false)
+
     private String Cell;
 
-    @NotEmpty
-    @Column(nullable = false)
+
     private String Weight;
 
-    @NotEmpty
-    @Column(nullable = false)
+
     private String Guarantee_info;
 
-    @NotEmpty
-    @Column(nullable = false)
+
     private String Color;
 
-    @NotEmpty
-    @Column(nullable = false)
+
     private String Other_info;
 
-    @NotEmpty
-    @Column(nullable = false)
+
     private String ImageID;
 
-    @NotEmpty
-    @Column(nullable = false)
+
     private String Type;
 
     private String Description;
@@ -132,7 +114,7 @@ public class Laptop {
         Name = name;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return Price;
     }
 

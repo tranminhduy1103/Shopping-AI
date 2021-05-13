@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
+
 <head>
     <title>Shop</title>
     <meta charset="utf-8">
@@ -16,6 +17,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+
     <link rel="stylesheet" type="text/css" th:href="@{/styles/bootstrap4/bootstrap.min.css}">
     <link rel="stylesheet" type="text/css" th:href="@{plugins/fontawesome-free-5.0.1/css/fontawesome-all.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/plugins/OwlCarousel2-2.2.1/owl.carousel.css}">
@@ -34,7 +38,7 @@
         text-align: center;
     }
     
-    .portfolio-menu ul li {
+    .portfolio-menu td tr a{
         display: inline-block;
         margin: 0;
         list-style: none;
@@ -56,6 +60,7 @@
         float: left;
         margin-bottom: 10px;
     }
+
 </style>
 
 <body>
@@ -412,22 +417,22 @@
 
     <!-- Shop -->
 
-    <div class="shop">
+    <div class="shop portfolio-menu mt-2 mb-4">
         <div class="shop-toolbar mb--30">
             <table>
                 <tr height="45px">
                     <th width="120px">Brand:</th>
-                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Acer"
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".ACER"
                                                        href="#">Acer </a></td>
                     <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".HP" href="#">HP</a>
                     </td>
                     <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".DELL"
                                                        href="#">DELL</a></td>
-                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Apple"
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".APPLE"
                                                        href="#">Apple</a></td>
-                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Asus"
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".ASUS"
                                                        href="#">Asus</a></td>
-                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Lenovo" href="#">Lenovo</a>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".LENOVO" href="#">Lenovo</a>
                     </td>
                 </tr>
                 <tr height="45px">
@@ -470,69 +475,12 @@
         </div>
         <div class="container">
             <div class="row">
-                <!-- <div class="col-lg-3">
-
-
-                    <div class="shop_sidebar">
-                        <div class="sidebar_section">
-                            <div class="sidebar_title">Categories</div>
-                            <ul class="sidebar_categories">
-                                <li><a href="#">Laptops</a></li>
-                                <li><a href="#">PCs</a></li>
-                                <li><a href="#">Components</a></li>
-
-                            </ul>
-                        </div>
-                        <div class="sidebar_section filter_by_section">
-                            <div class="sidebar_title">Filter By</div>
-                            <div class="sidebar_subtitle">Price</div>
-                            <div class="filter_price">
-                                <div id="slider-range" class="slider_range"></div>
-                                <p>Range: </p>
-                                <p><input class="amount" id="amount" readonly style="border:0; font-weight:bold;" type="text"></p>
-                            </div>
-                        </div>
-                        <div class="sidebar_section">
-                            <div class="sidebar_subtitle color_subtitle">Color</div>
-                            <ul class="colors_list">
-                                <li class="color">
-                                    <a href="#" style="background: #b19c83;"></a>
-                                </li>
-                                <li class="color">
-                                    <a href="#" style="background: #000000;"></a>
-                                </li>
-                                <li class="color">
-                                    <a href="#" style="background: #999999;"></a>
-                                </li>
-                                <li class="color">
-                                    <a href="#" style="background: #0e8ce4;"></a>
-                                </li>
-                                <li class="color">
-                                    <a href="#" style="background: #df3b3b;"></a>
-                                </li>
-                                <li class="color">
-                                    <a href="#" style="background: #ffffff; border: solid 1px #e1e1e1;"></a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="sidebar_section">
-                            <div class="sidebar_subtitle brands_subtitle">Brands</div>
-                            <ul class="brands_list">
-                                <li class="btn btn-outline-dark" data-filter=".ASUS"><a>ACER</a></li>
-                                <li class="btn btn-outline-dark" data-filter=".HP"><a href="#">HP</a></li>
-                                <li class="btn btn-outline-dark" data-filter=".DELL"><a href="#">DELL</a></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div> -->
 
                 <div class="col-lg-12">
 
                     <!-- Shop Content -->
 
-                    <div class="shop_content">
+                    <div class="shop_content ">
                         <div class="shop_bar clearfix">
                             <div class="shop_product_count"><span>186</span> products found</div>
                             <div class="shop_sorting">
@@ -546,10 +494,10 @@
                                                 data-isotope-option='{ "sortBy": "original-order" }'>highest rated
                                             </li>
                                             <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "name" }'>
-                                                name
+                                                Name
                                             </li>
                                             <li class="shop_sorting_button" data-isotope-option='{ "sortBy": "price" }'>
-                                                price
+                                                Price
                                             </li>
                                         </ul>
                                     </li>
@@ -557,11 +505,12 @@
                             </div>
                         </div>
 
-                        <div class="product_grid">
+                        <div class="product_grid portfolio-item row ">
 
                             <div class="product_grid_border"></div>
                             <!-- Product Item -->
-                            <div class="product_item" th:each="laptop:${Laptops}">
+                            <div class="product_item item" th:classappend="${laptop.RAM} +' ' +|${laptop.Supplier}|"
+                                 th:each="laptop:${Laptops}">
                                 <div class="product_border"></div>
                                 <div class="product_image d-flex flex-column align-items-center justify-content-center">
                                     <a th:href="${ '/Laptops/' + laptop.id}">
@@ -570,71 +519,15 @@
                                     </a>
                                 </div>
                                 <div class="product_content">
-                                    <div class="product_price" th:text="${laptop.Price}"></div>
-                                    <div class="product_name">
+                                    <div class="product_price"
+                                         th:text="${#numbers.formatDecimal(laptop.Price, 0, 'COMMA', 2, 'POINT')}">
+                                        <h2>VNĐ</h2>
+                                    </div>
+                                    <div class="product_name popup-btn">
                                         <div th:text="${laptop.Name}"></div>
                                     </div>
                                 </div>
-                                <!--                                <div class="product_fav"><i class="fas fa-heart"></i></div>-->
-                                <!--                                <ul class="product_marks">-->
-                                <!--                                    <li class="product_mark product_discount">-25%</li>-->
-                                <!--                                    <li class="product_mark product_new">new</li>-->
-                                <!--                                </ul>-->
-
                             </div>
-
-                            <!-- Product Item -->
-                            <!--                            <div class="product_item is_new">-->
-                            <!--                                <div class="product_border"></div>-->
-                            <!--                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/new_5.jpg" alt=""></div>-->
-                            <!--                                <div class="product_content">-->
-                            <!--                                    <div class="product_price">$225</div>-->
-                            <!--                                    <div class="product_name">-->
-                            <!--                                        <div><a href="#" tabindex="0">Philips BT6900A</a></div>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <!--                                <div class="product_fav"><i class="fas fa-heart"></i></div>-->
-                            <!--                                <ul class="product_marks">-->
-                            <!--                                    <li class="product_mark product_discount">-25%</li>-->
-                            <!--                                    <li class="product_mark product_new">new</li>-->
-                            <!--                                </ul>-->
-                            <!--                            </div>-->
-
-                            <!--                            &lt;!&ndash; Product Item &ndash;&gt;-->
-                            <!--                            <div class="product_item discount">-->
-                            <!--                                <div class="product_border"></div>-->
-                            <!--                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/featured_1.png" alt=""></div>-->
-                            <!--                                <div class="product_content">-->
-                            <!--                                    <div class="product_price">$225<span>$300</span></div>-->
-                            <!--                                    <div class="product_name">-->
-                            <!--                                        <div><a href="#" tabindex="0">Huawei MediaPad...</a></div>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <!--                                <div class="product_fav"><i class="fas fa-heart"></i></div>-->
-                            <!--                                <ul class="product_marks">-->
-                            <!--                                    <li class="product_mark product_discount">-25%</li>-->
-                            <!--                                    <li class="product_mark product_new">new</li>-->
-                            <!--                                </ul>-->
-                            <!--                            </div>-->
-
-                            <!--                            &lt;!&ndash; Product Item &ndash;&gt;-->
-                            <!--                            <div class="product_item">-->
-                            <!--                                <div class="product_border"></div>-->
-                            <!--                                <div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="images/featured_2.png" alt=""></div>-->
-                            <!--                                <div class="product_content">-->
-                            <!--                                    <div class="product_price">$379</div>-->
-                            <!--                                    <div class="product_name">-->
-                            <!--                                        <div><a href="#" tabindex="0">Apple iPod shuffle</a></div>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <!--                                <div class="product_fav"><i class="fas fa-heart"></i></div>-->
-                            <!--                                <ul class="product_marks">-->
-                            <!--                                    <li class="product_mark product_discount">-25%</li>-->
-                            <!--                                    <li class="product_mark product_new">new</li>-->
-                            <!--                                </ul>-->
-                            <!--                            </div>-->
-
-
                         </div>
 
                         <!-- Shop Page Navigation -->
@@ -855,6 +748,7 @@
                                     document.write(new Date().getFullYear());
 
 
+
                             </script>
                             All rights reserved | This template is made with <i aria-hidden="true"
                                                                                 class="fa fa-heart"></i> by <a
@@ -885,29 +779,30 @@
 </div>
 
 <script th:inline="javascript">
-        // $('.portfolio-item').isotope({
+      // $('.portfolio-item').isotope({
         //  	itemSelector: '.item',
         //  	layoutMode: 'fitRows'
         //  });
 
-        $('.portfolio-menu ul li').click(function() {
-            $('.portfolio-menu ul li').removeClass('active');
-            $(this).addClass('active');
-            var selector = $(this).attr('data-filter');
-            $('.portfolio-item').isotope({
-                filter: selector
-            });
-            return false;
-        });
-        $(document).ready(function() {
-            var popup_btn = $('.popup-btn');
-            popup_btn.magnificPopup({
-                type: 'image',
-                gallery: {
-                    enabled: true
-                }
-            });
-        });
+         $('.portfolio-menu tr td a').click(function(){
+         	$('.portfolio-menu tr td a').removeClass('active');
+         	$(this).addClass('active');
+         	var selector = $(this).attr('data-filter');
+         	$('.portfolio-item').isotope({
+         		filter:selector
+         	});
+         	return  false;
+         });
+         $(document).ready(function() {
+         var popup_btn = $('.popup-btn');
+         popup_btn.magnificPopup({
+         type : 'image',
+         gallery : {
+         	enabled : true
+         }
+         });
+         });
+
 
 
 </script>

@@ -63,7 +63,7 @@ public class CartItem {
     }
 
     @Transient
-    public float getSubtotal(){
+    public double getSubtotal() {
         return this.laptop.getPrice() * quantity;
     }
 }

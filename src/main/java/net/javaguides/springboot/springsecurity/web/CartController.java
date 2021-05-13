@@ -40,7 +40,7 @@ public class CartController {
             email = principal.toString();
         }
         List<CartItem> cart = cartServices.listCartItems(userService.findByEmail(email));
-        float total = 0.0f;
+        double total = 0;
         for (CartItem item : cart) {
             total += item.getSubtotal();
         }
@@ -81,7 +81,7 @@ public class CartController {
             email = principal.toString();
         }
         List<CartItem> cart = cartServices.listCartItems(userService.findByEmail(email));
-        float total = 0.0f;
+        double total = 0;
         for (CartItem item : cart) {
             total += item.getSubtotal();
         }
