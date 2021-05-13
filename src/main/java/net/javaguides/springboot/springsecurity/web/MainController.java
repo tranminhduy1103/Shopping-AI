@@ -1,18 +1,23 @@
 package net.javaguides.springboot.springsecurity.web;
 
 import net.javaguides.springboot.springsecurity.Entity.Laptop.Laptop;
-import net.javaguides.springboot.springsecurity.Exception.FileStorageException;
+import net.javaguides.springboot.springsecurity.Entity.User;
 import net.javaguides.springboot.springsecurity.Exception.RecordNotFoundException;
-import net.javaguides.springboot.springsecurity.Entity.*;
-import net.javaguides.springboot.springsecurity.repository.*;
-import net.javaguides.springboot.springsecurity.service.*;
+import net.javaguides.springboot.springsecurity.repository.ImageRepository;
+import net.javaguides.springboot.springsecurity.repository.LaptopRepository;
+import net.javaguides.springboot.springsecurity.repository.PCRepository;
+import net.javaguides.springboot.springsecurity.repository.UserRepository;
+import net.javaguides.springboot.springsecurity.service.LaptopService;
+import net.javaguides.springboot.springsecurity.service.LaptopServiceImpl;
+import net.javaguides.springboot.springsecurity.service.UserServiceImpl;
 import net.javaguides.springboot.springsecurity.upload.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 import java.util.Optional;
