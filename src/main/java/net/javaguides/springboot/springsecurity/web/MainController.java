@@ -58,7 +58,7 @@ public class MainController {
 
     @GetMapping("/")
     public String root(Model model) {
-        return "redirect:/Laptops";
+        return "redirect:/Menu";
     }
 
 
@@ -66,7 +66,7 @@ public class MainController {
     public String ListofLaptop(Model model) {
         model.addAttribute("Laptops", laptopRepository.findAll());
         model.addAttribute("Images", imageRepository.findAll());
-        return "List-Of-Laptops";
+        return "List-Of-Sound";
     }
 
     @GetMapping("Laptops/{id}")
