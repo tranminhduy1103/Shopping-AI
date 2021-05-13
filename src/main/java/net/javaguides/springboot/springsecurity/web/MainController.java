@@ -141,7 +141,7 @@ public class MainController {
     public String listofUser(Model model) {
         List<User> list = userService.getAllUsers();
         model.addAttribute("users", list);
-        return "test2";
+        return "List-Of-User";
     }
 
 
