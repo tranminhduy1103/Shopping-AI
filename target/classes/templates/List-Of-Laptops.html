@@ -462,13 +462,13 @@
                 </tr>
                 <tr height="45px">
                     <th width="120px">OS:</th>
-                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Window" href="#">Window </a>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Windows" href="#">Windows </a>
                     </td>
                     <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Linux"
                                                        href="#">Linux</a></td>
-                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".MacOS"
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".macOS"
                                                        href="#">MacOS</a></td>
-                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Ubuntu" href="#">Ubuntu</a>
+                    <td align="center" width="80px"><a class="btn btn-outline-dark" data-filter=".Fedora" href="#">Fedora</a>
                     </td>
                 </tr>
             </table>
@@ -509,7 +509,8 @@
 
                             <div class="product_grid_border"></div>
                             <!-- Product Item -->
-                            <div class="product_item item" th:classappend="${laptop.RAM} +' ' +|${laptop.Supplier}|"
+                            <div class="product_item item"
+                                 th:classappend="${laptop.RAM} +' ' +|${laptop.Supplier} + ${laptop.Storage}+ ${laptop.Operating_System} |"
                                  th:each="laptop:${Laptops}">
                                 <div class="product_border"></div>
                                 <div class="product_image d-flex flex-column align-items-center justify-content-center">
@@ -520,8 +521,8 @@
                                 </div>
                                 <div class="product_content">
                                     <div class="product_price"
-                                         th:text="${#numbers.formatDecimal(laptop.Price, 0, 'COMMA', 2, 'POINT')}">
-                                        <h2>VNĐ</h2>
+                                         th:text="${#numbers.formatDecimal(laptop.Price, 0, 'COMMA', 2, 'POINT')}+'VNĐ' ">
+
                                     </div>
                                     <div class="product_name popup-btn">
                                         <div th:text="${laptop.Name}"></div>
