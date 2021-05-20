@@ -66,7 +66,7 @@ public class MainController {
     public String ListofLaptop(Model model) {
         model.addAttribute("Laptops", laptopRepository.findAll());
         model.addAttribute("Images", imageRepository.findAll());
-        return "List-Of-Sound";
+        return "List-Of-Laptops";
     }
 
     @GetMapping("Laptops/{id}")
