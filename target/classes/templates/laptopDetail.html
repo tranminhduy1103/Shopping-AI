@@ -498,7 +498,8 @@
 
                                         </ul>
                                     </div>
-                                    <div class="product_price" th:text="${laptop.Price}"></div>
+                                    <div class="product_price"
+                                         th:text="${#numbers.formatDecimal(laptop.Price, 0, 'COMMA', 2, 'POINT')}+'VNĐ' "></div>
                                 </form>
                             </div>
                             <br>
@@ -558,16 +559,23 @@
                                     <img alt="" src="image/others/review-tab-product-details.jpg">
                                 </div>
                                 <h5 class="meta">Reference: <span class="small-text"></span></h5>
-                                <h5 class="meta">In stock: <span class="small-text">297 Items</span></h5>
+                                <h5 class="meta">In stock: <span class="small-text"></span></h5>
                                 <section class="product-features">
                                     <h3 class="title">Tech Specs:</h3>
                                     <dl class="data-sheet">
                                         <dt class="name">CPU</dt>
-                                        <dd class="value">Intel Core i5</dd>
+                                        <dd class="value" th:text="${laptop.CPU}"></dd>
                                         <dt class="name">RAM</dt>
-                                        <dd class="value">8 GB</dd>
+                                        <dd class="value" th:text="${laptop.RAM}"></dd>
                                         <dt class="name">Display</dt>
-                                        <dd class="value">14" FullHD</dd>
+                                        <dd class="value" th:text="${laptop.Graphics}"></dd>
+                                        <dt class="name">Cell</dt>
+                                        <dd class="value" th:text="${laptop.Cell}"></dd>
+                                        <dt class="name">Operating System</dt>
+                                        <dd class="value" th:text="${laptop.Operating_System}"></dd>
+                                        <dt class="name">Storage</dt>
+                                        <dd class="value" th:text="${laptop.Storage}"></dd>
+
                                     </dl>
                                 </section>
                             </div>

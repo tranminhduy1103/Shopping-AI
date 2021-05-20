@@ -147,7 +147,8 @@
                                                                         </th:block>
                                                                     </td>
                                                                     <td>
-                                                                        <b><span th:text="${Total}">Total</span></b>
+                                                                        <b><span
+                                                                                th:text="${#numbers.formatDecimal(Total, 0, 'COMMA', 2, 'POINT')}+'VNĐ' ">Total</span></b>
                                                                     </td>
                                                                 </tr>
                                                             </table>
@@ -157,7 +158,8 @@
                                                             text-align: center;">
                                                                 <h3>Order Total</h3>
                                                                 <h3><span style="color:green;"><span
-                                                                        th:text="${Total}">Total</span></span></h3>
+                                                                        th:text="${#numbers.formatDecimal(Total, 0, 'COMMA', 2, 'POINT')}+'VNĐ' ">Total</span></span>
+                                                                </h3>
                                                             </div>
                                                         </div>
                                                     </div>

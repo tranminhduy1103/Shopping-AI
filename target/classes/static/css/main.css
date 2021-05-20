@@ -497,13 +497,14 @@ input {
 }
 
 .card-1 .card-heading {
-    background: url("../images/bg-head-02.jpg") center center/cover no-repeat;
-    padding-top: 210px;
+height:350px;
+    background: url("https://i.ytimg.com/vi/9p4As71gq4E/maxresdefault.jpg") center center/cover no-repeat;
+    padding-top: 300px;
 }
 
 .card-1 .card-body {
     padding: 0 90px;
-    padding-top: 55px;
+    padding-top: 70px;
     padding-bottom: 65px;
 }
 

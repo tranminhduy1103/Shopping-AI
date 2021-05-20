@@ -58,7 +58,7 @@ public class MainController {
 
     @GetMapping("/")
     public String root(Model model) {
-        return "redirect:/Menu";
+        return "redirect:/Login_form";
     }
 
 
@@ -66,7 +66,7 @@ public class MainController {
     public String ListofLaptop(Model model) {
         model.addAttribute("Laptops", laptopRepository.findAll());
         model.addAttribute("Images", imageRepository.findAll());
-        return "List-Of-Sound";
+        return "List-Of-Laptops";
     }
 
     @GetMapping("Laptops/{id}")
@@ -149,7 +149,7 @@ public class MainController {
     public String deleteUserById(Model model, @PathVariable("id") Long id)
             throws RecordNotFoundException {
         userService.deleteUserById(id);
-        return "redirect:/";
+        return "redirect:/listofuser";
     }
 
     @RequestMapping(path = {"/edit", "/edit/{id}"})

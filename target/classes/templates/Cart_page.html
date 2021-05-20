@@ -139,9 +139,11 @@
                                                style="width: 50px;">
                                     </td>
                                     <td class="col-sm-1 col-md-1 text-center"><strong><span
-                                            th:text="${product.Price}">price</span></strong></td>
+                                            th:text="${#numbers.formatDecimal(product.Price, 0, 'COMMA', 2, 'POINT')}+'VNĐ' ">price</span></strong>
+                                    </td>
                                     <td class="col-sm-1 col-md-1 text-center"><strong><span
-                                            th:text="${item.getSubtotal()}">Subtotal</span></strong></td>
+                                            th:text="${#numbers.formatDecimal(item.getSubtotal(), 0, 'COMMA', 2, 'POINT')}+'VNĐ' "
+                                    >Subtotal</span></strong></td>
                                     <td class="col-sm-1 col-md-1">
                                         <button type="button" class="btn btn-danger">
                                             <span class="glyphicon glyphicon-remove"></span><a
@@ -172,7 +174,9 @@
                             <td><h3>Total</h3></td>
                             <td class="text-right">
                                 <h3><strong>
-                                    <div th:text="${Total}">Total</div>
+                                    <div th:text="${#numbers.formatDecimal(Total, 0, 'COMMA', 2, 'POINT')}+'VNĐ' ">
+                                        Total
+                                    </div>
                                 </strong></h3>
                             </td>
                         </tr>
