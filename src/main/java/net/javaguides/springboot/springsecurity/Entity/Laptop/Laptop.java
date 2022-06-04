@@ -5,7 +5,6 @@ import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "Id"))
-
 public class Laptop {
     //Laptop(Id,Name,Price,Supplier,cpu,Screen,RAM,Graphics,Storage,Operating_System,Cell,Weight,
     //Description, `Guarantee-info`, color, `Other-info`, ImageID,Type)

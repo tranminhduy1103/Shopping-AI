@@ -79,11 +79,11 @@
                     <div class="col d-flex flex-row">
                         <div class="top_bar_contact_item">
                             <div class="top_bar_icon"><img alt="" src="/images/phone.png"></div>
-                            0704689783
+                            (028) 37244270
                         </div>
                         <div class="top_bar_contact_item">
                             <div class="top_bar_icon"><img alt="" src="/images/mail.png"></div>
-                            <a href="">IUMall@iu.vn</a></div>
+                            <a th:href="@{/Menu}">IUMall@iu.vn</a></div>
                         <div class="top_bar_content ml-auto">
                             <div class="top_bar_menu">
 
@@ -92,7 +92,26 @@
                                 <div class="user_icon"><img alt="" src="/images/user.svg"></div>
                                 <div><a href="/Register">Register</a></div>
                                 <div><a href="/login">Sign in</a></div>
+                                &emsp;
+                                <div class="dropdown">
+                                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                                            type="button">Hello
+                                        <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-header">Email</li>
+                                        <li><a class="dropdown-item" href="#">Your Profile</a></li>
+                                        <li><a class="dropdown-item" href="#">Manage Orders</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" th:href="@{/logout}">
+                                            <button class="btn btn-primary" type="submit">Log out</button>
+                                        </a></li>
+                                    </ul>
+                                </div>
                             </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -108,7 +127,7 @@
                     <!-- Logo -->
                     <div class="col-lg-2 col-sm-3 col-3 order-1">
                         <div class="logo_container">
-                            <div class="logo"><a href="#">IU MALL</a></div>
+                            <div class="logo"><a th:href="@{/Menu}">IU MALL</a></div>
                         </div>
                     </div>
 
@@ -681,7 +700,7 @@
                 <div class="col-lg-3 footer_col">
                     <div class="footer_column footer_contact">
                         <div class="logo_container">
-                            <div class="logo"><a href="#">IU Mart</a></div>
+                            <div class="logo"><a th:href="@{/Menu}">IU Mart</a></div>
                         </div>
                         <div class="footer_title">Got Question? Call Us 24/7</div>
                         <div class="footer_phone">0123 456 789</div>

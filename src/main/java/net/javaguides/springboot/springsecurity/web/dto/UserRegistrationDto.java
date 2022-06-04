@@ -35,9 +35,11 @@ public class UserRegistrationDto {
     @NotNull
     @NotEmpty
     private String Gender;
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+
+
     @NotNull
     @NotEmpty
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     private String DateOfBirth;
 
 

@@ -78,6 +78,7 @@ public class MainController {
     }
 
 
+
     @GetMapping("/detail")
     public String Product_Detail(Model model) {
         return "laptopDetail";
@@ -111,9 +112,20 @@ public class MainController {
         return "/403";
     }
 
+    /**
+     * Admin Page
+     **/
     @RequestMapping("/adminview")
     public String adminView() {
         return "/Admin-page";
+    }
+
+    /**
+     * Admin Page
+     **/
+    @RequestMapping("/Product_Supplier_View")
+    public String Product_SupplierView() {
+        return "/Product_Supplier";
     }
 
 
@@ -162,6 +174,16 @@ public class MainController {
             model.addAttribute("user", new User());
         }
         return "Edit_member";
+    }
+
+    /**
+     *
+     **/
+    @GetMapping("/Manage_laptop")
+    public String manaChamp(Model model) {
+        model.addAttribute("Images", imageRepository.findAll());
+        model.addAttribute("Laptops", laptopRepository.findAll());
+        return "Manage_Laptop";
     }
 
 
