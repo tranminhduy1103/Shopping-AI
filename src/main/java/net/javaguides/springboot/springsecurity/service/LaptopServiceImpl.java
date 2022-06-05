@@ -35,4 +35,34 @@ public class LaptopServiceImpl implements LaptopService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return null;
     }
+
+    @Override
+    public List<Laptop> getAllLaptop() {
+	
+    	return laptopRepository.findAll();
+    }
+
+    @Override
+    public void saveLaptop(Laptop laptop) {
+	
+    	this.laptopRepository.save(laptop);
+    }
+
+    @Override
+    public Laptop getLaptopById(long id) {
+    	Optional<Laptop> optional = laptopRepository.findById(id);
+    	Laptop laptop =null;
+	
+    	if(optional.isPresent()) {
+    		laptop= optional.get();
+    	}else {
+    		throw new RuntimeException("The Laptop not found by id: "+id);
+    	}
+    	return laptop;
+    }
+
+    @Override
+    public void deleteLaptopById(long id) {
+    	this.laptopRepository.deleteById(id);
+    }	
 }

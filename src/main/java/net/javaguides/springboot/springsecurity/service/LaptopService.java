@@ -9,4 +9,16 @@ import java.util.Optional;
 public interface LaptopService extends UserDetailsService {
     Optional<Laptop> findById(Long id);
 //    List<Laptop> search(String name);
+    
+    // get all Laptop
+    public List<Laptop> getAllLaptop();
+    
+    //save laptop
+    public void saveLaptop(Laptop laptop);
+    
+    //get Laptop by Id
+    public Laptop getLaptopById(long id);
+    
+    //delete laptop by id
+    public void deleteLaptopById(long id);
 }

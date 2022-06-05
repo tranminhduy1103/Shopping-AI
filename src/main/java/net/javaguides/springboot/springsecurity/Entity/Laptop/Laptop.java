@@ -1,10 +1,9 @@
 package net.javaguides.springboot.springsecurity.Entity.Laptop;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 
 @Entity
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = "Id"))
+@Table(name = "laptop",uniqueConstraints = @UniqueConstraint(columnNames = "Id"))
 
 public class Laptop {
     //Laptop(Id,Name,Price,Supplier,cpu,Screen,RAM,Graphics,Storage,Operating_System,Cell,Weight,
@@ -12,50 +11,55 @@ public class Laptop {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(name ="Name", length = 255 )
     private String Name;
-
+    
+    @Column(name ="Price")
     private double Price;
-
+    
+    @Column(name ="Supplier", length = 255 )
     private String Supplier;
 
-
+    @Column(name ="CPU", length = 255 )
     private String CPU;
 
-
+    @Column(name ="Screen", length = 255 )
     private String Screen;
-
+    
+    @Column(name ="RAM", length = 255 )
     private String RAM;
 
+    @Column(name ="Graphics", length = 255 )
     private String Graphics;
 
-
+    @Column(name ="Storage", length = 255 )
     private String Storage;
 
-
+    @Column(name ="OperatingSystem", length = 255 )
     private String Operating_System;
 
-
+    @Column(name ="Cell", length = 255 )
     private String Cell;
 
-
+    @Column(name ="Weight", length = 255 )
     private String Weight;
 
-
+    @Column(name ="GuaranteeInfo", length = 255 )
     private String Guarantee_info;
 
-
+    @Column(name ="Color", length = 255 )
     private String Color;
 
-
+    @Column(name ="OtherInfo", length = 255 )
     private String Other_info;
 
-
+    @Column(name ="ImageID", length = 255 )
     private String ImageID;
 
-
+    @Column(name ="Type", length = 255 )
     private String Type;
-
+    
+    @Column(name ="Description", length = 255 )
     private String Description;
 
     public Laptop() {
@@ -118,7 +122,7 @@ public class Laptop {
         return Price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         Price = price;
     }
 

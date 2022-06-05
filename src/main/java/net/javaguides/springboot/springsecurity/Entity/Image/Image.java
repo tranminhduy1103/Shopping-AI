@@ -6,17 +6,35 @@ import javax.persistence.*;
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "Id"))
 public class Image {
-    @javax.persistence.Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
+    
+    @Column(name = "type", length = 255, nullable =true )
     private String Type;
+    
+    @Column(name = "imageid", length = 255, nullable =true )
     private String ImageID;
+    
+    @Column(name = "image1", length = 255, nullable =true )
     private String Image1;
+    
+    @Column(name = "image2", length = 255, nullable =true )
     private String Image2;
+    
+    @Column(name = "image3", length = 255, nullable =true )
     private String Image3;
+    
+    @Column(name = "image4", length = 255, nullable =true )
     private String Image4;
+    
+    @Column(name = "image5", length = 255, nullable =true )
     private String Image5;
+    
+    @Column(name = "image6", length = 255, nullable =true )
     private String Image6;
+    
+    @Column(name = "image7", length = 255, nullable =true )
     private String Image7;
 
     public Image() {
